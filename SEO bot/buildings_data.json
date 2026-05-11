@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Vinhomes Central Park",
+        "subdomain_url": "https://vinhomes.propertydanang.com",
+        "location": "208 Nguyễn Hữu Cảnh, Phường 22, Bình Thạnh, TP.HCM",
+        "highlights": "Tòa nhà Landmark 81 cao nhất Việt Nam, công viên ven sông 14ha, bến du thuyền 5 sao, bệnh viện Vinmec, trường học Vinschool.",
+        "focus_keyword": "Cho thuê căn hộ Vinhomes Central Park",
+        "consulting_service": "Dịch vụ ký gửi và quản lý tài sản chuyên nghiệp tại Vinhomes",
+        "status": "active"
+    },
+    {
+        "name": "Sun Panorama Đà Nẵng",
+        "subdomain_url": "https://sun-panorama.propertydanang.com",
+        "location": "Đường Trần Hưng Đạo, Quận Sơn Trà, Đà Nẵng",
+        "highlights": "Vị trí kim cương bên sông Hàn, tầm nhìn xem pháo hoa quốc tế DIFF, căn hộ hạng sang thiết kế chuẩn quốc tế.",
+        "focus_keyword": "Mua bán căn hộ Sun Panorama Đà Nẵng",
+        "consulting_service": "Tư vấn đầu tư và pháp lý dự án Sun Group tại Đà Nẵng",
+        "status": "active"
+    }
+]

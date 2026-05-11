@@ -1,0 +1,14 @@
+{
+  "target_url": "https://yourwebsite.com",
+  "crawl_depth": 3,
+  "max_pages": 50,
+  "pagespeed_api_key": "",
+  "request_timeout": 15,
+  "concurrent_requests": 5,
+  "user_agent": "WebsiteAuditBot/1.0 (SEO Audit Tool)",
+  "wordpress": {
+    "enabled": true
+  },
+  "output_dir": "reports",
+  "auto_open_report": true
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Audit Report – https://example.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #1c2128; --surface3: #21262d;
+    --border: #30363d; --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff;
+    --critical: #ef4444; --warning: #f59e0b; --pass: #10b981; --info: #6366f1;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+
+  /* ── Header ── */
+  .header { background:linear-gradient(135deg,#0d1117 0%,#1a1f2e 50%,#0d1117 100%);
+    border-bottom:1px solid var(--border); padding:32px 40px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+    background:radial-gradient(ellipse at center,rgba(88,166,255,0.08) 0%,transparent 60%);
+    pointer-events:none; }
+  .header-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand-icon { width:44px; height:44px; background:linear-gradient(135deg,#58a6ff,#7c3aed);
+    border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; }
+  .brand-text h1 { font-size:22px; font-weight:800; color:var(--text); }
+  .brand-text p { font-size:13px; color:var(--text-muted); margin-top:2px; }
+  .header-meta { text-align:right; }
+  .header-meta .target-url { font-size:18px; font-weight:700; color:var(--accent); word-break:break-all; }
+  .header-meta .meta-info { font-size:12px; color:var(--text-muted); margin-top:4px; }
+  .mode-badge { display:inline-block; padding:3px 10px; border-radius:20px; font-size:11px;
+    font-weight:600; background:rgba(88,166,255,0.15); color:var(--accent); border:1px solid rgba(88,166,255,0.3); }
+
+  /* ── Main Layout ── */
+  .container { max-width:1200px; margin:0 auto; padding:32px 24px; }
+
+  /* ── Score Hero ── */
+  .score-hero { display:grid; grid-template-columns:200px 1fr; gap:32px;
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:32px; margin-bottom:28px; align-items:center; }
+  .score-circle { text-align:center; }
+  .score-num { font-size:72px; font-weight:800; line-height:1; color:#f59e0b; }
+  .score-label { font-size:13px; color:var(--text-muted); margin-top:6px; font-weight:500; }
+  .score-right h2 { font-size:18px; font-weight:700; margin-bottom:20px; }
+  .cat-scores { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .cat-score-card { background:var(--surface2); border-radius:12px; padding:16px; text-align:center; border:1px solid var(--border); }
+  .cat-score-num { font-size:32px; font-weight:800; }
+  .cat-score-label { font-size:11px; color:var(--text-muted); font-weight:600; margin:4px 0 8px; text-transform:uppercase; letter-spacing:0.5px; }
+  .cat-score-bar { height:4px; background:var(--surface3); border-radius:2px; overflow:hidden; }
+  .cat-score-fill { height:100%; border-radius:2px; transition:width 1s ease; }
+
+  /* ── Stats Row ── */
+  .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px; }
+  .stat-card { background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:20px; display:flex; align-items:center; gap:16px; }
+  .stat-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center;
+    justify-content:center; font-size:22px; flex-shrink:0; }
+  .stat-icon.critical { background:rgba(239,68,68,0.15); }
+  .stat-icon.warning { background:rgba(245,158,11,0.15); }
+  .stat-icon.pass { background:rgba(16,185,129,0.15); }
+  .stat-value { font-size:32px; font-weight:800; }
+  .stat-value.critical { color:var(--critical); }
+  .stat-value.warning { color:var(--warning); }
+  .stat-value.pass { color:var(--pass); }
+  .stat-label { font-size:13px; color:var(--text-muted); margin-top:2px; }
+
+  /* ── Section ── */
+  .section { margin-bottom:32px; }
+  .section-title { font-size:16px; font-weight:700; margin-bottom:16px;
+    display:flex; align-items:center; gap:8px; color:var(--text); }
+  .section-title::after { content:''; flex:1; height:1px; background:var(--border); margin-left:12px; }
+
+  /* ── Issue Cards ── */
+  .issue-card { background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:18px; margin-bottom:10px; transition:border-color 0.2s; }
+  .issue-card:hover { border-color:var(--accent); }
+  .issue-card.badge-critical { border-left:3px solid var(--critical); }
+  .issue-card.badge-warning { border-left:3px solid var(--warning); }
+  .issue-card.badge-info { border-left:3px solid var(--info); }
+  .issue-header { display:flex; align-items:flex-start; gap:12px; }
+  .issue-icon { font-size:18px; flex-shrink:0; margin-top:1px; }
+  .issue-meta { flex:1; }
+  .issue-msg { font-size:14px; font-weight:600; color:var(--text); }
+  .issue-tags { display:flex; gap:6px; margin-top:6px; flex-wrap:wrap; }
+  .cat-tag { padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
+  .cat-seo { background:rgba(88,166,255,0.15); color:#58a6ff; }
+  .cat-security { background:rgba(239,68,68,0.15); color:#ef4444; }
+  .cat-performance { background:rgba(245,158,11,0.15); color:#f59e0b; }
+  .cat-technical { background:rgba(99,102,241,0.15); color:#818cf8; }
+  .page-tag { font-size:11px; color:var(--text-muted); }
+  .issue-badge { padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700;
+    flex-shrink:0; align-self:flex-start; }
+  .badge-critical { background:rgba(239,68,68,0.15); color:var(--critical); }
+  .badge-warning { background:rgba(245,158,11,0.15); color:var(--warning); }
+  .badge-info { background:rgba(99,102,241,0.15); color:var(--info); }
+  .issue-value { margin-top:8px; font-size:12px; color:var(--text-muted);
+    background:var(--surface2); border-radius:6px; padding:8px 12px;
+    font-family:monospace; word-break:break-all; max-height:60px; overflow:hidden; }
+
+  /* ── Fix Guide ── */
+  .fix-btn { margin-top:12px; background:linear-gradient(135deg,rgba(88,166,255,0.1),rgba(124,58,237,0.1));
+    color:var(--accent); border:1px solid rgba(88,166,255,0.3); border-radius:8px;
+    padding:7px 14px; font-size:12px; font-weight:600; cursor:pointer;
+    transition:all 0.2s; font-family:inherit; }
+  .fix-btn:hover { background:rgba(88,166,255,0.2); border-color:var(--accent); }
+  .fix-guide { margin-top:12px; background:var(--surface2); border-radius:10px;
+    padding:16px; border:1px solid var(--border); animation:fadeIn 0.2s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
+  .fix-why { font-size:13px; color:var(--text-muted); margin-bottom:12px; line-height:1.6; }
+  .fix-steps { font-size:13px; color:var(--text); }
+  .fix-steps ol { padding-left:18px; margin-top:8px; }
+  .fix-steps li { margin-bottom:6px; line-height:1.6; }
+  .wp-tip { margin-top:12px; background:rgba(88,166,255,0.08); border:1px solid rgba(88,166,255,0.2);
+    border-radius:8px; padding:10px 14px; font-size:12px; color:var(--accent); }
+  .wp-icon { font-weight:700; margin-right:4px; }
+
+  /* ── Pages Table ── */
+  .pages-table { width:100%; border-collapse:collapse; background:var(--surface);
+    border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+  .pages-table th { background:var(--surface2); padding:12px 16px; font-size:12px;
+    font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-muted);
+    text-align:left; }
+  .pages-table td { padding:12px 16px; font-size:13px; border-top:1px solid var(--border); }
+  .pages-table tr:hover td { background:var(--surface2); }
+  .page-link { color:var(--accent); text-decoration:none; font-size:12px; }
+  .page-link:hover { text-decoration:underline; }
+  .no-issues { text-align:center; color:var(--pass); font-size:16px; padding:40px; }
+
+  /* ── Filter Tabs ── */
+  .filter-tabs { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+  .filter-tab { padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600;
+    cursor:pointer; border:1px solid var(--border); background:var(--surface2);
+    color:var(--text-muted); transition:all 0.2s; font-family:inherit; }
+  .filter-tab:hover, .filter-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  /* ── Footer ── */
+  .footer { text-align:center; padding:32px; color:var(--text-muted); font-size:12px;
+    border-top:1px solid var(--border); margin-top:48px; }
+  .footer a { color:var(--accent); text-decoration:none; }
+
+  @media(max-width:768px) {
+    .score-hero { grid-template-columns:1fr; }
+    .cat-scores { grid-template-columns:repeat(2,1fr); }
+    .stats-row { grid-template-columns:1fr; }
+    .header { padding:20px; }
+    .container { padding:20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="brand">
+      <div class="brand-icon">🔍</div>
+      <div class="brand-text">
+        <h1>Website Audit Bot</h1>
+        <p>Powered by Antigravity AI Tools</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="target-url">https://example.com</div>
+      <div class="meta-info">
+        <span class="mode-badge">🔎 Single Page</span>
+        &nbsp; 1 trang được quét &nbsp;·&nbsp; 05/05/2026 10:15:15
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- SCORE HERO -->
+  <div class="score-hero">
+    <div class="score-circle">
+      <div class="score-num" style="color:#f59e0b">65</div>
+      <div class="score-label">/ 100<br>Overall Score</div>
+    </div>
+    <div class="score-right">
+      <h2>📊 Điểm số theo danh mục</h2>
+      <div class="cat-scores">
+        <div class="cat-score-card">
+            <div class="cat-score-num" style="color:#ef4444">16</div>
+            <div class="cat-score-label">SEO</div>
+            <div class="cat-score-bar">
+                <div class="cat-score-fill" style="width:16%;background:#ef4444"></div>
+            </div>
+        </div>
+        <div class="cat-score-card">
+            <div class="cat-score-num" style="color:#10b981">100</div>
+            <div class="cat-score-label">Performance</div>
+            <div class="cat-score-bar">
+                <div class="cat-score-fill" style="width:100%;background:#10b981"></div>
+            </div>
+        </div>
+        <div class="cat-score-card">
+            <div class="cat-score-num" style="color:#ef4444">44</div>
+            <div class="cat-score-label">Security</div>
+            <div class="cat-score-bar">
+                <div class="cat-score-fill" style="width:44%;background:#ef4444"></div>
+            </div>
+        </div>
+        <div class="cat-score-card">
+            <div class="cat-score-num" style="color:#10b981">100</div>
+            <div class="cat-score-label">Technical</div>
+            <div class="cat-score-bar">
+                <div class="cat-score-fill" style="width:100%;background:#10b981"></div>
+            </div>
+        </div></div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon critical">🔴</div>
+      <div>
+        <div class="stat-value critical">1</div>
+        <div class="stat-label">Lỗi nghiêm trọng (Critical)</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon warning">⚠️</div>
+      <div>
+        <div class="stat-value warning">15</div>
+        <div class="stat-label">Cảnh báo (Warning)</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon pass">✅</div>
+      <div>
+        <div class="stat-value pass">8</div>
+        <div class="stat-label">Kiểm tra đạt (Passed)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ISSUES -->
+  <div class="section">
+    <div class="section-title">⚠️ Vấn đề tìm thấy</div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterIssues('all', this)">Tất cả</button>
+      <button class="filter-tab" onclick="filterIssues('badge-critical', this)">🔴 Critical</button>
+      <button class="filter-tab" onclick="filterIssues('badge-warning', this)">🟡 Warning</button>
+      <button class="filter-tab" onclick="filterIssues('cat-seo', this)">SEO</button>
+      <button class="filter-tab" onclick="filterIssues('cat-security', this)">Security</button>
+      <button class="filter-tab" onclick="filterIssues('cat-performance', this)">Performance</button>
+      <button class="filter-tab" onclick="filterIssues('cat-technical', this)">Technical</button>
+    </div>
+    <div id="issues-container">
+      
+        <div class="issue-card badge-critical">
+            <div class="issue-header">
+                <span class="issue-icon">🔴</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu thẻ meta description</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-critical">CRITICAL</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Meta description ảnh hưởng đến click-through rate (CTR) trên Google. Thiếu nó Google sẽ tự chọn đoạn text ngẫu nhiên.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Mở Rank Math SEO panel trên bài viết</li><li>Điền 'Meta Description' khoảng 150–160 ký tự</li><li>Phải chứa từ khóa chính và lời kêu gọi hành động (CTA)</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math → Meta Description → Nên có từ khóa và CTA như 'Đọc ngay', 'Tìm hiểu thêm'</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Title quá ngắn (14 ký tự, nên 50–60)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            <div class="issue-value">Example Domain</div>
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Title ngắn hơn 50 ký tự lãng phí không gian hiển thị trên Google SERP.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Mở Rank Math SEO panel trên bài viết</li><li>Mở rộng title bằng cách thêm từ khóa phụ hoặc tên thương hiệu</li><li>Mục tiêu: 50–60 ký tự</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Dùng công thức: [Từ khóa chính] – [Từ khóa phụ] | [Tên thương hiệu]</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Không có thẻ H2 nào – cấu trúc nội dung thiếu</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> H2 tags giúp cấu trúc nội dung, cải thiện readability và SEO.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Chia nội dung bài viết thành các phần với tiêu đề H2</li><li>Mỗi H2 nên chứa từ khóa phụ hoặc LSI keywords</li><li>Nên có 3–5 H2 cho bài viết dài</li></ol></div>
+                
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu thẻ canonical</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Canonical tag ngăn duplicate content khi URL có nhiều dạng khác nhau.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Cài Rank Math hoặc Yoast SEO – cả hai tự động thêm canonical</li><li>Kiểm tra Settings → General → Canonical URL trong Rank Math</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math tự động thêm canonical tag cho mọi bài viết/trang</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu Open Graph tags: og:title, og:description, og:image</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Open Graph tags kiểm soát cách nội dung hiển thị khi share lên Facebook, LinkedIn...</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Cài Rank Math SEO</li><li>Vào Rank Math → Settings → General → Social Meta</li><li>Bật 'Open Graph Meta Tags'</li><li>Mỗi bài viết: thêm ảnh thumbnail đúng kích thước 1200x630px</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math → Post → Social → Custom OG Image để kiểm soát ảnh share</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Không tìm thấy Schema markup (JSON-LD)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Schema giúp Google hiểu nội dung sâu hơn và hiển thị rich snippets (sao, giá, FAQ...).</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Rank Math tự động thêm Schema cho Article, BlogPost</li><li>Vào Rank Math → Post → Schema tab → chọn loại schema phù hợp</li><li>Cho trang FAQ: thêm FAQ schema để có rich snippet</li><li>Kiểm tra tại: search.google.com/test/rich-results</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math PRO hỗ trợ schema nâng cao: Review, Recipe, HowTo...</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Nội dung mỏng (21 từ, nên > 600)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Trang < 300 từ khó xếp hạng và có thể bị Google đánh giá là low-quality.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Mở rộng nội dung lên ít nhất 600–1000 từ</li><li>Thêm phần FAQ, thông tin chi tiết, ví dụ thực tế</li><li>Dùng SEO bot để tạo nội dung dài hơn với chủ đề tương tự</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math → Content Analysis → kiểm tra 'Content Length' score</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Không phát hiện Rank Math hoặc Yoast SEO</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> SEO plugin giúp tối ưu meta tags, schema, sitemap tự động.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Vào WordPress → Plugins → Add New</li><li>Tìm 'Rank Math SEO' → Install → Activate</li><li>Chạy Setup Wizard để cấu hình cơ bản</li><li>Kết nối với Google Search Console</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math free version đủ mạnh cho hầu hết websites</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Ít internal links (0), nên có ≥ 3</div>
+                    <div class="issue-tags"><span class="cat-tag cat-seo">SEO</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Internal linking giúp Google crawl site và phân phối PageRank.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Thêm ít nhất 3–5 internal links trong mỗi bài viết</li><li>Link đến các bài viết liên quan cùng chủ đề</li><li>Dùng anchor text có ý nghĩa, chứa từ khóa</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Plugin 'Link Whisper' tự động gợi ý internal links phù hợp</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu X-Frame-Options (chống clickjacking)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Không có header này cho phép kẻ tấn công nhúng site vào iframe (clickjacking attack).</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Thêm vào .htaccess: Header always append X-Frame-Options SAMEORIGIN</li><li>Hoặc cài plugin 'HTTP Headers' để quản lý security headers dễ dàng</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Plugin 'Headers Security Advanced & HSTS WP' tự động thêm tất cả headers</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu X-Content-Type-Options header</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Ngăn trình duyệt đoán sai content type (MIME sniffing attacks).</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Thêm .htaccess: Header always set X-Content-Type-Options nosniff</li></ol></div>
+                
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu HSTS (Strict-Transport-Security)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> HSTS buộc trình duyệt luôn dùng HTTPS, ngăn SSL stripping attack.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Thêm vào .htaccess: Header always set Strict-Transport-Security 'max-age=31536000'</li><li>Sau khi HTTPS ổn định 100%, thêm includeSubDomains</li></ol></div>
+                
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu Referrer-Policy header</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Kiểm soát thông tin referrer được gửi khi user click link ra ngoài.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Thêm .htaccess: Header always set Referrer-Policy 'strict-origin-when-cross-origin'</li></ol></div>
+                
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Thiếu Content-Security-Policy (CSP)</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> CSP ngăn XSS attacks bằng cách giới hạn sources của scripts, styles...</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>CSP phức tạp, cần test kỹ trước khi deploy</li><li>Bắt đầu với Content-Security-Policy-Report-Only để monitor</li><li>Dùng tool: csp-evaluator.withgoogle.com</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Plugin 'HTTP Headers' có wizard tạo CSP header</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Không tìm thấy robots.txt</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> robots.txt hướng dẫn Google bot những trang nào nên/không nên crawl.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Rank Math → General Settings → Generate robots.txt tự động</li><li>Hoặc tạo file /robots.txt thủ công với nội dung cơ bản:</li><li>User-agent: *\nAllow: /\nSitemap: https://yoursite.com/sitemap.xml</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Yoast/Rank Math đều có công cụ tạo và chỉnh robots.txt trong dashboard</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-warning">
+            <div class="issue-header">
+                <span class="issue-icon">🟡</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Không tìm thấy sitemap.xml</div>
+                    <div class="issue-tags"><span class="cat-tag cat-security">Security</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-warning">WARNING</span>
+            </div>
+            
+            
+            <button class="fix-btn" onclick="toggleFix(this)">💡 Hướng dẫn sửa lỗi</button>
+            <div class="fix-guide" style="display:none">
+                <div class="fix-why"><strong>❓ Tại sao?</strong> Sitemap giúp Google khám phá và index tất cả trang nhanh hơn.</div>
+                <div class="fix-steps"><strong>📋 Cách sửa:</strong><ol><li>Rank Math → Sitemap Settings → Enable Sitemap</li><li>Sau đó submit sitemap vào Google Search Console</li><li>URL sitemap thường là: yoursite.com/sitemap_index.xml</li></ol></div>
+                <div class="wp-tip"><span class="wp-icon">🔧 WordPress Tip:</span> Rank Math → Sitemap → Submit URL vào Google Search Console → Sitemaps</div>
+            </div>
+        </div>
+
+        <div class="issue-card badge-info">
+            <div class="issue-header">
+                <span class="issue-icon">ℹ️</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Chưa cấu hình Google PageSpeed API key – bỏ qua Core Web Vitals</div>
+                    <div class="issue-tags"><span class="cat-tag cat-performance">Performance</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-info">INFO</span>
+            </div>
+            <div class="issue-value">Thêm pagespeed_api_key vào config.json</div>
+            
+        </div>
+
+        <div class="issue-card badge-info">
+            <div class="issue-header">
+                <span class="issue-icon">ℹ️</span>
+                <div class="issue-meta">
+                    <div class="issue-msg">Tổng số 1 links cần kiểm tra</div>
+                    <div class="issue-tags"><span class="cat-tag cat-technical">Technical</span> <span class="page-tag">https://example.com</span></div>
+                </div>
+                <span class="issue-badge badge-info">INFO</span>
+            </div>
+            
+            
+        </div>
+    </div>
+  </div>
+
+  <!-- PAGES TABLE -->
+  <div class="section">
+    <div class="section-title">🗺️ Danh sách trang đã quét</div>
+    <table class="pages-table">
+      <thead><tr><th>URL</th><th>SEO Issues</th><th>Perf Issues</th><th>Sec Issues</th><th>Tổng</th></tr></thead>
+      <tbody><tr>
+            <td><a href="https://example.com" target="_blank" class="page-link">https://example.com</a></td>
+            <td style="color:#60a5fa">9</td>
+            <td style="color:#f59e0b">0</td>
+            <td style="color:#ef4444">7</td>
+            <td><span style="color:#ef4444;font-weight:700">16 issues</span></td>
+        </tr></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Báo cáo được tạo bởi <strong>Website Audit Bot</strong> · 05/05/2026 10:15:15</p>
+  <p style="margin-top:6px">Kiểm tra lại tại: <a href="https://pagespeed.web.dev" target="_blank">PageSpeed Insights</a> · 
+  <a href="https://search.google.com/test/rich-results" target="_blank">Rich Results Test</a> · 
+  <a href="https://www.ssllabs.com/ssltest/" target="_blank">SSL Labs</a></p>
+</div>
+
+<script>
+function toggleFix(btn) {
+  const guide = btn.nextElementSibling;
+  if (guide.style.display === 'none') {
+    guide.style.display = 'block';
+    btn.textContent = '🔼 Ẩn hướng dẫn';
+  } else {
+    guide.style.display = 'none';
+    btn.textContent = '💡 Hướng dẫn sửa lỗi';
+  }
+}
+
+function filterIssues(cls, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.issue-card');
+  cards.forEach(card => {
+    if (cls === 'all') {
+      card.style.display = '';
+    } else if (cls.startsWith('cat-')) {
+      const hasCat = card.querySelector('.' + cls);
+      card.style.display = hasCat ? '' : 'none';
+    } else {
+      card.style.display = card.classList.contains(cls) ? '' : 'none';
+    }
+  });
+}
+
+// Animate score bars on load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.cat-score-fill').forEach(bar => {
+    const w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => { bar.style.width = w; }, 100);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinhomes Central Park | Cổng Thông Tin Dự Án Chính Thức</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c4a068;
+            --text-light: #f4f4f4;
+            --text-dark: #333;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                        url('building_hero_demo_1777954858821.png') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .official-badge {
+            border: 1px solid var(--accent);
+            padding: 8px 20px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background-color: var(--accent);
+            color: white;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .cta-button:hover {
+            background-color: #b38f57;
+            transform: translateY(-3px);
+        }
+
+        /* Info Section */
+        .section {
+            padding: 100px 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .stat-val {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        /* Amenities Section */
+        .amenities {
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .amenity-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 4px;
+        }
+
+        /* Lead Form */
+        .contact-box {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: 1px solid #444;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent);
+            border: none;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            background: #111;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="official-badge">Thông Tin Dự Án Chính Thức</div>
+        <h1>VINHOMES CENTRAL PARK</h1>
+        <p class="hero-sub">Biểu tượng phồn vinh ven sông Sài Gòn. Nơi hội tụ cộng đồng tinh hoa và những giá trị sống khác biệt.</p>
+        <a href="#register" class="cta-button">Nhận Bảng Giá & Mặt Bằng</a>
+    </header>
+
+    <section class="section">
+        <h2>Tổng Quan Dự Án</h2>
+        <div class="grid">
+            <div class="stat-card">
+                <span class="stat-val">43.91 ha</span>
+                <span class="stat-label">Tổng diện tích</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">10,000+</span>
+                <span class="stat-label">Số lượng căn hộ</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">Landmark 81</span>
+                <span class="stat-label">Tòa nhà cao nhất VN</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">2018</span>
+                <span class="stat-label">Năm hoàn thiện</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section amenities">
+        <h2>Tiện Ích Đặc Quyền</h2>
+        <div class="grid">
+            <div class="amenity-item">
+                <h3>Công viên 14ha</h3>
+                <p>Công viên ven sông lớn nhất TP.HCM với thảm cỏ xanh mướt.</p>
+            </div>
+            <div class="amenity-item">
+                <h3>Bệnh viện Vinmec</h3>
+                <p>Tiêu chuẩn chăm sóc sức khỏe quốc tế ngay trong nội khu.</p>
+            </div>
+            <div class="amenity-item">
+                <h3>Bến Du Thuyền</h3>
+                <p>Đẳng cấp sống thượng lưu bên dòng sông Sài Gòn thơ mộng.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="contact-box">
+        <h2>Liên Hệ Ban Quản Lý Dự Án</h2>
+        <p>Để nhận tài liệu chi tiết, mặt bằng tầng và danh sách các căn hộ đang trống, vui lòng để lại thông tin.</p>
+        
+        <div class="form-container">
+            <form action="#">
+                <input type="text" placeholder="Họ và tên của bạn" required>
+                <input type="tel" placeholder="Số điện thoại liên lạc" required>
+                <input type="email" placeholder="Địa chỉ Email">
+                <button type="submit" class="submit-btn">Đăng Ký Nhận Thông Tin</button>
+            </form>
+            <p style="font-size: 13px; color: #666; margin-top: 20px;">* Chúng tôi cam kết bảo mật thông tin khách hàng tuyệt đối.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Vinhomes Central Park Project Information Center. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
