@@ -1,5 +1,12 @@
-node_modules/
-.DS_Store
-.gemini/
-*.log
+# Cấu hình môi trường ảo
+venv/
 .env
+
+# Bảo mật thông tin nhạy cảm (CỰC KỲ QUAN TRỌNG)
+**/config.json
+**/content_plan.json
+
+# File tạm và cache
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,14 +1,16 @@
 import os
 import json
 import re
+import sys
+import subprocess
 from google import genai
 
 class KeywordResearcher:
     def __init__(self, config_path=None):
         if config_path is None:
-            # Tự động tìm config.json cùng thư mục với file script
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            config_path = os.path.join(script_dir, 'config.json')
+            # Tự động tìm config.json cùng thư mục với file script này
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            config_path = os.path.join(base_dir, 'config.json')
             
         with open(config_path, 'r', encoding='utf-8') as f:
             self.config = json.load(f)
@@ -17,15 +19,19 @@ class KeywordResearcher:
         self.model_name = self.config['gemini']['model']
         self.client = genai.Client(api_key=api_key)
         self.output_path = None # Sẽ được thiết lập khi chọn target
+        self.script_path = None # Sẽ được thiết lập khi chọn target
 
-    def generate_plan(self, seed_topic, num_keywords=None):
+    def generate_plan(self, seed_topic, context="", num_keywords=None):
         num_keywords = num_keywords or self.config['research_settings'].get('default_num_keywords', 10)
+        
+        context_prompt = f"\nBỐI CẢNH/MÔ TẢ CHI TIẾT TỪ NGƯỜI DÙNG: {context}" if context else ""
         
         print(f"\n[AI Search/AEO] Đang phân tích không gian mạng cho chủ đề: '{seed_topic}'...")
         
         prompt = f"""
         Bạn là chuyên gia SEO và AEO (AI Engine Optimization - Tối ưu hóa công cụ tìm kiếm AI như ChatGPT, Gemini, Copilot).
         Nhiệm vụ của bạn là nghiên cứu và lập ra một Content Plan cho chủ đề cốt lõi: "{seed_topic}".
+        {context_prompt}
 
         MỤC TIÊU: 
         Tìm ra {num_keywords} cụm từ khóa (keywords) và mục đích tìm kiếm (search intents) giúp website ĐƯỢC CÁC CÔNG CỤ AI TRÍCH DẪN (Citation) nhiều nhất.
@@ -141,7 +147,15 @@ def main():
     
     t_choice = input("Chọn mục tiêu (1, 2...): ").strip()
     if t_choice in targets:
-        researcher.output_path = targets[t_choice]['output_path']
+        # Resolve output path relative to script directory
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        rel_output = targets[t_choice]['output_path']
+        researcher.output_path = os.path.abspath(os.path.join(base_dir, rel_output))
+        
+        rel_script = targets[t_choice]['script_path']
+        researcher.script_path = os.path.abspath(os.path.join(base_dir, rel_script))
+        
         print(f"🎯 Đã chọn mục tiêu: {targets[t_choice]['name']}")
     else:
         print("Lựa chọn không hợp lệ. Thoát.")
@@ -151,11 +165,26 @@ def main():
     if not seed_topic:
         print("Chủ đề không được để trống!")
         return
+    
+    context = input("Nhập bối cảnh/mô tả sâu hơn (Nhấn Enter để bỏ qua): ").strip()
         
     num_input = input(f"Số lượng từ khóa cần tạo (Enter để dùng mặc định là {researcher.config['research_settings'].get('default_num_keywords')}): ").strip()
     num_keywords = int(num_input) if num_input.isdigit() else None
     
-    researcher.generate_plan(seed_topic, num_keywords)
+    result = researcher.generate_plan(seed_topic, context, num_keywords)
+    
+    if result and researcher.script_path:
+        print("\n" + "="*40)
+        confirm = input("Bạn có muốn CHẠY LUÔN Bot viết bài để đăng lên website không? (y/n): ").strip().lower()
+        if confirm == 'y':
+            print(f"🚀 Đang khởi động Bot viết bài: {os.path.basename(researcher.script_path)}...")
+            try:
+                # Sử dụng chính python đang chạy để thực thi script tiếp theo
+                subprocess.run([sys.executable, researcher.script_path], check=True)
+            except Exception as e:
+                print(f"❌ Lỗi khi chạy Bot viết bài: {e}")
+        else:
+            print("👋 Đã xong! Bạn có thể chạy Bot viết bài sau bằng lệnh đã được cung cấp.")
 
 if __name__ == "__main__":
     main()

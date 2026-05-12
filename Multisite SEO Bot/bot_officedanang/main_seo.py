@@ -3,8 +3,12 @@ import time
 from seo_generator import SEOGenerator
 from wp_publisher import WPPublisher
 
+import os
+
 def load_config():
-    with open('config.json', 'r') as f:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(base_dir, 'config.json')
+    with open(config_path, 'r') as f:
         return json.load(f)
 
 def main():
@@ -29,11 +33,12 @@ def main():
     tasks = []
     if choice == '1':
         try:
-            import os
-            if not os.path.exists('content_plan.json'):
-                print("Lỗi: Không tìm thấy file content_plan.json. Hãy chạy Keyword Research Bot trước.")
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            plan_path = os.path.join(base_dir, 'content_plan.json')
+            if not os.path.exists(plan_path):
+                print(f"Lỗi: Không tìm thấy file {plan_path}. Hãy chạy Keyword Research Bot trước.")
                 return
-            with open('content_plan.json', 'r', encoding='utf-8') as f:
+            with open(plan_path, 'r', encoding='utf-8') as f:
                 plan_data = json.load(f)
             for item in plan_data:
                 tasks.append({
