@@ -14,7 +14,7 @@ def load_config():
 def main():
     config = load_config()
     
-    # Khởi tạo các module
+    print("--- SEO AUTO POSTER (✨ Powered by Imagen AI) ---")
     generator = SEOGenerator(
         config['gemini']['api_key'],
         model_name=config['gemini']['model']
@@ -24,6 +24,8 @@ def main():
         config['wordpress']['username'],
         config['wordpress']['application_password']
     )
+    # 🔗 Kết nối WPPublisher vào Generator để Imagen AI tự upload ảnh lên WordPress
+    generator.wp_publisher = publisher
     
     print("--- SEO AUTO POSTER ---")
     print("1. Chạy theo Kế hoạch Nội dung (đọc từ content_plan.json)")
@@ -44,7 +46,8 @@ def main():
                 tasks.append({
                     "topic": item.get("topic", ""),
                     "focus_keyword": item.get("focus_keyword", ""),
-                    "intent": item.get("intent", "")
+                    "intent": item.get("intent", ""),
+                    "pillar_link": item.get("pillar_link", "")
                 })
         except Exception as e:
             print(f"Lỗi khi đọc file kế hoạch: {e}")
@@ -53,14 +56,15 @@ def main():
         # Nhập tay như cũ
         keywords_input = input("Nhập các chủ đề bài viết (cách nhau bởi dấu phẩy): ").split(',')
         global_intent = input("Nhập mục đích/định hướng bài viết (để trống nếu không cần): ")
+        pillar_input = input("Nhập URL Pillar Link muốn trỏ về (để trống nếu không cần): ").strip()
         for kw in keywords_input:
             kw = kw.strip()
             if kw:
-                # Với nhập tay, dùng chủ đề làm từ khóa chính tạm thời
                 tasks.append({
                     "topic": kw,
                     "focus_keyword": kw,
-                    "intent": global_intent
+                    "intent": global_intent,
+                    "pillar_link": pillar_input
                 })
                 
     if not tasks:
@@ -71,12 +75,14 @@ def main():
         topic = task['topic']
         focus_kw = task['focus_keyword']
         current_intent = task['intent']
+        pillar_link = task.get('pillar_link', '')
         
         print(f"\n[Bài {idx+1}/{len(tasks)}] Đang tạo nội dung cho: '{topic}'...")
         article_data = generator.generate_content(
             topic=topic, 
             focus_keyword=focus_kw, 
             intent=current_intent, 
+            pillar_link=pillar_link,
             contact_info=config['seo_settings']['contact_info']
         )
         

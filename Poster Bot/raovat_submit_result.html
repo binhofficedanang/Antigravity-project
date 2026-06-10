@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="vi" xmlns="http://www.w3.org/1999/html"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="manifest" href="/manifest.json">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="apple-touch-icon" sizes="150x150" href="/images/ios/icon.png">
+      <link rel="apple-touch-startup-image" href="/images/ios/launch.png">
+      <meta name="viewport" content="viewport-fit=cover, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="apple-mobile-web-app-status-bar-style" content="default">
+      <link rel="icon" href="/favicon.ico">
+    <title>Rao vặt - Đăng tin rao vặt</title>
+      <link href="/css/v2.css?ver=2022.03.30.1" rel="stylesheet">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-F4RNVN3RY3&amp;cx=c&amp;gtm=4e65d0"></script><script src="/callback_js/init.js?ver=2022.02.07.1" type="text/javascript"></script>
+      <script type="text/javascript">
+          
+          const GOOGLE_MAP_KEY = "AIzaSyDGO9re-cPfAtDVB6P10j7oWEXTfSrMjjU";
+          let session_id = '02O83hHLrEqTzpL5Nzoiy5+b3Lb5f/U02pSLaS+d6Wm+zJrXxAnpmtrEQQRlpALqSuJTJZ3yC7M+SIBW77kZ/EXmkEYm0gdbjZ0=';
+      </script>
+      <style>
+          a.ax-upload-all {
+              display: none;
+          }
+      </style>
+
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/android/homescreen192-24@1,188x.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/android/homescreen192-24@5x.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/android/homescreen192-24@3,17x.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/android/homescreen192-24@2,5x.png"><link rel="apple-touch-icon" sizes="57x57" href="/images/android/homescreen192-24@2,375x.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/android/homescreen192-24@3x.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/android/homescreen192-24@4,75x.png"><link rel="icon" sizes="128x128" href="/images/android/homescreen192-128.png"><link rel="icon" sizes="192x192" href="/images/android/homescreen192-24@1,5x.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Raovat.net"><meta name="application-name" content="Raovat.net"><meta name="msapplication-TileColor" content="undefined"><meta name="msapplication-square70x70logo" content="undefined"><meta name="msapplication-square150x150logo" content="undefined"><meta name="msapplication-wide310x150logo" content="undefined"><meta name="msapplication-square310x310logo" content="undefined"></head>
+
+  <body class="modal-open" style="padding-right: 12px;">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <div id="prloading"><span class="ld-text"><img src="/images/connecting.gif" width="48" border="0"></span></div>
+            <div class="notification-nav visible-xs">
+                <div class="notification notification-button pull-right" data-original-title="" title=""><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom"><i class="fa fa-bell fa-fw bottom"></i><span class="count notificount" style="display: none"></span></a></div>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand reload" href="https://raovat.net/"><img src="/images/logo.png" width="165" border="0"></a>
+
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right bar-top">
+                <li class="lf-postad visible-md visible-lg"><a href="/dang-tin"><i class="fa fa-commenting fa-fw" aria-hidden="true"></i> Đăng tin <span class="hidden-xs">miễn phí</span></a></li>
+                <li class="visible-xs"><a href="/tim-kiem"><i class="fa fa-search fa-fw" aria-hidden="true"></i> Tìm kiếm</a></li>
+
+                <li><a href="/huong-dan"><i class="fa fa-question-circle-o fa-fw"></i><span class="visible-md-inline visible-lg-inline visible-xs-inline"> Hướng dẫn</span></a></li>
+
+                <li class="hidden-xs">
+                    <div class="notification notification-button pull-right" data-original-title="" title=""><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom"><i class="fa fa-bell fa-fw bottom"></i><span class="count notificount" style="display: none"></span></a></div>
+                </li>
+                <li class="hidden-xs">
+                    <div class="pull-right avatar"><div class="avatar-img32" id="usrAvt" data-original-title="" title=""><a tabindex="0" data-placement="bottom" role="button" data-toggle="popover" data-trigger="focus" data-title="Tài khoản của bạn <span class=&quot;badge&quot;>975724</span>">
+<img src="/images/avatar/default.png" alt="avatar"></a></div><div class="usrAvtBox hidden" id="usrAvtText"><div class="avatar-text"><div class="usr-name"><i class="fa fa-info-circle fa-fw"></i> binh.officedanang</div></div><div class="avatar-text"><div class="user-email"><i class="fa fa-envelope fa-fw"></i> binh.officedanang@gmail.com</div></div><div class="avatar-text"><div class="avt-link"><a href="/quan-ly"><i class="fa fa-wpforms fa-fw"></i> Bản tin đã đăng <span class="n-posts">0</span></a></div></div><div class="avatar-text"><div class="user-info"><a href="/tai-khoan"><i class="fa fa-user-circle-o fa-fw"></i> Chỉnh sửa thông tin</a></div></div><div class="avatar-text"><div class="user-logout"><a href="/dang-xuat"><i class="fa fa-power-off fa-fw"></i> Thoát / Đăng xuất</a></div></div><div class="avatar-last-login"><i class="fa fa-history fa-fw"></i> <span class="small">Đăng nhập gần đây 07:00 - 01/01/1970</span></div><div class="clearfix"></div></div></div>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right bar-bellow">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-server fa-fw" aria-hidden="true"></i> MyRaovat <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/dang-tin"><i class="fa fa-commenting fa-fw rvn-blue"></i> Đăng tin rao vặt</a></li>
+                        <li><a href="/quan-ly"><i class="fa fa-wpforms fa-fw"></i> Chỉnh sửa, nâng cấp bản tin</a></li>
+                        <li><a href="/nang-cap"><i class="fa fa-trophy fa-fw"></i> Nạp tiền vào tài khoản</a></li>
+                        <li><a href="/hoa-don"><i class="fa fa-history fa-fw"></i> Quản lý hóa đơn</a></li>
+                        <li role="separator" class="divider hidden"></li>
+                        <li><a href="/tin-nhan"><i class="fa fa-comments-o fa-fw"></i> Tin nhắn</a></li>
+                        <li><a href="/quan-tam"><i class="fa fa-bookmark fa-fw"></i> Tin đã đánh dấu (Favorites)</a></li>
+                        <li><a href="/tai-khoan"><i class="fa fa-user fa-fw"></i> Thông tin tài khoản</a></li>
+                        <li><a href="/mat-khau"><i class="fa fa-key fa-fw"></i> Đổi mật khẩu</a></li>
+                        <li><a href="/dang-xuat"><i class="fa fa-sign-out fa-fw red"></i> Đăng xuất</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<span id="top-link-block" class="affix-top">
+    <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span><i class="fa fa-arrow-circle-up fa-3x"></i></span></a>
+</span>
+
+    <!-- child of the body tag -->
+    <div id="pgContent" class="clearfix">
+
+      <div class="container pgBody">
+        <div class="dang-tin-body rows">
+          <div class="col-md-9">
+            <div class="dang-tin">
+
+                <div class="dang-tin-step clearfix">
+                    <div class="step1" style="width:35%"><i class="fa fa-list"></i> Danh mục</div>
+                    <div class="step2" style="width:35%"><i class="fa fa-eye"></i> Nội dung</div>
+                    <div class="step3" style="width:30%"><i class="fa fa-check"></i> Kiểm tra</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" style="width: 35%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="width: 35%">
+                        <span class="sr-only">20% Complete (warning)</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success" style="width: 0%">
+                        <span class="sr-only">35% Complete (success)</span>
+                    </div>
+                </div>
+                <div class="post-step2">
+                    <div class="rows">
+                        <div class="col-md-12 what-next">
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <b>Tin đăng thành công!</b>
+                            </div>
+                            <blockquote>
+                            <div class="page-header">
+                                Bản tin của bạn sẽ được đăng ngay sau khi biên tập viên kiểm duyệt!
+                            </div>
+                            <div class="options">
+<!--                                <div class="li"><a href="/tin-dich-vu?siteid=8668137"><i class="fa fa-shopping-cart fa-lg fa-fw orange"></i> Mua dịch vụ cho bản tin.</a></div>-->
+                                <div class="li"><a href="/xem/8668137-Cho-thue-van-phong-xin-tai-Hai-Chau-Da-Nang.html"><i class="fa fa-eye fa-lg fa-fw"></i> Xem bản tin vừa cập nhật?</a></div>
+                                <div class="li"><a href="/hinh-anh?siteid=8668137"><i class="fa fa-picture-o fa-lg fa-fw"></i> Cập nhật hình ảnh cho bản tin vừa đăng?</a></div>
+                                <div class="li"><a href="/dang-tin?mode=edit&amp;siteid=8668137&amp;v=html"><i class="fa fa-pencil-square fa-lg fa-fw"></i> Chỉnh sửa bản lại bản tin vừa cập nhật?</a></div>
+                                <div class="li"><a href="/dang-tin?post=new"><i class="fa fa-wpforms fa-lg fa-fw"></i> Đăng bản tin mới khác?</a></div>
+                            </div>
+                                <footer>Cập nhật lúc 14:15 - 18/05/2026</footer>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-3">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+
+      </div>
+        <div class="modal fade" id="send-resp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-inline">Thông báo!</div>
+                    </div>
+                    <div class="modal-body" id="modalTextResp">
+                        Đang xử lý thông tin!
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-danger btn-ok" data-dismiss="modal">Ok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade in" id="allow_notification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block; padding-right: 12px;">
+            <div class="modal-dialog modal-400">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-inline">Nhận thông báo liên hệ từ khách hàng?</div>
+                    </div>
+                    <div class="modal-body text-center rvn-light-blue-bg">
+                        <img src="/images/allow.png" border="0" width="307" class="img-rounded">
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success btn-ok" data-dismiss="modal" id="btnNotification">Allow</a> <a class="btn btn-danger btn-cancel" id="btnCancelNotification" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+        <div class="rows ftr-4cols hidden-xs clearfix">
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Liên hệ Raovat.Net</div>
+
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Thông tin Raovat.Net</div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Hướng dẫn</div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="ftr-title">Liên kết ưu tiên</div>
+            </div>
+        </div>
+        <div class="rows hidden-xs clearfix">
+            <div class="col-md-3 col-sm-4">
+
+                <div class="ftr-content">
+                    Địa chỉ: 68/166D Trần Quang Khải, P. Tân Định, Q.1, TPHCM.<br>ĐT:&nbsp;0913732102 (Zalo)<br>Email: <a href="mailto:info@sgc.vn" class="" classname="" target="_blank" name="">info@sgc.vn</a>
+                    <div class="fb-icon"><a target="_blank" href="https://www.facebook.com/raovat2000/"><i class="fa fa-facebook-official fa-2x"></i></a> <span class="dev-icon"><a title="fullstack developer" href="https://globalvietnam.com" target="_blank"><i class="fa fa-code fa-2x"></i></a> </span></div>
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-content">
+                    <div><a href="/help?p=tin-tuc"><i class="fa fa-caret-right fa-fw"></i> Tin tức</a></div><div><a href="/help?p=quy-che"><i class="fa fa-caret-right fa-fw"></i> Quy chế hoạt động</a></div><div><a href="/help?p=dieu-khoan"><i class="fa fa-caret-right fa-fw"></i> Điều khoản sử dụng</a></div><div><a href="/huong-dan?subj=1/Bang-gia-dich-vu.html"><i class="fa fa-caret-right fa-fw"></i> Bảng giá</a></div><div><a href="/help?p=lien-he"><i class="fa fa-caret-right fa-fw"></i> Liên hệ</a></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-content">
+                    <div><a href="/huong-dan?subj=27/Huong-dan-dang-ky-thanh-vien.html" class="" classname="" target="" name="">Hướng dẫn đăng ký thành viên</a></div><div><a href="/huong-dan?subj=28/Huong-dan-dang-tin.html" class="" classname="" target="" name=""><i class="fa fa-caret-right fa-fw"></i> Hướng dẫn đăng tin</a></div><div><a href="/huong-dan?subj=10/Huong-dan-thanh-toan-.html" class="" classname="" target="" name=""><i class="fa fa-caret-right fa-fw"></i> Hướng dẫn thanh toán</a></div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="ftr-content">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="ftr">
+            <div class="ftrSigns hidden-xs"><div class="badge"><a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=27313"><span class="fa fa-check-circle"> ĐÃ ĐĂNG KÝ</span><br>Bộ Công Thương</a></div></div>
+            <div class="ftrCopyright">
+                <div class="CopyrightText">Bản quyền © 2001 - 2020 bởi Công ty TNHH TM-DV-KT SGC - Số ĐKKD: 0302298015, Sở Kế Hoạch Và Đầu Tư TP.HCM</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+        function showAllowNotification() {
+            if(sessionStorage.getItem('Notification') !== 'cancel') {
+                $('#allow_notification').modal('show');
+                const cancelButton = document.getElementById('btnCancelNotification');
+                cancelButton.addEventListener('click', function () {
+                    sessionStorage.setItem('Notification', 'cancel');
+                });
+            }
+        }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/bootstrap/dist/js/jquery.min.js"><\/script>')</script>
+    <script src="/callback_js/dang-tin.js?ver=2022.02.07.1"></script>
+
+    <script type="text/javascript">
+
+        let Gmap = false;
+        let mapMarker;
+        let myLatLng = {lat: 12.248866, lng: 109.195850};
+        let GMloaded = false;
+        function initMap() {
+            if($('#map').val()===undefined)return;
+
+            if(!Gmap) {
+                Gmap = new google.maps.Map(document.getElementById('map'), {
+                    center: myLatLng,
+                    zoom: 13
+                });
+            }
+
+            mapMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: Gmap,
+                draggable:true
+            });
+
+            google.maps.event.addListener(Gmap, 'dblclick', function(event) {
+                mapMarker.setPosition(Gmap.getCenter());
+            });
+            Gmap.addListener('click', function(event) {
+                Gmap.setCenter(event.latLng);
+
+                console.log(event.latLng.lat);
+            });
+
+            GMloaded = true;
+        }
+
+        function showGMarker() {
+            if(typeof mapMarker === 'undefined' || typeof Gmap === 'undefined') return;
+            mapMarker.setPosition(Gmap.getCenter());
+
+        }
+    </script>
+    <script data-cfasync="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGO9re-cPfAtDVB6P10j7oWEXTfSrMjjU&amp;callback=" async="" defer=""></script>
+
+  <script type="text/javascript">
+      // $('a.ax-upload-all').toggle('hide');
+
+      $('#siteprice').maskMoney({precision:1});
+      function btnUploadAll_Click(obj) {modalDialog('Chọn "Đăng tin" để đăng bản tin kèm hình ảnh!')}
+      function extClearQueue () {
+          $.ajax({
+              url: '/ajax-upload-session.php',
+              type: "POST",
+              data: {"clr":1},
+              success: function (text) {
+                  $('#uplSess').html(text);
+              }
+          });
+      }
+      noscroll = 1;
+      var jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTc1NzI0IiwiaWF0IjoxNzc5MDg4NTAwLCJleHAiOjE3NzkxNzQ5MDAsInNzaWQiOiJlN2ZhOGRxaDA2N212dGJjN25rZm9jbWcyMiJ9.2mRaV196OC2O_Vzqaz9mpvMEvvJO8xSXKUq--je5Ci8';
+      $(window).load(function () {
+          initMap();
+          
+      });
+      noscroll = 0;
+
+      $("#findMeGeo").on("click",function(){if("geolocation"in navigator){$("#markerPos").html("\u0110ang t\u00ecm ki\u1ebfm...");let b;navigator.geolocation.getCurrentPosition(function(a){b=a;myLatLng={lat:b.coords.latitude,lng:b.coords.longitude};"undefined"!==typeof Gmap&&(Gmap.setCenter(myLatLng),showGMarker(),$("#markerPos").html('\u0110\u00e3 t\u00ecm th\u1ea5y, nh\u1edb ch\u1ecdn "L\u01b0u v\u1ecb tr\u00ed" n\u1ebfu mu\u1ed1n c\u1eadp nh\u1eadt!'))},function(a){console.log(a.code);switch(a.code){case 1:modalDialog('B\u1ea1n ph\u1ea3i ch\u1ecdn "Allow" \u0111\u1ec3 s\u1eed d\u1ee5ng ch\u1ee9c n\u0103ng n\u00e0y!')}$("#markerPos").html("C\u00f3 l\u1ed7i khi s\u1eed d\u1ee5ng ch\u1ee9c n\u0103ng n\u00e0y!")},
+          {maximumAge:3E5})}else modalDialog("T\u00ednh n\u0103ng t\u00ecm v\u1ecb tr\u00ed c\u1ee7a b\u1ea1n kh\u00f4ng h\u1ed7 tr\u1ee3!")});
+
+  </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-727484-5"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-727484-5');
+    </script>
+  
+
+
+<div class="modal-backdrop fade in"></div></body></html>

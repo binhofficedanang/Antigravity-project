@@ -1,0 +1,55 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: DATVIET24H.COM.VN ---
+Đang đăng nhập vào datviet24h.com.vn với tài khoản: binhofficedanang
+⚠️ Vẫn ở trang đăng nhập datviet24h.com.vn. Có thể có CAPTCHA hoặc thông tin đăng nhập sai.
+  📸 Đã chụp screenshot: datviet24h_com_vn_login_failed.png
+❌ Đăng nhập DatViet24h thất bại!
+
+--- 🌐 Đang chạy trên: LUACHONNHADAT.VN ---
+Đang đăng nhập vào luachonnhadat.vn với tài khoản: binhofficedanang
+✓ Đăng nhập thành công trên luachonnhadat.vn
+Bắt đầu đăng tin trên luachonnhadat.vn: Cho thuê văn phòng trống 600m2 cực đẹp ở tòa nhà DẦU KHÍ PVFC, Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-dau-khi-pvfc/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+❌ Lỗi đăng tin luachonnhadat.vn: Locator.fill: Error: Element is not an <input>, <textarea> or [contenteditable] element
+Call log:
+waiting for locator("#tieude, #title, input[name='title'], input[name='tieude'], #txtTieuDe").first
+  -   locator resolved to <p id="tieude">…</p>
+  -   fill("Cho thuê văn phòng trống 600m2 cực đẹp ở tòa nhà DẦU KHÍ PVFC, Hải Châu")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+
+  📸 Đã chụp screenshot: luachonnhadat_vn_post_error.png
+❌ Đăng tin LuaChonNhaDat thất bại!
+
+--- 🌐 Đang chạy trên: DANGTINBATDONGSAN.VN ---
+Đang đăng nhập vào dangtinbatdongsan.vn với tài khoản: binhofficedanang
+❌ Lỗi đăng nhập dangtinbatdongsan.vn: Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://dangtinbatdongsan.vn/dang-nhap.html
+Call log:
+navigating to "https://dangtinbatdongsan.vn/dang-nhap.html", waiting until "domcontentloaded"
+
+❌ Đăng nhập DangTinBatDongSan thất bại!
+
+--- 🌐 Đang chạy trên: DIAOCANPHU.COM ---
+Đang đăng nhập vào diaocanphu.com với tài khoản: binhofficedanang
+❌ Lỗi đăng nhập diaocanphu.com: Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://diaocanphu.com/dang-nhap.html
+Call log:
+navigating to "https://diaocanphu.com/dang-nhap.html", waiting until "domcontentloaded"
+
+❌ Đăng nhập DiaOcAnPhu thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+❌ Không có kênh nào đăng tin thành công!
+❌ Đăng tin thất bại trên các kênh: datviet24h.com.vn, luachonnhadat.vn, dangtinbatdongsan.vn, diaocanphu.com
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

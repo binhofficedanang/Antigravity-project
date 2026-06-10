@@ -1,0 +1,306 @@
+function AddProperty() {
+    if (GetImageSize() > 29) {
+        alert("Dung lượng ảnh quá lớn vui lòng xóa bớt hoặc giảm dung lượng trước khi up hình");
+        return;
+    }
+
+    $('.left .loading').show();
+    var url = "/handler/Handler.ashx?command=" + COMMAND_CHECK_LOGIN;
+    var temp = $(this);
+    $.post(url, function(isLogin) {
+        var isValidate = true;
+        //success
+        if (isLogin == "1") {
+            var matin = $('.post-content input#matin').val();
+            var status = 1; //thêm mới
+            if (matin != "")
+                status = 2; //cập nhật
+            var url = "/publish/handler/Handler.ashx?command=" + USER_CHECK_ALLOW_POST + "&status=" + status;
+            $.post(url, function(allowPost) {
+                if (allowPost != 1) {
+                    ShowPostError("Xảy ra lỗi", "Tài khoản của bạn <b style='color:red'>chưa được chứng thực</b>, bạn chỉ có thể đăng được 2 tin. Xem <a href='/huong-dan/huong-dan-xac-thuc-tai-khoan' target='_blank' style='color:blue'>hướng dẫn</a> chứng thực tài khoản.");
+                    return;
+                }
+                $('.post-content .require').hide();
+                var tieude = $('.post-content input#tieude').val();
+                $('.post-content textarea#noidung').val($('.post-content textarea#noidung').val().replace(/</g, "").replace(/>/g, ""));
+                var noidung = $('.post-content textarea#noidung').val();
+                var loaitin = $('.post-content select#loaitin').val();
+                var loaibds = $('.post-content select#loaibds').val();
+                var tinh = $('.post-content select#tinh').val();
+                var huyen = $('.post-content select#huyen').val();
+                var phuong = $('.post-content select#phuong').val();
+                var duong = $('.post-content select#duong').val();
+                var duan = $('.post-content select#project').val();
+                var dientich = $('.post-content input#dientich').val().replace(/\s/g, ""); //xóa khoảng trắng
+                $('.post-content input#dientich').val(dientich); //set lại giá trị
+                var gia = $('.post-content input#gia').val().replace(/\s/g, ""); //xóa khoảng trắng
+                $('.post-content input#gia').val(gia); //set lại giá trị
+                var nguoilienhe = $('.post-content input#lienhe').val();
+                var sodienthoai = $('.post-content input#dienthoai').val();
+                var chieungang = $('.post-content input#chieungang').val();
+                var chieudai = $('.post-content input#chieudai').val();
+                var duongrong = $('.post-content input#duongrong').val();
+                var solau = $('.post-content input#solau').val();
+                var sophongngu = $('.post-content input#sophongngu').val();
+                var captcha = $('.post-content input#captcha').val();
+                var errorMessage = "";
+                var isValidate = true;
+                $('.post-content *').removeClass('fielderror');
+                //validate
+                if (tieude.length < 30 || tieude.length > 90) {
+                    $('.post-content input#tieude').parents('.value').find('.require').html('Tiêu đề từ 30 - 90 ký tự').show();
+                    $('.post-content input#tieude').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#tieude').focus()
+                    }
+                    errorMessage += "- Tiêu đề từ 30 - 90 ký tự.</br>";
+                }
+                if (noidung.length < 200 || noidung.length > 40000) {
+                    $('.post-content textarea#noidung').parents('.value').find('.require').html('Nội dung từ 200 - 40000 ký tự. Nên mô tả chi tiết về tài sản, vị trí, tiện ích,...').show();
+                    $('.post-content textarea#noidung').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content textarea#noidung').focus()
+                    }
+                    errorMessage += "- Nội dung từ 200 - 40000 ký tự.</br>";
+                }
+                if (loaitin == "0") {
+                    $('.post-content select#loaitin').parents('.value').find('.require').html('Chọn loại tin').show();
+                    $('.post-content select#loaitin').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content select#loaitin').focus()
+                    }
+                    errorMessage += "- Chưa chọn loại tin.</br>";
+                }
+                if (loaibds == 0) {
+                    $('.post-content select#loaibds').parents('.value').find('.require').html('Chọn loại BĐS').show();
+                    $('.post-content select#loaibds').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content select#loaibds').focus();
+                    }
+                    errorMessage += "- Chưa chọn loại BĐS.</br>";
+                }
+                if (tinh == 0) {
+                    $('.post-content select#tinh').parents('.value').find('.require').html('Chọn tỉnh').show();
+                    $('.post-content select#tinh').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content select#tinh').focus();
+                    }
+                    errorMessage += "- Chưa chọn tỉnh.</br>";
+                }
+                if (huyen == 0) {
+                    $('.post-content select#huyen').parents('.value').find('.require').html('Chọn huyện').show();
+                    $('.post-content select#huyen').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content select#huyen').focus();
+                    }
+                    errorMessage += "- Chưa chọn huyện.</br>";
+                }
+                if (phuong == '') {
+                    $('.post-content select#phuong').parents('.value').find('.require').html('Chọn phường/xã').show();
+                    $('.post-content select#phuong').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content select#phuong').focus();
+                    }
+                    errorMessage += "- Chưa chọn phường/xã.</br>";
+                }
+                if (duong == '') {
+                    $('.post-content select#duong').parents('.value').find('.require').html('Chọn đường/phố').show();
+                    $('.post-content #street_acp_text').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content #street_acp_text').focus();
+                    }
+                    errorMessage += "- Chưa chọn đường/phố.</br>";
+                }
+                if (loaibds == 4) {   //căn hộ             
+                    if ($('.post-content select#project').val() == '') {
+                        $('.post-content select#project').parents('.value').find('.require').html('Chọn dự án').show();
+                        $('.post-content select#project').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content select#project').focus();
+                        }
+                        errorMessage += "- Chưa chọn dự án.</br>";
+                    }
+                }
+
+                if ($('.post-content #kxd').is(':checked')) {
+                    dientich = "0";
+
+                } else {
+                    if (dientich.length == 0) {
+                        $('.post-content input#dientich').parents('.value').find('.require').html('Nhập diện tích hoặc diện tích SD').show();
+                        $('.post-content input#dientich').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content input#dientich').focus();
+                        }
+                        errorMessage += "- Nhập diện tích/ diện tích SD.</br>";
+                    } else {
+                        if (!isNumber(dientich)) {
+                            $('.post-content input#dientich').parents('.value').find('.require').html('Chỉ nhập số nguyên không chứa dấu (, .)').show();
+                            $('.post-content input#dientich').addClass('fielderror');
+                            isValidate = false;
+                            if (errorMessage == "") {
+                                $('.post-content input#dientich').focus();
+                            }
+                            errorMessage += "- Diện tích chỉ nhập số nguyên không chứa dấu (, .).</br>";
+                        }
+                    }
+                }
+
+                if ($('.post-content #thoathuan').is(':checked')) {
+                    gia = 0;
+                } else {
+                    if (gia.length == 0) {
+                        $('.post-content input#gia').parents('.value').find('.require').html('Nhập giá tiền').show();
+                        $('.post-content input#gia').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content input#gia').focus();
+                        }
+                        errorMessage += "- Chưa nhập giá tiền.</br>";
+                    } else {
+                        if (!isNumber(gia)) {
+                            $('.post-content input#gia').parents('.value').find('.require').html('Chỉ nhập số nguyên không chưa dấu (, .)').show();
+                            $('.post-content input#gia').addClass('fielderror');
+                            isValidate = false;
+                            if (errorMessage == "") {
+                                $('.post-content input#gia').focus();
+                            }
+                            errorMessage += "- Số tiền chỉ nhập số nguyên không chứa dấu (, .).</br>";
+                        }
+                    }
+                }
+                if (nguoilienhe.length == 0) {
+                    $('.post-content input#lienhe').parents('.value').find('.require').html('Nhập tên người liên hệ').show();
+                    $('.post-content input#lienhe').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#lienhe').focus();
+                    }
+                    errorMessage += "- Nhập tên người liên hệ.</br>";
+                }
+
+                if (sodienthoai.length == 0) {
+                    $('.post-content input#dienthoai').parents('.value').find('.require').html('Nhập số điện thoại').show();
+                    $('.post-content input#dienthoai').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#dienthoai').focus();
+                    }
+                    errorMessage += "- Nhập số điện thoại.</br>";
+                }
+                if (solau.length > 0 && !isNumber(solau)) {
+                    $('.post-content input#solau').parents('.value').find('.require').html('Chỉ nhập số nguyên không chưa dấu (, .)').show();
+                    $('.post-content input#solau').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#solau').focus();
+                    }
+                    errorMessage += "- Số lầu chỉ nhập số nguyên không chứa dấu (, .).</br>";
+                }
+                if (sophongngu.length > 0 && !isNumber(sophongngu)) {
+                    $('.post-content input#sophongngu').parents('.value').find('.require').html('Chỉ nhập số nguyên không chưa dấu (, .)').show();
+                    $('.post-content input#sophongngu').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#sophongngu').focus();
+                    }
+                    errorMessage += "- Số phòng chỉ nhập số nguyên không chứa dấu (, .).</br>";
+                }
+                if (captcha == '') {
+                    $('.post-content input#captcha').parents('.row').find('.require').html('Chưa nhập mã an toàn').show();
+                    $('.post-content input#captcha').addClass('fielderror');
+                    isValidate = false;
+                    if (errorMessage == "") {
+                        $('.post-content input#captcha').focus();
+                    }
+                    errorMessage += "- Chưa nhập mã an toàn.</br>";
+                }
+
+                var hinhthucdang = $('.post-content .vip-box .hinhthucdang:checked').val();
+                if (hinhthucdang == 1) {
+                    var vipTypeDay = $('.post-content .vip-box .vipperdayform .viptype').val();
+                    var dayNumber = $('.post-content .vip-box .vipperdayform .daynumber').val();
+                    if (vipTypeDay == "") {
+                        $('.post-content .vip-box .vipperdayform .viptype').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content .vip-box .vipperdayform .viptype').focus();
+                        }
+                        errorMessage += "- Chưa chọn loại VIP.</br>";
+                    }
+                    if (dayNumber == "0") {
+                        $('.post-content .vip-box .vipperdayform .daynumber').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content .vip-box .vipperdayform .daynumber').focus();
+                        }
+                        errorMessage += "- Chưa chọn số ngày VIP.</br>";
+                    }
+                    if (vipTypeDay != "" && dayNumber != 0) {
+                        if (!KiemTraDuSoDuNangCapVIP(hinhthucdang)) {
+                            $('.post-content .vip-box .vipperdayform .viptype').addClass('fielderror');
+                            $('.post-content .vip-box .vipperdayform .daynumber').addClass('fielderror');
+                            isValidate = false;
+                            if (errorMessage == "") {
+                                $('.post-content .vip-box .vipperdayform .daynumber').focus();
+                            }
+                            errorMessage += "- Không đủ số tiền để nâng cấp VIP.</br>";
+                        }
+                    }
+                }
+                if (hinhthucdang == 2) {
+                    if ($('.post-content .vip-box .vippermonthform .viptype').val() == "") {
+                        $('.post-content .vip-box .vippermonthform .viptype').addClass('fielderror');
+                        isValidate = false;
+                        if (errorMessage == "") {
+                            $('.post-content .vip-box .vippermonthform .viptype').focus();
+                        }
+                        errorMessage += "- Chưa chọn loại VIP.</br>";
+                    } else {
+                        if (!KiemTraDuSoDuNangCapVIP(hinhthucdang)) {
+                            $('.post-content .vip-box .vippermonthform .viptype').addClass('fielderror');
+                            isValidate = false;
+                            if (errorMessage == "") {
+                                $('.post-content .vip-box .vippermonthform .viptype').focus();
+                            }
+                            errorMessage += "- Không đủ số tiền để nâng cấp VIP.</br>";
+                        }
+                    }
+                }
+
+                if (isValidate) {
+                    var url = "/handler/Handler.ashx?command=" + COMMAND_CHECK_CAPTCHA + "&captcha=" + captcha; ;
+                    $.post(url, function(isMatch) {
+                        if (isMatch == 1) {
+                            $(".post-content #form1").submit();
+                        } else {
+                            alert("Mã an toàn không đúng.");
+                            $('.post-content img.captchagenerator').attr("src", "/CaptchaGenerator.ashx?t=" + Math.floor((Math.random() * 100000) + 1)); //reload captcha
+                            $('.post-content input#captcha').parents('.row').find('.require').html('Mã an toàn không đúng').show();
+                            $('.post-content input#captcha').addClass('fielderror');
+                            $('.post-content input#captcha').focus();
+                            $('.left .loading').hide();
+                        }
+                    });
+
+                } else {
+                    ShowPostError("Xảy ra lỗi", errorMessage);
+                }
+            });
+        } else {
+            ShowLoginForm();
+            $('.left .loading').hide();
+        }
+    });
+}

@@ -1,0 +1,31 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Cho thuê sàn văn phòng 30m2 ở 7 OFFICE - Q. Hải Châu
+  💡 Chế độ hiển thị: Vui lòng xem trình duyệt và tự nhập mã Captcha...
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+❌ Đăng tin 123nhadatviet.com thất bại! Vẫn ở trang: https://123nhadatviet.com/dang-tin.html
+  📸 Đã chụp screenshot: 123nhadatviet_com_submit_failed.png
+❌ Đăng tin 123NhaDatViet thất bại!
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Cho thuê sàn văn phòng 30m2 ở 7 OFFICE - Q. Hải Châu
+  💡 Chế độ hiển thị: Vui lòng xem trình duyệt và tự nhập mã Captcha...
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+❌ Đăng tin nhadatviet247.net thất bại! Vẫn ở trang: http://nhadatviet247.net/dang-tin.html
+  📸 Đã chụp screenshot: nhadatviet247_net_submit_failed.png
+❌ Đăng tin NhaDatViet247 thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+❌ Không có kênh nào đăng tin thành công!
+❌ Đăng tin thất bại trên các kênh: 123nhadatviet.com, nhadatviet247.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

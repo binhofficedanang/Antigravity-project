@@ -1,0 +1,353 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: THUVIENNHADAT.VN ---
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Cho thuê sàn văn phòng 126m2 ở DMT - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-dmt/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 309160 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Mr Bình
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 175310
+
+--- 🌐 Đang chạy trên: MUABAN.NET ---
+Đang đăng nhập muaban.net với tài khoản: 0935723727
+- Truy cập trang đăng nhập muaban.net...
+- Kiểm tra trạng thái đăng nhập hoặc chờ form...
+  URL hiện tại: https://muaban.net/
+  Title hiện tại: Mua bán đăng tin rao vặt miễn phí nhanh chóng, hiệu quả 2026 - Muaban.net
+=> Session đã đăng nhập sẵn từ lần trước!
+Bắt đầu đăng tin trên muaban.net: Cho thuê sàn văn phòng 126m2 ở DMT - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-dmt/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Vào trang đăng tin...
+  Trang hiện tại: Đăng tin - Muaban.net
+  - Đã bấm 'Đăng tin mới' để xóa bản nháp cũ
+- Chọn danh mục: Bất động sản -> Cho thuê -> Văn phòng...
+  - Đã click 'Bất động sản' [text=Bất động sản]
+  - Đã click 'Cho thuê'
+  - Đã click 'text=Văn phòng, mặt bằng'
+- Điền thông tin cơ bản...
+  - Tiêu đề đã điền
+  - Mô tả đã điền
+  - Giá đã điền: 38954160
+  - Diện tích đã điền: 126
+- Điền địa chỉ...
+  - Thành phố: Đà Nẵng (hoặc đại diện)
+  - Quận/Huyện: Hải Châu (hoặc đại diện)
+  ⚠️ Không tìm thấy option khớp với query nào cho 'Phường/Xã'. Đang xóa tìm kiếm để chọn đại diện...
+  - Phường/Xã: Hoà Cường Nam (hoặc đại diện)
+  - Tên đường: Đ. 2 Tháng 9 (hoặc đại diện)
+  - Số nhà: 484
+  - Standard click failed for trigger property_subtype: Locator.click: Timeout 3000ms exceeded.
+Call log:
+waiting for locator("div#property_subtype")
+  -   locator resolved to <div aria-invalid="false" id="property_subtype" class…>…</div>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #1
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #10
+  -   waiting 500ms
+. Trying JS click...
+  - Kiểu BĐS: Văn phòng (hoặc đại diện)
+- Tải lên hình ảnh...
+  - Đã tải 5 ảnh
+- Tìm và bấm nút Tiếp tục / Đăng tin...
+  - Standard click failed: Locator.click: Timeout 4000ms exceeded.
+Call log:
+waiting for locator("button:has-text('Tiếp tục')").last
+  -   locator resolved to <button type="submit" class="sc-f1un1v-4 kbomUv">Tiếp tục</button>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #1
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   element is outside of the viewport
+  - retrying click action, attempt #11
+  -   waiting 500ms
+. Trying JS click...
+  - Đã bấm: 'button:has-text('Tiếp tục')'
+  - Standard confirm click failed: Locator.click: Timeout 4000ms exceeded.
+Call log:
+waiting for locator("button:has-text('Đăng tin'), button:has-text('Xác nhận')").last
+  -   locator resolved to <button class="sc-18oo25t-8 guzavZ iconbg">Đăng tin</button>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #1
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="sc-10cb6dl-3 jKGyYl modal">…</div> from <div class="sc-n9gkxm-0 eLdsfc">…</div> subtree intercepts pointer events
+  - retrying click action, attempt #11
+  -   waiting 500ms
+. Trying JS click...
+  - Đã bấm xác nhận lần 2
+URL sau đăng: https://muaban.net/dang-tin | Title: Đăng tin - Muaban.net
+  📸 Đã chụp screenshot: muaban_post_result.png
+❌ Đăng tin muaban.net thất bại! Vẫn ở trang: https://muaban.net/dang-tin
+❌ Đăng tin Muaban thất bại!
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Cho thuê sàn văn phòng 126m2 ở DMT - Q. Hải Châu
+  ⚠️ Không tìm thấy CAPTCHA API Key trong cấu hình.
+  ⚠️ Không giải được captcha
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+❌ Đăng tin 123nhadatviet.com thất bại! Vẫn ở trang: https://123nhadatviet.com/dang-tin.html
+  📸 Đã chụp screenshot: 123nhadatviet_com_submit_failed.png
+❌ Đăng tin 123NhaDatViet thất bại!
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Cho thuê sàn văn phòng 126m2 ở DMT - Q. Hải Châu
+  ⚠️ Không tìm thấy CAPTCHA API Key trong cấu hình.
+  ⚠️ Không giải được captcha
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+❌ Đăng tin nhadatviet247.net thất bại! Vẫn ở trang: http://nhadatviet247.net/dang-tin.html
+  📸 Đã chụp screenshot: nhadatviet247_net_submit_failed.png
+❌ Đăng tin NhaDatViet247 thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: thuviennhadat.vn
+❌ Đăng tin thất bại trên các kênh: muaban.net, 123nhadatviet.com, nhadatviet247.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

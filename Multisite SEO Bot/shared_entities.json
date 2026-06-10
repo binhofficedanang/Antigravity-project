@@ -1,0 +1,48 @@
+{
+    "office_buildings": [
+        {
+            "id": "b_indochina",
+            "name": "Tòa nhà Indochina Riverside Tower",
+            "keywords": ["Indochina Riverside", "tòa nhà Indochina", "văn phòng Indochina Đà Nẵng", "Indochina Tower Bạch Đằng"],
+            "url_officedanang": "https://officedanang.vn/property/toa-nha-indochina-riverside",
+            "url_propertydanang": "https://propertydanang.com/du-an/indochina-riverside-tower"
+        },
+        {
+            "id": "b_azura",
+            "name": "Tòa nhà Azura",
+            "keywords": ["tòa nhà Azura", "văn phòng Azura", "chung cư Azura Trần Hưng Đạo"],
+            "url_officedanang": "https://officedanang.vn/property/toa-nha-azura",
+            "url_propertydanang": "https://propertydanang.com/du-an/azura-da-nang"
+        },
+        {
+            "id": "b_software_park",
+            "name": "Công viên Phần mềm Đà Nẵng (Software Park)",
+            "keywords": ["Công viên phần mềm", "Software Park Đà Nẵng", "văn phòng Quang Trung"],
+            "url_officedanang": "https://officedanang.vn/property/cong-vien-phan-mem-da-nang",
+            "url_propertydanang": ""
+        },
+        {
+            "id": "b_vinh_trung",
+            "name": "Vĩnh Trung Plaza",
+            "keywords": ["Vĩnh Trung Plaza", "tòa nhà Vĩnh Trung", "văn phòng Hùng Vương Đà Nẵng"],
+            "url_officedanang": "https://officedanang.vn/property/vinh-trung-plaza",
+            "url_propertydanang": "https://propertydanang.com/du-an/vinh-trung-plaza"
+        }
+    ],
+    "locations": [
+        {
+            "id": "loc_hai_chau",
+            "name": "Quận Hải Châu",
+            "keywords": ["quận Hải Châu", "trung tâm Hải Châu", "quận nội thành Hải Châu"],
+            "url_officedanang": "https://officedanang.vn/location/van-phong-cho-thue-quan-hai-chau/",
+            "url_propertydanang": "https://propertydanang.com/ban-dat-quan-hai-chau/"
+        },
+        {
+            "id": "loc_son_tra",
+            "name": "Quận Sơn Trà",
+            "keywords": ["quận Sơn Trà", "bán đảo Sơn Trà", "khu vực Sơn Trà"],
+            "url_officedanang": "https://officedanang.vn/location/van-phong-cho-thue-quan-son-tra/",
+            "url_propertydanang": "https://propertydanang.com/ban-dat-quan-son-tra/"
+        }
+    ]
+}

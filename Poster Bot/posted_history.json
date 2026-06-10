@@ -1,0 +1,316 @@
+[
+    "Cho thuê văn phòng 130m2 tại THÀNH CÔNG - Quận Thanh Khê, Đà Nẵng",
+    "Cho thuê văn phòng 68m2 tại COZY - Quận Hải Châu, Đà Nẵng",
+    "Cho thuê văn phòng 270m2 tại AVN - Quận Cẩm Lệ, Đà Nẵng",
+    "Văn phòng làm việc 130m2 cho thuê tại THÀNH CÔNG Quận Thanh Khê",
+    "Văn phòng cho thuê 130m2 tại tòa nhà THÀNH CÔNG, Thanh Khê",
+    {
+        "title": "Văn phòng cho thuê 180m2 tại tòa nhà THÀNH CÔNG, Thanh Khê",
+        "area": "180",
+        "source_url": "https://officedanang.vn/property/toa-nha-thanh-cong/",
+        "posted_at": "2026-05-25 14:36:41"
+    },
+    {
+        "title": "Văn phòng làm việc 350m2 cho thuê tại VIETINBANK Quận Hải Châu",
+        "area": "350",
+        "source_url": "https://officedanang.vn/property/toa-nha-vietinbank/",
+        "posted_at": "2026-05-26 10:58:29"
+    },
+    {
+        "title": "Văn phòng làm việc 93m2 cho thuê tại WINK HOTEL TRẦN HƯNG ĐẠO Quận Sơn Trà",
+        "area": "93",
+        "source_url": "https://officedanang.vn/property/toa-nha-wink-hotel-tran-hung-dao/",
+        "posted_at": "2026-05-26 13:01:21"
+    },
+    {
+        "title": "Cho thuê diện tích văn phòng 400m2 tại LUXURY BUILDING 2 THÁNG 9 Hải Châu",
+        "area": "400",
+        "source_url": "https://officedanang.vn/property/toa-nha-luxury-building-2-thang-9/",
+        "posted_at": "2026-05-26 14:03:28"
+    },
+    {
+        "title": "Cho thuê văn phòng 60m2 tại SUMMIT BUILDING - Quận Thanh Khê, Đà Nẵng",
+        "area": "60",
+        "source_url": "https://officedanang.vn/property/toa-nha-summit-building/",
+        "posted_at": "2026-05-27 11:07:55"
+    },
+    {
+        "title": "Cho thuê diện tích văn phòng 2m2 tại LUXURY BUILDING 2 THÁNG 9 Hải Châu",
+        "area": "350",
+        "source_url": "https://officedanang.vn/property/toa-nha-luxury-building-2-thang-9/",
+        "posted_at": "2026-05-27 11:29:59",
+        "status": "Thành công",
+        "channels": "raovat.net",
+        "log_file": "run_20260527_112959.log"
+    },
+    {
+        "title": "Cho thuê diện tích văn phòng 205m2 tại INDOCHINA RIVERSIDE Hải Châu",
+        "area": "205",
+        "source_url": "https://officedanang.vn/property/toa-nha-indochina-riverside/",
+        "posted_at": "2026-05-27 11:45:08",
+        "status": "Thành công",
+        "channels": "raovat.net",
+        "log_file": "run_20260527_114508.log"
+    },
+    {
+        "title": "Cho thuê văn phòng trống 650m2 cực đẹp ở tòa nhà VIETINBANK, Hải Châu",
+        "area": "650",
+        "source_url": "https://officedanang.vn/property/toa-nha-vietinbank/",
+        "posted_at": "2026-05-27 12:07:11",
+        "status": "Thành công",
+        "channels": "raovat.net",
+        "log_file": "run_20260527_120711.log"
+    },
+    {
+        "title": "Văn phòng làm việc 380m2 cho thuê tại Luxury Building Trần Phú Quận Hải Châu",
+        "area": "380",
+        "source_url": "https://officedanang.vn/property/toa-nha-luxury-building-tran-phu/",
+        "posted_at": "2026-05-27 15:36:56",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn",
+        "log_file": "run_20260527_153656.log"
+    },
+    {
+        "title": "Cho thuê diện tích văn phòng 1100m2 tại NHẬT LINH Cẩm Lệ",
+        "area": "1100",
+        "source_url": "https://officedanang.vn/property/toa-nha-nhat-linh-atp-galaxy/",
+        "posted_at": "2026-05-27 15:58:44",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn",
+        "log_file": "run_20260527_155844.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 170m2 tại tòa nhà RINWA BUILDING, Cẩm Lệ",
+        "area": "170",
+        "source_url": "https://officedanang.vn/property/toa-nha-rinwa-building/",
+        "posted_at": "2026-05-27 16:21:15",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn",
+        "log_file": "run_20260527_162115.log"
+    },
+    {
+        "title": "Cho thuê văn phòng trống 110m2 cực đẹp ở tòa nhà PHI LONG TECHNOLOGY, Hải Châu",
+        "area": "110",
+        "source_url": "https://officedanang.vn/property/toa-nha-phi-long-technology/",
+        "posted_at": "2026-05-27 16:24:31",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260527_162431.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 120m2 ở TRỰC THĂNG - Q. Hải Châu",
+        "area": "120",
+        "source_url": "https://officedanang.vn/property/toa-nha-truc-thang/",
+        "posted_at": "2026-05-27 16:28:09",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260527_162809.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 120m2 ở TRỰC THĂNG - Q. Hải Châu",
+        "area": "120",
+        "source_url": "https://officedanang.vn/property/toa-nha-truc-thang/",
+        "posted_at": "2026-05-27 16:31:11",
+        "status": "Thành công",
+        "channels": "muaban.net",
+        "log_file": "run_20260527_163111.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 126m2 ở DMT - Q. Hải Châu",
+        "area": "126",
+        "source_url": "https://officedanang.vn/property/toa-nha-dmt/",
+        "posted_at": "2026-05-28 10:07:24",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn",
+        "log_file": "run_20260528_100724.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 633m2 tại tòa nhà BẠCH ĐẰNG COMPLEX, Hải Châu",
+        "area": "633",
+        "source_url": "https://officedanang.vn/property/toa-nha-bach-dang-complex/",
+        "posted_at": "2026-05-28 10:23:59",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_102359.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 30m2 ở 7 OFFICE - Q. Hải Châu",
+        "area": "30",
+        "source_url": "https://officedanang.vn/property/toa-nha-7-office/",
+        "posted_at": "2026-05-28 10:30:06",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_103006.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 189m2 ở VERNAL BUILDING - Q. Hải Châu",
+        "area": "189",
+        "source_url": "https://officedanang.vn/property/toa-nha-vernal-building/",
+        "posted_at": "2026-05-28 14:54:55",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn, nhadatviet247.net",
+        "log_file": "run_20260528_145455.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 265m2 tại tòa nhà PHI LONG TECHNOLOGY, Hải Châu",
+        "area": "265",
+        "source_url": "https://officedanang.vn/property/toa-nha-phi-long-technology/",
+        "posted_at": "2026-05-28 15:27:45",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_152745.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 265m2 tại tòa nhà PHI LONG TECHNOLOGY, Hải Châu",
+        "area": "265",
+        "source_url": "https://officedanang.vn/property/toa-nha-phi-long-technology/",
+        "posted_at": "2026-05-28 15:28:11",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_152811.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 265m2 tại tòa nhà PHI LONG TECHNOLOGY, Hải Châu",
+        "area": "265",
+        "source_url": "https://officedanang.vn/property/toa-nha-phi-long-technology/",
+        "posted_at": "2026-05-28 15:31:37",
+        "status": "Thành công",
+        "channels": "thuviennhadat.vn, nhadatviet247.net",
+        "log_file": "run_20260528_153137.log"
+    },
+    {
+        "title": "Cho thuê văn phòng trống 600m2 cực đẹp ở tòa nhà DẦU KHÍ PVFC, Hải Châu",
+        "area": "600",
+        "source_url": "https://officedanang.vn/property/toa-nha-dau-khi-pvfc/",
+        "posted_at": "2026-05-28 15:58:38",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_155838.log"
+    },
+    {
+        "title": "Cho thuê văn phòng trống 600m2 cực đẹp ở tòa nhà DẦU KHÍ PVFC, Hải Châu",
+        "area": "600",
+        "source_url": "https://officedanang.vn/property/toa-nha-dau-khi-pvfc/",
+        "posted_at": "2026-05-28 16:04:31",
+        "status": "Thất bại",
+        "channels": "Không có",
+        "log_file": "run_20260528_160431.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 110m2 ở PETROLIMEX - Q. Hải Châu",
+        "area": "110",
+        "source_url": "https://officedanang.vn/property/toa-nha-petrolimex/",
+        "posted_at": "2026-05-29 12:28:35",
+        "status": "Thành công",
+        "channels": "raovat.net, 123nhadatviet.com, nhadatviet247.net",
+        "log_file": "run_20260529_122835.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu",
+        "area": "120",
+        "source_url": "https://officedanang.vn/property/toa-nha-ap-tek-van-phong-cho-thue/",
+        "posted_at": "2026-06-01 13:28:15",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net",
+        "log_file": "run_20260601_132815.log"
+    },
+    {
+        "title": "Văn phòng làm việc 2m2 cho thuê tại CÔNG TY XÂY DỰNG 2.9 Quận Hải Châu",
+        "area": "2",
+        "source_url": "https://officedanang.vn/property/toa-nha-cong-ty-xay-dung-2-9/",
+        "posted_at": "2026-06-01 14:36:13",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, luachonnhadat.vn",
+        "log_file": "run_20260601_143613.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 250m2 tại tòa nhà AAC, Hải Châu",
+        "area": "250",
+        "source_url": "https://officedanang.vn/property/toa-nha-aac/",
+        "posted_at": "2026-06-02 11:00:43",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net",
+        "log_file": "run_20260602_110043.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 150m2 ở TUẤN TOÀN - Q. Hải Châu",
+        "area": "150",
+        "source_url": "https://officedanang.vn/property/toa-nha-tuan-toan/",
+        "posted_at": "2026-06-02 15:16:00",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, phongtro123.com, thuephongtro.com",
+        "log_file": "run_20260602_151600.log"
+    },
+    {
+        "title": "Cho thuê sàn văn phòng 214m2 ở 4B TOWER - Q. Thanh Khê",
+        "area": "214",
+        "source_url": "https://officedanang.vn/property/toa-nha-4b-tower/",
+        "posted_at": "2026-06-02 15:55:51",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, muabandanang.vn, phongtro123.com, thuephongtro.com",
+        "log_file": "run_20260602_155551.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 220m2 tại tòa nhà CLOUD 9, Hải Châu",
+        "area": "220",
+        "source_url": "https://officedanang.vn/property/toa-nha-cloud-9-van-phong-cho-thue/",
+        "posted_at": "2026-06-03 13:33:20",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, thuephongtro.com",
+        "log_file": "run_20260603_133320.log"
+    },
+    {
+        "title": "Cho thuê văn phòng 102m2 tại G8 GOLDEN - Quận Hải Châu, Đà Nẵng",
+        "area": "102",
+        "source_url": "https://officedanang.vn/property/toa-nha-g8-golden/",
+        "posted_at": "2026-06-04 13:37:19",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260604_133719.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ",
+        "area": "93",
+        "source_url": "https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/",
+        "posted_at": "2026-06-05 10:26:32",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260605_102632.log"
+    },
+    {
+        "title": "Cho thuê văn phòng 286m2 tại BẠCH ĐẰNG COMPLEX - Quận Hải Châu, Đà Nẵng",
+        "area": "286",
+        "source_url": "https://officedanang.vn/property/toa-nha-bach-dang-complex/",
+        "posted_at": "2026-06-08 09:08:33",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260608_090833.log"
+    },
+    {
+        "title": "Cho thuê văn phòng trống 220m2 cực đẹp ở tòa nhà ACB, Hải Châu",
+        "area": "220",
+        "source_url": "https://officedanang.vn/property/toa-nha-acb/",
+        "posted_at": "2026-06-08 10:02:12",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, phongtro123.com, thuephongtro.com, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260608_100212.log"
+    },
+    {
+        "title": "Văn phòng cho thuê 90m2 tại tòa nhà 319 Miền Trung, Hải Châu",
+        "area": "90",
+        "source_url": "https://officedanang.vn/property/toa-nha-319/",
+        "posted_at": "2026-06-09 15:36:42",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, bds123.vn, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260609_153642.log"
+    },
+    {
+        "title": "Cho thuê văn phòng 600m2 tại tòa nhà DẦU KHÍ PVFC Đà Nẵng",
+        "area": "600",
+        "source_url": "https://officedanang.vn/property/toa-nha-dau-khi-pvfc/",
+        "posted_at": "2026-06-10 12:10:59",
+        "status": "Thành công",
+        "channels": "raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, bds123.vn, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn",
+        "log_file": "run_20260610_121059.log"
+    }
+]

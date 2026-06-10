@@ -1,0 +1,666 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ✅ Stealth mode (playwright-stealth) đã kích hoạt
+  ✅ Custom JS Stealth đã được tiêm vào trang
+
+--- 🌐 Đang chạy trên: RONGBAY.COM ---
+Đang đăng nhập rongbay.com (VietID) với tài khoản: binh.officedanang@gmail.com
+- Mở form đăng nhập...
+  ✓ Đã click mở đăng nhập bằng selector: a.hm_link_login
+- Đợi form đăng nhập xuất hiện...
+  ... Đang đợi form VietID (1s)...
+  ... Đang đợi form VietID (6s)...
+  ... Đang đợi form VietID (11s)...
+  ... Đang đợi form VietID (16s)...
+  ... Đang đợi form VietID (21s)...
+  ⚠️ Không tự phát hiện được form qua 'account', dùng mặc định page context
+- Nhập tài khoản (email)...
+  ⚠️ Thử selector thay thế: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+waiting for locator("input[name='account']").first to be visible
+
+  ✓ Đã nhập tài khoản qua selector thay thế
+- Click Tiếp tục...
+  ✓ Đã click Tiếp tục qua JavaScript
+- Nhập mật khẩu...
+  ⚠️ Lỗi nhập mật khẩu: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+waiting for locator("input[type='password']").first to be visible
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+
+=> Lỗi khi đăng nhập rongbay: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+waiting for locator("input[type='password']").first to be visible
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+  -   locator resolved to hidden <input size="20" class="txtBox" type="password" id="use…/>
+
+  📸 Đã chụp screenshot: rongbay_login_failed.png
+  📸 Đã chụp rongbay_login_failed.png và lưu HTML để debug
+❌ Đăng nhập Rongbay thất bại!
+
+--- 🌐 Đang chạy trên: RAOVAT.NET ---
+Đang đăng nhập raovat.net với email: binh.officedanang@gmail.com
+=> Đăng nhập thành công (user: binh.officedanang)
+Bắt đầu đăng tin Raovat: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ap-tek-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn danh mục...
+- Đợi nút Tiếp tục sẵn sàng và click...
+  => URL step 2: https://raovat.net/dang-tin-11-Nha-cua-Dat-dai
+- Bước 2: Điền tiêu đề...
+  ⚠️ Cảnh báo: Tiêu đề > 50 ký tự, tự động cắt còn: 'Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châ'
+- Chọn loại tin (Thuê - Cho thuê) bằng JS...
+- Chọn thành phố (Đà Nẵng) và Quận huyện bằng JS...
+  => Đang chọn Quận/Huyện: Hải Châu
+  => Đã chọn xong Tỉnh thành & Quận huyện
+- Điền giá...
+  => Giá quy đổi: 25000000 VNĐ/tháng
+- Điền nội dung...
+- Điền từ khóa...
+- Tải lên hình ảnh bài viết...
+  => Đã kích hoạt JS Upload All cho 5 ảnh
+- Đóng modal popup nếu có...
+- Đăng tin (dùng JS submit để tránh bị modal chặn)...
+  => URL: https://raovat.net/dang-tin?step=2
+  => Title: Rao vặt - Đăng tin rao vặt
+  ✅ ĐĂNG TIN RAOVAT THÀNH CÔNG (Đã ghi nhận trên hệ thống)!
+=> Hoàn tất đăng tin Raovat ✓
+
+--- 🌐 Đang chạy trên: THUVIENNHADAT.VN ---
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ap-tek-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 208333 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Bình Office Danang
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 176550
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 817
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+🎉 Đăng tin 123nhadatviet.com thành công! URL: https://123nhadatviet.com/dang-tin.html
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 29298
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+🎉 Đăng tin nhadatviet247.net thành công! URL: http://nhadatviet247.net/dang-tin.html
+
+--- 🌐 Đang chạy trên: DATVIET24H.COM.VN ---
+Đang đăng nhập vào datviet24h.com.vn với tài khoản: binhofficedanang
+⚠️ Vẫn ở trang đăng nhập datviet24h.com.vn. Có thể có CAPTCHA hoặc thông tin đăng nhập sai.
+  📸 Đã chụp screenshot: datviet24h_com_vn_login_failed.png
+❌ Đăng nhập DatViet24h thất bại!
+
+--- 🌐 Đang chạy trên: LUACHONNHADAT.VN ---
+LuaChonNhaDat.vn sử dụng cơ chế đăng nhập/đăng tin qua Email. Bỏ qua đăng nhập trước.
+Bắt đầu đăng tin trên luachonnhadat.vn: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ap-tek-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Điền email bước 1: binh.officedanang@gmail.com
+  📸 Đã chụp screenshot: luachonnhadat_form_filled.png
+❌ Lỗi đăng tin luachonnhadat.vn: Locator.click: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("button[type='submit'], input[type='submit'], button:has-text('Đăng tin')").first
+  -   locator resolved to <button type="submit">Gửi</button>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #1
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   <div class="swal2-container swal2-center swal2-backdr…>…</div> intercepts pointer events
+  - retrying click action, attempt #60
+  -   waiting 500ms
+
+  📸 Đã chụp screenshot: luachonnhadat_post_error.png
+❌ Đăng tin LuaChonNhaDat thất bại!
+
+--- 🌐 Đang chạy trên: DANGTINBATDONGSAN.VN ---
+Đang đăng nhập vào dangtinbatdongsan.vn với tài khoản: binhofficedanang
+✓ Đăng nhập thành công trên dangtinbatdongsan.vn
+Bắt đầu đăng tin trên dangtinbatdongsan.vn: Cho thuê sàn văn phòng 120m2 ở AP TEK - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ap-tek-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+❌ Lỗi đăng tin dangtinbatdongsan.vn: Page.evaluate() takes from 2 to 3 positional arguments but 9 were given
+  📸 Đã chụp screenshot: dangtinbatdongsan_post_error.png
+❌ Đăng tin DangTinBatDongSan thất bại!
+
+--- 🌐 Đang chạy trên: DIAOCANPHU.COM ---
+Đang đăng nhập vào diaocanphu.com với tài khoản: binhofficedanang
+⚠️ Vẫn ở trang đăng nhập diaocanphu.com. Có thể có CAPTCHA hoặc thông tin đăng nhập sai.
+  📸 Đã chụp screenshot: diaocanphu_com_login_failed.png
+❌ Đăng nhập DiaOcAnPhu thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net
+❌ Đăng tin thất bại trên các kênh: rongbay.com, datviet24h.com.vn, luachonnhadat.vn, dangtinbatdongsan.vn, diaocanphu.com
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

@@ -1,0 +1,2 @@
+browser-use>=0.1.0
+langchain-google-genai>=1.0.0

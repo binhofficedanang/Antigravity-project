@@ -1,0 +1,241 @@
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ✅ Stealth mode (playwright-stealth) đã kích hoạt
+  ✅ Custom JS Stealth đã được tiêm vào trang
+
+--- [ RAOVAT.NET ] ---
+[raovat.net] Bắt đầu đăng tin bằng Hybrid Selector Runner...
+[raovat.net] Đi tới trang đăng nhập: https://raovat.net/dang-nhap
+[raovat.net] Điền tài khoản: binh.officedanang@gmail.com
+[raovat.net] Click Đăng nhập
+[raovat.net] Đi tới trang đăng tin: https://raovat.net/dang-tin-11-Nha-cua-Dat-dai
+[raovat.net] Thực hiện chọn danh mục qua 2 click chuột...
+  - Click 1: .sub-cate[onclick*='51']
+  - Click 2: #btnNextStep button
+[raovat.net] Đang điền form bài viết...
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+[raovat.net] Tải lên 5 hình ảnh...
+[raovat.net] Đã chụp ảnh màn hình lưu tại: debug_raovat.net_form_filled.png
+[raovat.net] Bấm gửi bài đăng...
+✓ [raovat.net] Đăng tin thành công bằng Hybrid Selector Runner!
+
+--- [ THUVIENNHADAT.VN ] ---
+[thuviennhadat.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho thuviennhadat.vn...
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 235800 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Thiên Bình
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 178979
+
+--- [ 123NHADATVIET.COM ] ---
+[123nhadatviet.com] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho 123nhadatviet.com...
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 335
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+🎉 Đăng tin 123nhadatviet.com thành công! URL: https://123nhadatviet.com/dang-tin.html
+
+--- [ NHADATVIET247.NET ] ---
+[nhadatviet247.net] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho nhadatviet247.net...
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 84457
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+🎉 Đăng tin nhadatviet247.net thành công! URL: http://nhadatviet247.net/dang-tin.html
+
+--- [ MUABANDANANG.VN ] ---
+[muabandanang.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho muabandanang.vn...
+Đang kiểm tra trạng thái đăng nhập hoặc đăng nhập vào muabandanang.vn...
+Chưa đăng nhập. Truy cập trang đăng nhập muabandanang.vn...
+✓ Đăng nhập thành công trên muabandanang.vn
+Bắt đầu đăng tin trên muabandanang.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Đã upload 5 ảnh.
+  📸 Đã chụp screenshot: muabandanang_filled.png
+  📸 Đã chụp screenshot: muabandanang_posted.png
+✓ Đăng tin thành công trên muabandanang.vn
+
+--- [ PHONGTRO123.COM ] ---
+[phongtro123.com] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho phongtro123.com...
+Đang kiểm tra trạng thái đăng nhập phongtro123.com...
+✓ Đã đăng nhập trước đó trên phongtro123.com
+Bắt đầu đăng tin trên phongtro123.com: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Đã chọn option 'Cho thuê mặt bằng + Văn phòng' cho select#post_cat
+  ✓ Đã chọn option 'Đà Nẵng' cho select#province_id
+  ✓ Đã chọn option 'Quận Hải Châu' cho select#district_id
+  ✓ Đã chọn option 'Phường Hòa Cường (P. Bình Thuận, P. Hòa Thuận Tây, P. Hòa Cường Bắc, P. Hòa Cường Nam cũ)' cho select#phuongxa_new
+  📸 Đã chụp screenshot: phongtro123_filled.png
+✓ Đăng tin phongtro123.com hoàn tất
+
+--- [ THUEPHONGTRO.COM ] ---
+[thuephongtro.com] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho thuephongtro.com...
+Đang kiểm tra trạng thái đăng nhập thuephongtro.com...
+Chưa đăng nhập. Truy cập trang đăng nhập thuephongtro.com...
+✓ Đăng nhập thành công trên thuephongtro.com
+Bắt đầu đăng tin trên thuephongtro.com: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Đã chọn option 'Đà Nẵng' cho select#ddlProvince
+  ✓ Đã chọn option 'Hải Châu' cho select#ddlDistrict
+  ✓ Đã chọn option 'Phường Hòa Cường Bắc' cho select#ddlWard
+  ⚠️ Không tìm thấy option chứa 'văn phòng' trong select#ddlPostCate
+  📸 Đã chụp screenshot: thuephongtro_filled.png
+✓ Đăng tin thuephongtro.com hoàn tất
+
+--- [ BDS123.VN ] ---
+[bds123.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho bds123.vn...
+Đang kiểm tra trạng thái đăng nhập bds123.vn...
+✓ Đã đăng nhập bds123.vn từ session trước
+Bắt đầu đăng tin bds123.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  📸 Đã chụp screenshot: bds123_post_start.png
+  => Phát hiện modal login, tiến hành đăng nhập ngay...
+  📸 Đã chụp screenshot: bds123_post_after_login.png
+⚠️ Không tìm thấy form đăng tin bds123.vn sau khi đăng nhập
+❌ Đăng tin BDS123 thất bại!
+
+--- [ GIAODICHNHADAT.VN ] ---
+[giaodichnhadat.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho giaodichnhadat.vn...
+Đang đăng nhập vào giaodichnhadat.vn với tài khoản: binh.officedanang@gmail.com
+✓ Đã đăng nhập trước đó trên giaodichnhadat.vn
+Bắt đầu đăng tin trên giaodichnhadat.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Form đăng tin tại /dang-tin-bds.html (30 trường)
+  ✓ Mô tả: textarea:first-of-type
+  ✓ Tỉnh: select[name='city_id']
+  ✓ Upload 5 ảnh
+  📸 Đã chụp screenshot: giaodichnhadat_vn_form_filled.png
+  ✓ Submit: input[type='submit'][value='Đăng tin']
+  📸 Đã chụp screenshot: giaodichnhadat_vn_after_submit.png
+🏁 Hoàn thành đăng tin trên giaodichnhadat.vn. URL: https://giaodichnhadat.vn/danh-sach-dang-tin.html
+
+--- [ THONGTINNHADAT.VN ] ---
+[thongtinnhadat.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho thongtinnhadat.vn...
+Đang đăng nhập vào thongtinnhadat.vn với tài khoản: binh.officedanang@gmail.com
+✓ Đã đăng nhập trước đó trên thongtinnhadat.vn
+Bắt đầu đăng tin trên thongtinnhadat.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Form đăng tin tại /dang-tin-bds.html (24 trường)
+  ✓ Mô tả: textarea:first-of-type
+  ✓ Tỉnh: select[name='city_id']
+  ✓ Upload 5 ảnh
+  📸 Đã chụp screenshot: thongtinnhadat_vn_form_filled.png
+  ✓ Submit: input[type='submit'][value='Đăng tin']
+  📸 Đã chụp screenshot: thongtinnhadat_vn_after_submit.png
+🏁 Hoàn thành đăng tin trên thongtinnhadat.vn. URL: https://thongtinnhadat.vn/danh-sach-dang-tin.html
+
+--- [ DANGTINBATDONGSAN.VN ] ---
+[dangtinbatdongsan.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho dangtinbatdongsan.vn...
+Đang đăng nhập vào dangtinbatdongsan.vn với tài khoản: binhofficedanang
+✓ Đăng nhập thành công trên dangtinbatdongsan.vn
+Bắt đầu đăng tin trên dangtinbatdongsan.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Tải ảnh đại diện lên
+  📸 Đã chụp screenshot: dangtinbatdongsan_form_filled.png
+  📸 Đã chụp screenshot: dangtinbatdongsan_after_submit.png
+✓ Đăng tin dangtinbatdongsan.vn thành công!
+
+--- [ LUACHONNHADAT.VN ] ---
+[luachonnhadat.vn] Thông tin selectors chưa được lưu trong database.
+⚠️ Fallback về code cứng cho luachonnhadat.vn...
+Bắt đầu đăng tin trên luachonnhadat.vn: Văn phòng cho thuê 93m2 tại tòa nhà RICCO, Cẩm Lệ
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-ricco-van-phong-cho-thue/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+  ✓ Điền email bước 1: binh.officedanang@gmail.com
+  📸 Đã chụp screenshot: luachonnhadat_form_filled.png
+🏁 Đã hoàn thành gửi form trên luachonnhadat.vn. URL: https://luachonnhadat.vn/thanh-vien/login.html/?ref=https://luachonnhadat.vn/thanh-vien/dang-tin.html
+  📸 Đã chụp screenshot: luachonnhadat_after_submit.png
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net, muabandanang.vn, phongtro123.com, thuephongtro.com, giaodichnhadat.vn, thongtinnhadat.vn, dangtinbatdongsan.vn, luachonnhadat.vn
+❌ Đăng tin thất bại trên các kênh: bds123.vn
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

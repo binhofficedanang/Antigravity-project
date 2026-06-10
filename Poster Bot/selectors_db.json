@@ -1,0 +1,19 @@
+{
+    "raovat.net": {
+        "login_url": "https://raovat.net/dang-nhap",
+        "email_input": "input[name='useremail']",
+        "password_input": "input[name='password']",
+        "login_submit": "button#buttonLogin",
+        "post_url": "https://raovat.net/dang-tin-11-Nha-cua-Dat-dai",
+        "category_clicks": [
+            ".sub-cate[onclick*='51']",
+            "#btnNextStep button"
+        ],
+        "title_input": "input[name='sitetitle']",
+        "content_textarea": "textarea[name='sitedescription']",
+        "price_input": "input[name='siteprice']",
+        "area_input": "",
+        "image_upload": "input[name='ax_file_input']",
+        "submit_button": "button.btn-success"
+    }
+}

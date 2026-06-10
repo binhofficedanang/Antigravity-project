@@ -1,0 +1,34 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ✅ Stealth mode (playwright-stealth) đã kích hoạt
+  ✅ Custom JS Stealth đã được tiêm vào trang
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Văn phòng cho thuê 633m2 tại tòa nhà BẠCH ĐẰNG COMPLEX, Hải Châu
+  ⚠️ Không tìm thấy CAPTCHA API Key trong cấu hình.
+  ⚠️ Không giải được captcha
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+❌ Đăng tin 123nhadatviet.com thất bại! Vẫn ở trang: https://123nhadatviet.com/dang-tin.html
+  📸 Đã chụp screenshot: 123nhadatviet_com_submit_failed.png
+❌ Đăng tin 123NhaDatViet thất bại!
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Văn phòng cho thuê 633m2 tại tòa nhà BẠCH ĐẰNG COMPLEX, Hải Châu
+  ⚠️ Không tìm thấy CAPTCHA API Key trong cấu hình.
+  ⚠️ Không giải được captcha
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+❌ Đăng tin nhadatviet247.net thất bại! Vẫn ở trang: http://nhadatviet247.net/dang-tin.html
+  📸 Đã chụp screenshot: nhadatviet247_net_submit_failed.png
+❌ Đăng tin NhaDatViet247 thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+❌ Không có kênh nào đăng tin thành công!
+❌ Đăng tin thất bại trên các kênh: 123nhadatviet.com, nhadatviet247.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

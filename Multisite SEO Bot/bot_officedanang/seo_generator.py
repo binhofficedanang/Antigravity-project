@@ -1,30 +1,93 @@
 from google import genai
+from google.genai import types as genai_types
 import json
 import re
 import requests
 import random
+import sys
+import os
+import base64
+
+# Thêm đường dẫn thư mục cha để import entity_injector
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+try:
+    from entity_injector import EntityInjector
+except ImportError:
+    EntityInjector = None
 
 class SEOGenerator:
     def __init__(self, api_key, model_name="gemini-2.0-flash"):
         self.client = genai.Client(api_key=api_key)
         self.model_name = model_name
-        # Bạn có thể thay API Key Pexels của mình vào đây (Free)
-        self.pexels_api_key = "563492ad6f917000010000016026a79895244d5ba81404e38e1201d1" 
+        # Pexels API Key (dự phòng khi Imagen thất bại)
+        self.pexels_api_key = "563492ad6f917000010000016026a79895244d5ba81404e38e1201d1"
+        # WordPress publisher (sẽ được set từ bên ngoài nếu cần upload ảnh)
+        self.wp_publisher = None
 
-    def get_images(self, query, count=3):
-        print(f"🔍 Đang tìm ảnh với từ khóa: '{query}'...")
+    def get_imagen_image(self, prompt_text, alt_text=""):
+        """
+        Tạo ảnh bằng Google Imagen AI.
+        Trả về URL (nếu wp_publisher có sẵn để upload) hoặc bytes thô.
+        Nếu thất bại trả về None để fallback về Pexels.
+        """
+        print(f"🎨 [Imagen AI] Đang tạo ảnh cho: '{prompt_text[:60]}...' ...")
+        try:
+            response = self.client.models.generate_images(
+                model="imagen-3.0-generate-002",
+                prompt=prompt_text,
+                config=genai_types.GenerateImagesConfig(
+                    number_of_images=1,
+                    aspect_ratio="16:9",
+                    safety_filter_level="block_only_high",
+                    person_generation="dont_allow",
+                )
+            )
+            if response.generated_images:
+                img_bytes = response.generated_images[0].image.image_bytes
+                # Upload lên WordPress nếu có publisher
+                if self.wp_publisher and img_bytes:
+                    safe_name = re.sub(r'[^a-zA-Z0-9]', '-', prompt_text[:40]).lower()
+                    filename = f"imagen-{safe_name}.jpg"
+                    wp_url = self.wp_publisher.upload_image(img_bytes, filename=filename, alt_text=alt_text)
+                    if wp_url:
+                        print(f"✅ [Imagen AI] Ảnh AI đã upload lên WordPress: {wp_url}")
+                        return wp_url
+                # Fallback: encode base64 để nhúng thẳng vào HTML (không lý tưởng nhưng vẫn chạy được)
+                b64 = base64.b64encode(img_bytes).decode('utf-8')
+                return f"data:image/jpeg;base64,{b64}"
+        except Exception as e:
+            print(f"⚠️ [Imagen AI] Thất bại: {e}")
+        return None
+
+    def get_images(self, query, count=1, alt_text="", use_imagen=True):
+        """
+        Lấy ảnh: ưu tiên Imagen AI, fallback về Pexels nếu thất bại.
+        """
+        # --- Thử Imagen AI trước ---
+        if use_imagen:
+            imagen_prompt = (
+                f"Professional real estate photography, {query}, "
+                f"Da Nang Vietnam cityscape, modern architecture, "
+                f"bright natural lighting, ultra high quality, 16:9 landscape"
+            )
+            imagen_url = self.get_imagen_image(imagen_prompt, alt_text=alt_text or query)
+            if imagen_url:
+                return [imagen_url]
+
+        # --- Fallback: Pexels ---
+        print(f"🔄 [Pexels Fallback] Đang tìm ảnh với từ khóa: '{query}'...")
         try:
             url = f"https://api.pexels.com/v1/search?query={query}&per_page={count}&orientation=landscape"
             headers = {"Authorization": self.pexels_api_key}
-            response = requests.get(url, headers=headers)
+            response = requests.get(url, headers=headers, timeout=15)
             if response.status_code == 200:
                 data = response.json()
                 return [img['src']['large'] for img in data.get('photos', [])]
         except Exception as e:
-            print(f"Lỗi tìm ảnh: {e}")
+            print(f"Lỗi tìm ảnh Pexels: {e}")
         return []
 
-    def generate_content(self, topic, focus_keyword="", intent="", contact_info=None):
+    def generate_content(self, topic, focus_keyword="", intent="", pillar_link="", contact_info=None):
         hotline = contact_info['hotline'] if contact_info else "0935 723 727"
         email = contact_info['email'] if contact_info else "officedanang.vn@gmail.com"
         
@@ -32,54 +95,63 @@ class SEOGenerator:
         current_year = datetime.datetime.now().year
         
         intent_prompt = f"Mục đích/Định hướng bài viết: {intent}" if intent else ""
+        pillar_prompt = f"QUAN TRỌNG: Hãy chèn một liên kết nội bộ tự nhiên trỏ về: {pillar_link} trong nội dung bài viết." if pillar_link else ""
 
         prompt = f"""
-        Bạn là một chuyên gia SEO và chuyên gia nội dung hàng đầu. Nhiệm vụ của bạn là viết một bài viết chuyên sâu về chủ đề "{topic}" để đăng lên website Office Danang (officedanang.vn).
-        LƯU Ý: Luôn gọi tên thương hiệu là "Office Danang" một cách trang trọng.
+        Bạn là một chuyên gia SEO và Cố vấn Bất động sản cấp cao với hơn 10 năm kinh nghiệm tại Đà Nẵng. Nhiệm vụ của bạn là viết một bài viết chuyên sâu về chủ đề "{topic}" để đăng lên website Office Danang (officedanang.vn).
+        LƯU Ý: Luôn gọi tên thương hiệu là "Office Danang" một cách trang trọng. Đóng vai trò là một chuyên gia chia sẻ góc nhìn thực tế (EEAT).
 
         CHỦ ĐỀ: "{topic}"
         TỪ KHÓA CHÍNH (Focus Keyword): "{focus_keyword}"
         {intent_prompt}
+        {pillar_prompt}
 
-        --- YÊU CẦU VỀ NGÔN NGỮ & AI SEARCH ---
-        1. NGÔN NGỮ: Sử dụng tiếng Việt chuyên nghiệp, súc tích. HẠN CHẾ tối đa việc lạm dụng thuật ngữ tiếng Anh (VD: thay vì dùng "ROI" hãy dùng "Tỷ suất lợi nhuận", thay vì "Retention" dùng "Giữ chân nhân tài"). Chỉ dùng tiếng Anh khi thực sự cần thiết hoặc là thuật ngữ kỹ thuật phổ biến.
-        2. AI SEARCH OPTIMIZATION: Viết nội dung có cấu trúc rõ ràng, dựa trên dữ liệu hoặc phân tích chuyên gia để dễ được các công cụ tìm kiếm AI (như Gemini, Perplexity) đề xuất.
+        --- YÊU CẦU VỀ NGÔN NGỮ & TRÁNH AI DETECTION (HUMANIZE) ---
+        1. NGÔN NGỮ: Sử dụng tiếng Việt tự nhiên, chuyên nghiệp. Thay đổi linh hoạt độ dài câu văn (câu ngắn gọn xen kẽ câu phức) để tránh bị nhận diện là văn phong AI máy móc.
+        2. EEAT (Kinh nghiệm, Chuyên môn, Thẩm quyền, Độ tin cậy): Hãy lồng ghép "số liệu giả định hợp lý" hoặc "ví dụ thực tế" từ thị trường Đà Nẵng (như tuyến đường Nguyễn Văn Linh, Trần Phú, Bạch Đằng...) để tăng độ tin cậy.
+        3. AI SEARCH (AEO): Viết nội dung có cấu trúc rõ ràng, sử dụng list (danh sách) hoặc bullet points để các AI Crawler dễ dàng trích xuất thông tin.
 
         --- QUY TẮC RANK MATH SEO (MỤC TIÊU 90+ ĐIỂM) ---
-        1. TIÊU ĐỀ (Title): Phải chứa "{focus_keyword}" ở đầu. BẮT BUỘC chứa ít nhất một CON SỐ và một TỪ KHÓA MẠNH (Power Word) như: "Sinh Lời", "Bí Quyết", "Tốt Nhất", "Hiệu Quả", "Bền Vững". Độ dài < 60 ký tự.
-        2. MỞ ĐẦU: Từ khóa "{focus_keyword}" phải xuất hiện trong 100 chữ đầu tiên.
+        1. TIÊU ĐỀ (Title): Phải chứa "{focus_keyword}" ở đầu. BẮT BUỘC chứa ít nhất một CON SỐ và một TỪ KHÓA MẠNH.
+        2. MỞ ĐẦU: Từ khóa "{focus_keyword}" phải xuất hiện trong 100 chữ đầu tiên một cách tự nhiên.
         3. CẤU TRÚC: Có ít nhất một thẻ H2 và một thẻ H3 chứa "{focus_keyword}".
         4. LIÊN KẾT:
-           - 01 liên kết nội bộ (Internal Link) về: https://officedanang.vn/
-           - 01 liên kết ngoài (External Link) về nguồn uy tín (Wikipedia, Forbes, hoặc báo chí lớn).
-        5. FAQ: Cuối bài phải có ít nhất 05 câu hỏi thường gặp (FAQ) liên quan đến chủ đề, sử dụng cấu trúc heading H3.
-        7. HÌNH ẢNH (BẮT BUỘC): 
-           - Cung cấp trường "image_search_keyword" trong JSON bằng tiếng Anh (VD: "modern luxury office").
+           - 01 liên kết nội bộ (Internal Link) về trang chủ hoặc bài viết Pillar: {pillar_link or 'https://officedanang.vn/'}
+           - 01 liên kết ngoài (External Link) về nguồn thông tin uy tín (ví dụ: luatvietnam.vn, thuvienphapluat.vn nếu liên quan pháp lý, hoặc wikipedia).
+        5. FAQ & SCHEMA MARKUP: Cuối bài phải có ít nhất 05 câu hỏi thường gặp (FAQ). BẠN BẮT BUỘC PHẢI TẠO ĐOẠN MÃ JSON-LD (FAQPage Schema và Article Schema) và nhúng nó vào cuối phần `content` bên trong thẻ `<script type="application/ld+json">`.
+        6. HÌNH ẢNH: 
+           - Cung cấp trường "image_search_keyword" trong JSON bằng tiếng Anh.
            - Trong nội dung, chèn 2-3 placeholder: [IMAGE_PLACEHOLDER: "English description"].
 
-        --- CẤU TRÚC HTML & STYLE (SIZE CHUẨN THEO MẪU WEBSITE) ---
-        1. SCHEMA: Chèn một đoạn <script type="application/ld+json"> chứa Article Schema ở đầu bài viết.
-        2. STYLE: Sử dụng inline CSS theo mẫu sau để khớp hoàn toàn với bài viết mẫu:
-           - Wrapper: <article style="font-family: 'Montserrat', Arial, sans-serif; line-height: 1.8; color: #334155; max-width: 900px; margin: 0 auto; font-size: 16px; text-align: justify;">
-           - H1: <h1 style="color: #092a40; font-size: 30px; font-weight: 700; margin-bottom: 25px; line-height: 1.4;">
-           - H2: <h2 style="color: #092a40; font-size: 24px; margin-top: 40px; border-left: 5px solid #28B78D; padding-left: 20px; margin-bottom: 25px; font-weight: 700;">
-           - H3: <h3 style="color: #092a40; font-size: 20px; margin-top: 25px; margin-bottom: 20px; font-weight: 700;">
-           - Highlight Box: <div style="background-color: #f0fdf4; border-left: 5px solid #28B78D; padding: 25px; border-radius: 8px; margin: 30px 0; font-size: 16px;">
-           - Insight Box: <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 20px; border-radius: 8px; font-style: italic; margin-bottom: 20px; border-left: 4px solid #64748b; font-size: 16px;">
-           - CTA Button: <a href="tel:{hotline}" style="color: #ffffff !important; background-color: #28B78D; padding: 15px 30px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: 700; font-size: 17px;">
-         4. HÌNH ẢNH (QUAN TRỌNG): 
-            - Hãy tự xác định 2-3 vị trí trong bài viết cần có ảnh minh họa để tăng trải nghiệm người dùng. 
-            - Tại những vị trí đó, hãy chèn một đoạn text theo cú pháp: [IMAGE_PLACEHOLDER: "mô tả chi tiết ảnh cần tìm bằng tiếng Anh"]. 
-            - Ví dụ: [IMAGE_PLACEHOLDER: "modern office lobby with natural light"].
-         5. MỤC LỤC: Có một box "Nội dung chính" (Table of Contents) sau đoạn Sapo.
+        --- CẤU TRÚC HTML & STYLE CSS BẮT BUỘC ---
+        ĐỂ ĐẢM BẢO ĐỒNG BỘ THƯƠNG HIỆU, BẠN PHẢI TUÂN THỦ CHÍNH XÁC 100% CÁC THẺ HTML VÀ INLINE CSS SAU ĐÂY:
+        
+        1. BỌC TOÀN BỘ NỘI DUNG TRONG THẺ ARTICLE:
+        <article style="font-family: 'Montserrat', Arial, sans-serif; line-height: 1.8; color: #334155; max-width: 900px; margin: 0 auto; font-size: 16px; text-align: justify;">
+        
+        2. QUY TẮC HEADING (Tiêu đề):
+        - H1 (Chỉ dùng 1 lần): <h1 style="color: #092a40; font-size: 30px; font-weight: 700; margin-bottom: 25px; line-height: 1.4;">
+        - H2: <h2 style="color: #092a40; font-size: 24px; margin-top: 40px; border-left: 5px solid #28B78D; padding-left: 20px; margin-bottom: 25px; font-weight: 700;">
+        - H3: <h3 style="color: #092a40; font-size: 20px; margin-top: 25px; margin-bottom: 20px; font-weight: 700;">
+        
+        3. QUY TẮC CÁC KHỐI ĐẶC BIỆT:
+        - Mục lục (TOC - Bắt buộc có ở đầu bài): 
+        <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+            <strong style="color: #092a40; font-size: 18px;">Nội dung chính:</strong>...
+        </div>
+        - Khối Highlight (Trích dẫn/Lưu ý): 
+        <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 20px; border-radius: 8px; font-style: italic; margin-bottom: 20px; border-left: 4px solid #64748b; font-size: 16px;">...</div>
+        - Link & Text Nổi bật: Sử dụng <a style="color: #28B78D; text-decoration: none;"> hoặc <strong>.
 
-        Trả về JSON:
+        Đảm bảo phần Schema Markup được chèn ở dưới cùng của HTML.
+        
+        Trả về ĐÚNG MỘT KHỐI JSON (không kèm markdown format):
         {{
             "title": "Tiêu đề chuẩn SEO",
             "slug": "duong-dan-bai-viet",
             "image_search_keyword": "English keyword for featured image",
-            "content": "Toàn bộ HTML (bao gồm schema script và inline styles)",
-            "meta_description": "Mô tả meta chứa focus keyword và lời kêu gọi hành động",
+            "content": "Toàn bộ HTML (Bao gồm nội dung bài viết và phần thẻ <script type=\"application/ld+json\"> chứa Schema Markup ở cuối)",
+            "meta_description": "Mô tả meta chứa focus keyword và lời kêu gọi hành động (khoảng 150 ký tự)",
             "tags": "tag1, tag2"
         }}
         """
@@ -88,64 +160,74 @@ class SEOGenerator:
         max_retries = 3
         for i in range(max_retries):
             try:
+                print(f"📡 Đang gửi yêu cầu tới Gemini (Lần thử {i+1})...")
                 response = self.client.models.generate_content(
                     model=self.model_name,
                     contents=prompt
                 )
+                print("✅ Đã nhận phản hồi từ Gemini.")
                 
                 json_match = re.search(r'\{.*\}', response.text, re.DOTALL)
                 if json_match:
+                    print("🔍 Đang xử lý dữ liệu JSON...")
                     data = json.loads(json_match.group())
                     
-                    # 1. CHÈN ẢNH ĐẠI DIỆN BẮT BUỘC (FEATURED IMAGE)
+                    # 1. KIỂM TRA VÀ CHÈN PILLAR LINK NẾU CHƯA CÓ (Hậu xử lý)
+                    if pillar_link and pillar_link not in data['content']:
+                        # Thêm một câu CTA nhỏ ở cuối hoặc giữa bài nếu AI quên link
+                        cta_link = f'<p style="margin-top: 20px;"><strong>Xem thêm:</strong> <a href="{pillar_link}" style="color: #28B78D; font-weight: 600;">Thông tin chi tiết về các dịch vụ tại Office Danang</a></p>'
+                        if "</h3>" in data['content']:
+                            # Chèn trước FAQ cuối cùng hoặc sau H2 đầu tiên
+                            data['content'] = data['content'].replace("</h2>", f"</h2>\n{cta_link}", 1)
+                        else:
+                            data['content'] += cta_link
+
+                    # 2. CHÈN ẢNH ĐẠI DIỆN BẮT BUỘC (FEATURED IMAGE)
                     img_query = data.get('image_search_keyword', focus_keyword or topic)
-                    main_images = self.get_images(img_query, count=1)
+                    img_source_label = "📸 Ảnh Stock (Pexels)"
+                    main_images = self.get_images(img_query, count=1, alt_text=focus_keyword)
                     if main_images:
                         main_img = main_images[0]
+                        if main_img.startswith('data:') or ('officedanang.vn' in main_img) or ('propertydanang.com' in main_img):
+                            img_source_label = "🎨 Ảnh AI (Imagen)"
                         main_img_html = f'<div style="margin: 30px 0; text-align: center;"><img src="{main_img}" alt="{focus_keyword}" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15); display: block;"><p style="font-style: italic; color: #64748b; font-size: 14px; margin-top: 10px;">Hình ảnh: {focus_keyword}</p></div>'
                         if "</h1>" in data['content']:
                             data['content'] = data['content'].replace("</h1>", f"</h1>\n{main_img_html}", 1)
                         else:
                             data['content'] = main_img_html + data['content']
                         print(f"✅ Đã chèn ảnh đại diện: {focus_keyword}")
-                    else:
-                        print(f"⚠️ Không tìm thấy ảnh đại diện cho: {focus_keyword}")
 
-                    # 2. XỬ LÝ CÁC PLACEHOLDER ẢNH TRONG NỘI DUNG
-                    # Regex linh hoạt để bắt được: [IMAGE_PLACEHOLDER: "desc"], [IMAGE_PLACEHOLDER: desc], v.v.
+                    # 3. XỬ LÝ CÁC PLACEHOLDER ẢNH TRONG NỘI DUNG
                     placeholders = re.findall(r'\[IMAGE_PLACEHOLDER:\s*["\']?(.*?)["\']?\]', data['content'])
                     for desc in placeholders:
                         desc = desc.strip()
-                        found_images = self.get_images(desc, count=1)
+                        found_images = self.get_images(desc, count=1, alt_text=f"{focus_keyword} - {desc}")
                         if found_images:
                             img_url = found_images[0]
                             img_tag = f'<div style="margin: 35px 0; text-align: center;"><img src="{img_url}" alt="{focus_keyword} - {desc}" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15); display: block;"><p style="font-style: italic; color: #64748b; font-size: 14px; margin-top: 10px;">Minh họa: {desc}</p></div>'
-                            # Thay thế placeholder bằng tag img thực tế
                             pattern = r'\[IMAGE_PLACEHOLDER:\s*["\']?' + re.escape(desc) + r'["\']?\]'
                             data['content'] = re.sub(pattern, img_tag, data['content'])
-                            print(f"✅ Đã chèn ảnh nội dung: {desc}")
-                        else:
-                            # Xóa placeholder nếu không tìm thấy ảnh
-                            pattern = r'\[IMAGE_PLACEHOLDER:\s*["\']?' + re.escape(desc) + r'["\']?\]'
-                            data['content'] = re.sub(pattern, "", data['content'])
-                            print(f"⚠️ Bỏ qua placeholder (không tìm thấy ảnh): {desc}")
 
                     # Tạo Box ghi chú cho người duyệt bài
                     reviewer_note = f"""
 <div style="background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 20px; margin-bottom: 30px; border-radius: 8px; font-family: sans-serif;">
-    <strong style="font-size: 16px; display: block; margin-bottom: 10px;">⚠️ GHI CHÚ CHO NGƯỜI DUYỆT BÀI (XÓA BOX NÀY KHI ĐĂNG):</strong>
+    <strong style="font-size: 16px; display: block; margin-bottom: 10px;">⚠️ GHI CHÚ CHO NGƯỜI DUYỆT BÀI:</strong>
     <ul style="margin: 0; padding-left: 20px;">
         <li><strong>Focus Keyword:</strong> {focus_keyword}</li>
+        <li><strong>Pillar Link:</strong> {pillar_link or "N/A"}</li>
         <li><strong>Slug:</strong> {data.get('slug', '')}</li>
         <li><strong>Meta Description:</strong> {data.get('meta_description', '')}</li>
-        <li><strong>Tags:</strong> {data.get('tags', '')}</li>
+        <li><strong>Nguồn ảnh:</strong> {img_source_label if main_images else '❌ Không có ảnh'}</li>
     </ul>
 </div>
 """
-                    # Chèn vào đầu nội dung
                     data['content'] = reviewer_note + data['content']
                     
-                    # Thêm comment để dễ copy-paste nếu cần
+                    # Tự động chèn Entity Cross-site Links
+                    if EntityInjector:
+                        injector = EntityInjector()
+                        data['content'] = injector.inject_links(data['content'], "officedanang")
+
                     data['content'] = f"<!-- BẮT ĐẦU BÀI VIẾT -->\n{data['content']}\n<!-- KẾT THÚC BÀI VIẾT -->"
                     return data
                 

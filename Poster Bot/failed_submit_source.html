@@ -1,0 +1,1109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Language" content="vi"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="author" content="&lt;%=AloNhaDat.utils.Constant.DOMAIN_NAME%&gt;">
+	<meta name="copyright" content="Copyright 2013 - 2026 Mua bán nhà đất ">		
+	<link href="/publish/img/icon.png" rel="shortcut icon" type="image/x-icon"><link rel="Stylesheet" href="/publish/css/pc-master.css?v=201706250904">      
+    <meta content="index,follow" name="robots">
+    <meta name="keywords" content="đăng tin nhà đất miễn phí, quảng cáo nhà đất, rao vặt bất động sản, rao vặt nhà đất, miễn phí">
+    <meta name="description" content="Đăng tin quảng cáo nhà đất miễn phí hiệu quả nhất, nơi hiệu quả nhất để đăng tin quảng cáo bán nhà đất, đăng tin rao vặt mua bán nhà đất, đăng tin bán nhà, rao bán nhà đất, đăng tin cho thuê nhà đất, đăng tin cần mua, cần thuê nhà đất.">   
+
+<link rel="Stylesheet" href="/publish/css/pc-management.css?v=201706250904">
+   	
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-0GMV7L5R3S&amp;cx=c&amp;_slc=1"></script><script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.vi.jNwOADG1Nsk.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_s8LJUD_uFbjY2X4aCRtCONneL2Q/cb=gapi.loaded_1?le=scs" async=""></script><script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.vi.jNwOADG1Nsk.O/m=plusone/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_s8LJUD_uFbjY2X4aCRtCONneL2Q/cb=gapi.loaded_0?le=scs" async=""></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><script type="text/javascript" src="/publish/js/jquery.js"></script>	
+<title>
+	Rao vặt nhà đất, đăng tin quảng cáo bất động sản miễn phí hiệu quả
+</title></head>
+<body style="min-width: 1280px;">        
+
+<script type="text/javascript">
+    /*!
+    * JavaScript Cookie v2.1.4
+    * https://github.com/js-cookie/js-cookie
+    *
+    * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+    * Released under the MIT license
+    */
+    ; (function(factory) {
+        var registeredInModuleLoader = false;
+        if (typeof define === 'function' && define.amd) {
+            define(factory);
+            registeredInModuleLoader = true;
+        }
+        if (typeof exports === 'object') {
+            module.exports = factory();
+            registeredInModuleLoader = true;
+        }
+        if (!registeredInModuleLoader) {
+            var OldCookies = window.Cookies;
+            var api = window.Cookies = factory();
+            api.noConflict = function() {
+                window.Cookies = OldCookies;
+                return api;
+            };
+        }
+    } (function() {
+        function extend() {
+            var i = 0;
+            var result = {};
+            for (; i < arguments.length; i++) {
+                var attributes = arguments[i];
+                for (var key in attributes) {
+                    result[key] = attributes[key];
+                }
+            }
+            return result;
+        }
+
+        function init(converter) {
+            function api(key, value, attributes) {
+                var result;
+                if (typeof document === 'undefined') {
+                    return;
+                }
+
+                // Write
+
+                if (arguments.length > 1) {
+                    attributes = extend({
+                        path: '/'
+                    }, api.defaults, attributes);
+
+                    if (typeof attributes.expires === 'number') {
+                        var expires = new Date();
+                        expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+                        attributes.expires = expires;
+                    }
+
+                    // We're using "expires" because "max-age" is not supported by IE
+                    attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+                    try {
+                        result = JSON.stringify(value);
+                        if (/^[\{\[]/.test(result)) {
+                            value = result;
+                        }
+                    } catch (e) { }
+
+                    if (!converter.write) {
+                        value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+                    } else {
+                        value = converter.write(value, key);
+                    }
+
+                    key = encodeURIComponent(String(key));
+                    key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+                    key = key.replace(/[\(\)]/g, escape);
+
+                    var stringifiedAttributes = '';
+
+                    for (var attributeName in attributes) {
+                        if (!attributes[attributeName]) {
+                            continue;
+                        }
+                        stringifiedAttributes += '; ' + attributeName;
+                        if (attributes[attributeName] === true) {
+                            continue;
+                        }
+                        stringifiedAttributes += '=' + attributes[attributeName];
+                    }
+                    return (document.cookie = key + '=' + value + stringifiedAttributes);
+                }
+
+                // Read
+
+                if (!key) {
+                    result = {};
+                }
+
+                // To prevent the for loop in the first place assign an empty array
+                // in case there are no cookies at all. Also prevents odd result when
+                // calling "get()"
+                var cookies = document.cookie ? document.cookie.split('; ') : [];
+                var rdecode = /(%[0-9A-Z]{2})+/g;
+                var i = 0;
+
+                for (; i < cookies.length; i++) {
+                    var parts = cookies[i].split('=');
+                    var cookie = parts.slice(1).join('=');
+
+                    if (cookie.charAt(0) === '"') {
+                        cookie = cookie.slice(1, -1);
+                    }
+
+                    try {
+                        var name = parts[0].replace(rdecode, decodeURIComponent);
+                        cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+                        if (this.json) {
+                            try {
+                                cookie = JSON.parse(cookie);
+                            } catch (e) { }
+                        }
+
+                        if (key === name) {
+                            result = cookie;
+                            break;
+                        }
+
+                        if (!key) {
+                            result[name] = cookie;
+                        }
+                    } catch (e) { }
+                }
+
+                return result;
+            }
+
+            api.set = api;
+            api.get = function(key) {
+                return api.call(api, key);
+            };
+            api.getJSON = function() {
+                return api.apply({
+                    json: true
+                }, [].slice.call(arguments));
+            };
+            api.defaults = {};
+
+            api.remove = function(key, attributes) {
+                api(key, '', extend(attributes, {
+                    expires: -1
+                }));
+            };
+
+            api.withConverter = init;
+
+            return api;
+        }
+
+        return init(function() { });
+    }));
+</script>
+    <div id="wrapper" style="padding-bottom: 0px;">	
+        <div id="ctl00_pc_header">
+	        <div id="header">
+	            <div class="logo"><a href="/" title="Mua bán nhà đất"><img src="/publish/img/logo.png" alt="Mua bán nhà đất"></a></div>
+	            <div class="banner-top"> 
+	            <div class="item"><span class="banner-close" value="22" title="Ẩn quảng cáo này"></span><iframe src="/Media/CK/banners/banxehoicu_770x100px.html" width="770" height="100" frameborder="0" scrolling="no" style="overflow:hidden"></iframe><div class="over" onclick="ClickBanner(22)"></div></div></div>   
+	        </div>
+	        <div class="reg-menu-box">		
+	            <div style="position:absolute; margin-left:5px;">
+                    <span style="position:absolute"><div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1779939721507" name="I0_1779939721507" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;width=65&amp;origin=https%3A%2F%2F123nhadatviet.com&amp;url=https%3A%2F%2F123nhadatviet.com%2Fdang-tin.html&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.vi.jNwOADG1Nsk.O%2Fd%3D1%2Frs%3DAHpOoo_s8LJUD_uFbjY2X4aCRtCONneL2Q%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1779939721507&amp;_gfid=I0_1779939721507&amp;parent=https%3A%2F%2F123nhadatviet.com&amp;pfname=&amp;rpctoken=19434712" data-gapiattached="true"></iframe></div><g:plusone width="65" data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone></span> <span style="color:#d33320; margin-left: 100px; line-height: 25px; font-weight:bold">+1 để tin của bạn có vị trí cao trên google</span>
+                </div> 
+                 <div class="reg-menu">
+                 <span class="view-mobile" onclick="ViewWebVersion(2)">Mobile</span>
+                 <a class="regular-post" href="/dang-tin.html">Đăng tin miễn phí</a>
+                
+			        <a href="/quan-ly-ca-nhan.html" rel="nofollow"><span class="user">Quản lý cá nhân</span></a> &nbsp; (<a href="/handler/Handler.ashx?command=7"><span class="exit">Thoát</span></a>)		    
+		        
+		        </div>			    
+	        </div>	        	
+	        <div id="menu">  
+                <ul id="ctl00_mainmenu" class="menu"><li><a href="/" class="home" title="Mua bán nhà đất"></a></li><li><a href="/rao-vat/can-ban.html">Nhà Đất Bán</a><ul><li><a href="/rao-vat/can-ban/nha-pho.html">Cần bán nhà phố</a></li><li><a href="/rao-vat/can-ban/nha-rieng.html">Cần bán nhà riêng</a></li><li><a href="/rao-vat/can-ban/biet-thu-lien-ke.html">Cần bán biệt thự, liền kê</a></li><li><a href="/rao-vat/can-ban/chung-cu.html">Cần bán căn hộ chung cư</a></li><li><a href="/rao-vat/can-ban/nha-hang-khach-san.html">Cần bán nhà hàng, khách sạn</a></li><li><a href="/rao-vat/can-ban/van-phong.html">Cần bán văn phòng</a></li><li><a href="/rao-vat/can-ban/phong-tro.html">Cần bán phòng trọ</a></li><li><a href="/rao-vat/can-ban/trang-trai-khu-nghi-duong.html">Cần bán trang trại, khu nghỉ dưỡng</a></li><li><a href="/rao-vat/can-ban/mat-bang-cua-hang.html">Cần bán mặt bằng, cửa hàng</a></li><li><a href="/rao-vat/can-ban/dat-nen-phan-lo.html">Cần bán đất nền, phân lô</a></li><li><a href="/rao-vat/can-ban/dat-nong-lam-nghiep.html">Cần bán đất nông, lâm nghiệp</a></li><li><a href="/rao-vat/can-ban/cac-loai-khac.html">Cần bán các loại khác</a></li></ul></li><li><a href="/rao-vat/cho-thue.html">Nhà đất cho thuê</a><ul><li><a href="/rao-vat/cho-thue/nha-pho.html">Cho thuê nhà phố</a></li><li><a href="/rao-vat/cho-thue/nha-rieng.html">Cho thuê nhà riêng</a></li><li><a href="/rao-vat/cho-thue/biet-thu-lien-ke.html">Cho thuê biệt thự, liền kê</a></li><li><a href="/rao-vat/cho-thue/chung-cu.html">Cho thuê căn hộ chung cư</a></li><li><a href="/rao-vat/cho-thue/nha-hang-khach-san.html">Cho thuê nhà hàng, khách sạn</a></li><li><a href="/rao-vat/cho-thue/van-phong.html">Cho thuê văn phòng</a></li><li><a href="/rao-vat/cho-thue/phong-tro.html">Cho thuê phòng trọ</a></li><li><a href="/rao-vat/cho-thue/trang-trai-khu-nghi-duong.html">Cho thuê trang trại, khu nghỉ dưỡng</a></li><li><a href="/rao-vat/cho-thue/mat-bang-cua-hang.html">Cho thuê mặt bằng, cửa hàng</a></li><li><a href="/rao-vat/cho-thue/dat-nen-phan-lo.html">Cho thuê đất nền, phân lô</a></li><li><a href="/rao-vat/cho-thue/dat-nong-lam-nghiep.html">Cho thuê đất nông, lâm nghiệp</a></li><li><a href="/rao-vat/cho-thue/cac-loai-khac.html">Cho thuê các loại khác</a></li></ul></li><li><a href="https://alonhadat.com.vn/nha-dat/can-ban/dat-tho-cu-dat-o/14/binh-duong.html">ban dat binh duong</a></li><li><a href="https://alonhadat.com.vn/nha-dat/can-ban/dat-tho-cu-dat-o/ho-chi-minh/151/huyen-binh-chanh.html">Ban Dat Binh Chanh</a></li><li><a href="/chuyen-muc/tin-tuc.html">Tin Tức</a><ul><li><a href="/chuyen-muc/thi-truong.html">Thị trường</a></li></ul></li><li><a href="/lien-he-gop-y.html">Liên hệ - Góp ý</a></li><li><a href="#">Liên kết</a><ul><li><a href="https://alonhadat.com.vn/nha-dat/can-ban/dat-tho-cu-dat-o/ho-chi-minh/140/quan-9.html">ban dat quan 9</a></li></ul></li><div class="clear"></div></ul>	        
+            </div>
+        </div>
+        
+        
+        <div class="body">
+            
+
+<div class="propertyaddform">    
+    <div class="left">          
+        <div class="loading" style="display: none;"></div>
+		<div class="content-box">
+<div class="post-content">
+    <form id="form1" action="/publish/handler/AddPropertyHandler.ashx" enctype="multipart/form-data" method="post" target="post_target">
+        <div class="post-head">
+            <div class="dv1">ĐĂNG TIN NHÀ ĐẤT MIỄN PHÍ VÀ SẼ LUÔN NHƯ VẬY</div>            
+        </div>          
+        <input name="matin" type="hidden" id="matin">        
+        <div class="title">Thông tin bắt buộc</div>
+        <div class="require-infor">            
+            <div class="row row-title">	        
+                <div class="col">
+                    <div class="label">Tiêu đề(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Chưa nhập tiêu đề</div>
+                        <input name="tieude" type="text" id="tieude" class="tieude" width="200" title="Tiêu đề từ 10 - 90 ký tự" maxlength="90">
+                        <div class="suggesstion">	  
+                            <div style="position:relative"><span class="property-exit"></span></div>      
+	                        <ul>
+	                            <li><span>Tiêu đề phải lớn hơn 30 ký tự</span></li>
+	                            <li><span>Tiêu đề mô tả ngắn về tài sản</span></li>
+	                            <li><span>Không viết IN HOA, không chứa số điện thoại, không ký tự đặc biệt</span></li>
+	                            <li><span>Tiêu đề không đúng quy định sẽ không đươc duyệt</span></li>
+	                        </ul>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+            <div class="row row-content">
+                <div class="col">
+                    <div class="label">Nội dung(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Chưa nhập nội dung</div>
+                        <textarea name="noidung" id="noidung" class="noidung border_radius_dashed"></textarea>		            
+                    </div>
+                </div>
+            </div>	
+            <div class="row">
+                    <div class="col1">
+                        <div class="label">Loại tin(<span class="red">*</span>)</div>
+                        <div class="value">
+                            <div class="require">Chưa chọn loại tin</div>
+	                        <select name="loaitin" id="loaitin" class="loaitin">
+	<option value="0">---- Loại tin ----</option>
+	<option value="1">Cần bán</option>
+	<option value="2">Cho thuê</option>
+	<option value="3">Cần mua</option>
+	<option value="4">Cần thuê</option>
+</select>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="label">Loại BĐS(<span class="red">*</span>)</div> 
+                        <div class="value">
+                            <div class="require">Chưa chọn loại BĐS</div>
+	                        <select name="loaibds" id="loaibds">
+	<option value="0">--- Loại BĐS ---</option>
+	<option value="1">Nhà phố</option>
+	<option value="2">Nhà riêng</option>
+	<option value="3">Biệt thự, liền kề</option>
+	<option value="4">Chung cư</option>
+	<option value="5">Nhà hàng, khách sạn</option>
+	<option value="6">Văn phòng</option>
+	<option value="7">Phòng trọ</option>
+	<option value="8">Trang trại, khu nghỉ dưỡng</option>
+	<option value="9">Mặt bằng, cửa hàng</option>
+	<option value="10">Đất nền, phân lô</option>
+	<option value="11">Đất nông, lâm nghiệp</option>
+	<option value="13">Nhà xưởng</option>
+	<option value="12">Các loại khác</option>
+</select>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>               
+            <div class="row">
+                <div class="col1">
+                    <div class="label">Tỉnh/ Thành(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Chưa chọn tỉnh</div>
+                        <div style="position:relative">
+                        <select name="tinh" id="tinh" class="tinh" onchange="GetDistricts()">
+	<option value="0">---- Tỉnh/Thành ----</option>
+	<option value="1">Hà Nội</option>
+	<option value="2">Hồ Chí Minh</option>
+	<option value="3">Đà Nẵng</option>
+	<option value="4">Hải Phòng</option>
+	<option value="5">Cần Thơ</option>
+	<option value="6">An Giang</option>
+	<option value="7">Bà Rịa-Vũng Tàu</option>
+	<option value="8">Bạc Liêu</option>
+	<option value="9">Bắc Cạn</option>
+	<option value="10">Bắc Giang</option>
+	<option value="12">Bắc Ninh</option>
+	<option value="13">Bến Tre</option>
+	<option value="14">Bình Dương</option>
+	<option value="15">Bình Định</option>
+	<option value="16">Bình Phước</option>
+	<option value="17">Bình Thuận</option>
+	<option value="18">Cà Mau</option>
+	<option value="19">Cao Bằng</option>
+	<option value="20">Đắk Lắk</option>
+	<option value="21">Đăk Nông</option>
+	<option value="22">Điện Biên</option>
+	<option value="23">Đồng Nai</option>
+	<option value="24">Đồng Tháp</option>
+	<option value="25">Gia Lai</option>
+	<option value="26">Hà Giang</option>
+	<option value="27">Hà Nam</option>
+	<option value="28">Hà Tĩnh</option>
+	<option value="11">Hải Dương</option>
+	<option value="29">Hậu Giang</option>
+	<option value="30">Hòa Bình</option>
+	<option value="31">Hưng Yên</option>
+	<option value="32">Khánh Hòa</option>
+	<option value="33">Kiên Giang</option>
+	<option value="34">Kon Tum</option>
+	<option value="35">Lai Châu</option>
+	<option value="36">Lâm Đồng</option>
+	<option value="37">Lạng Sơn</option>
+	<option value="38">Lào Cai</option>
+	<option value="39">Long An</option>
+	<option value="40">Nam Định</option>
+	<option value="41">Nghệ An</option>
+	<option value="42">Ninh Bình</option>
+	<option value="43">Ninh Thuận</option>
+	<option value="44">Phú Thọ</option>
+	<option value="45">Phú Yên</option>
+	<option value="46">Quảng Bình</option>
+	<option value="47">Quảng Nam</option>
+	<option value="48">Quảng Ngãi</option>
+	<option value="49">Quảng Ninh</option>
+	<option value="50">Quảng Trị</option>
+	<option value="51">Sóc Trăng</option>
+	<option value="52">Sơn La</option>
+	<option value="53">Tây Ninh</option>
+	<option value="54">Thái Bình</option>
+	<option value="55">Thái Nguyên</option>
+	<option value="56">Thanh Hóa</option>
+	<option value="57">Thừa Thiên-Huế</option>
+	<option value="58">Tiền Giang</option>
+	<option value="59">Trà Vinh</option>
+	<option value="60">Tuyên Quang</option>
+	<option value="61">Vĩnh Long</option>
+	<option value="62">Vĩnh Phúc</option>
+	<option value="63">Yên Bái</option>
+</select>	  
+	                    </div> 		    
+                    </div>      
+                </div>      
+                <div class="col2">
+                    <div class="label">Quận/ Huyện(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Chưa chọn huyện</div>
+                        <select name="huyen" id="huyen" class="huyen" onchange="GetWards();GetStreets();GetProjects()">
+	<option value="0">---- Quận/Huyện ----</option>
+</select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="row row-address">
+                <div class="col">
+                    <div class="label">Địa chỉ</div>                 
+                    <div class="value">
+                        <div class="require">Chưa chọn phường/xã</div>
+                        <input name="diachi" type="text" id="diachi" class="diachi" maxlength="120" placeholder="Số nhà 21/32">	            
+	                    <select name="duong" id="duong" class="duong">
+	<option value="">---- Đường/Phố ----</option>
+</select>
+	                    <div class="street-acp-box">
+                            <input name="street_acp_text" type="text" id="street_acp_text" value="---- Đường/Phố ----">
+                            <span tabindex="0" class="street-row-down">▼</span>
+                            <ul>
+                                
+                                    <li isfirst="1" value="">---- Đường/Phố ----</li>
+                                
+                            </ul>
+                        </div>
+
+	                    <select name="phuong" id="phuong" class="phuong">
+	<option value="">---- Phường/Xã ----</option>
+</select>	  
+		                <div class="suggesstion">	   
+		                    <div style="position:relative"><span class="property-exit"></span></div>     
+	                        <ul>
+	                            <li><span>Nếu không tìm thấy tên đường/phố, phường/xã thì nhập đầy đủ tên đường/phố, phường/xã vào ô địa chỉ.</span></li>
+	                            <li><span>Nếu đã chọn tên đường/phố, phường xã thì chỉ nhập số nhà (nếu có). <font style="color:Red">Nhập sai số nhà sẽ bị khóa tài khoản.</font></span></li>
+	                            <li><span>Không viết IN HOA</span></li>
+	                            <li><span>Địa chỉ không đúng quy định sẽ không đươc duyệt</span></li>
+	                        </ul>
+	                    </div> 	
+		             </div>   
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col">
+                    <div class="label"></div> 
+                    <div class="value"><i>Lưu ý(*): Ghi rõ tên đường/phố, phường/xã nếu không tìm thấy trong danh sách</i></div>
+                </div>
+            </div>             	        
+            <div class="row row-square">
+                <div class="col1">
+                    <div class="label">Dự án</div> 
+                    <div class="value">
+                        <div class="require">Chưa chọn dự án</div>
+                        <select name="project" id="project" class="project" title="Chọn dự án giúp tin của bạn được hiển thị ở nhiều mục hơn">
+	<option value="">---- Chọn dự án ----</option>
+</select>			
+		            </div>    
+		        </div>		    
+		        <div class="col2">
+                    <div class="label">
+                       Diện tích(<span class="red">*</span>)
+                    </div>	    
+                    <div class="value">	
+                        <div class="require">Nhập diện tích</div>
+        	            <input name="dientich" type="text" id="dientich" class="dientich" maxlength="9">  <span class="m2">m<sup>2</sup></span>	   
+        	            <div class="suggesstion">	     
+        	                <div style="position:relative"><span class="property-exit"></span></div>   
+	                        <ul>
+	                            <li><span>Diện tích viết số nguyên, ví dụ: 45,5<sup>2</sup> thì nhập 45 hoặc 46.</span></li>
+	                        </ul>
+	                    </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="row row-price">
+                <div class="col">
+                    <div class="label">Giá(<span class="red">*</span>) <span class="explain"> Chú ý: 1 = 1.000 VNĐ</span></div>
+                    <div class="value">
+                        <div class="require">Nhập giá</div>
+	                    <input name="gia" type="text" id="gia" class="gia" maxlength="9" onkeyup="getTextPrice(this.value);" onblur="getTextPrice(this.value);" title="Chú ý: 1 = 1000 VNĐ">			   
+	                    /
+	                    <select name="cachtinh" id="cachtinh" class="cachtinh">
+	<option value="1">tổng diện tích</option>
+	<option value="2">m2</option>
+</select>
+	                    <label id="price_text" class="price_text"></label>
+	                    <div class="suggesstion">	     
+	                        <div style="position:relative"><span class="property-exit"></span></div>   
+	                        <ul>
+	                            <li><span>Số tiền đơn vị là ngàn đồng. <br>Ví dụ: 1 = 1 ngàn, 90 = 90 ngàn, 9000 = 9 triệu</span></li>
+	                            <li><span>Số tiền không nhập dấu chấm (.) hoặc dấu phẩy (,)</span></li>
+	                        </ul>
+	                    </div> 
+                    </div>	
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="color: #1029AC;font-style: italic;">Các tin đăng thiếu chính xác, <b>sai địa chỉ</b>, <b>sai mức giá</b> (giá thấp hơn giá thực tế) sẽ bị <b>khóa tài khoản vĩnh viễn</b></div>
+            </div>            
+            <div class="row row-contact">
+                <div class="col1">
+                    <div class="label">Tên liên hệ(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Nhập tên người liên hệ</div>
+                        <div style="position:relative">
+                            <div id="lienhe_over" class="lienhe-over property-over"></div>
+                            <input name="lienhe" type="text" id="lienhe" class="lienhe" maxlength="50" placeholder="Tên cá nhân hoặc doanh nghiệp" value="Nguyễn Ngọc Thiên Bình">                                                            
+                        </div>
+                        <div id="lienhe_suggestion" class="suggesstion">	        
+                            <div style="position:relative"><span class="property-exit"></span></div>
+                            <ul>
+                                <li><span>Để thay đổi tên liên hệ vui lòng vào: <br><b>Quản lý cá nhân</b> -&gt; <b>Thông tin tài khoản</b> để cập nhật.</span></li>
+                            </ul>
+                        </div>
+                        <input name="hddFullName" type="hidden" id="hddFullName">
+                        
+                     </div>	
+                 </div>	
+                 <div class="col2">
+                    <div class="label">Điện thoại(<span class="red">*</span>)</div>
+                    <div class="value">
+                        <div class="require">Nhập số điện thoại</div>
+                        <div style="position:relative">
+                            <div id="dienthoai_over" class="dienthoai-over property-over"></div>
+                            <input name="dienthoai" type="text" id="dienthoai" class="dienthoai" maxlength="50" placeholder="0909-090-090 / 0909-911-911" value="0935.723.727">                        
+                        </div>                        
+                        <div id="dienthoai_suggestion" class="suggesstion">	        
+	                        <div style="position:relative"><span class="property-exit"></span></div>
+	                        <ul>
+	                            <li><span>Để thay đổi số điện thoại vui lòng vào: <br><b>Quản lý cá nhân</b> -&gt; <b>Thông tin tài khoản</b> để cập nhật.</span></li>
+	                        </ul>
+	                    </div>
+	                    <input name="hddPhone" type="hidden" id="hddPhone">
+	                    
+                    </div>
+                </div>
+                <div class="clear"></div>
+             </div>	
+        </div>        
+        <div style="margin-bottom:10px;"></div>
+        <div class="title">Các thông tin khác</div>					
+        <div class="other-infor">
+            <div class="left-other-info">
+                <div class="row">
+                    <div class="col1">
+                        <div class="label">
+                            Chiều ngang
+                        </div>
+                        <div class="value">
+                            <div class="require">Chỉ nhập số</div>
+                            <input name="chieungang" type="text" id="chieungang" class="chieungang" maxlength="8">m
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="label">
+                            Chiều dài
+                        </div>
+                        <div class="value">
+                            <div class="require">Chỉ nhập số</div>
+                            <input name="chieudai" type="text" id="chieudai" class="chieudai" maxlength="8">m
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <div class="label">
+                            Hướng
+                        </div>
+                        <div class="value">
+                            <select name="huong" id="huong" class="huong">
+	<option value="0">Không xác định</option>
+	<option value="1">Đông</option>
+	<option value="2">Tây</option>
+	<option value="3">Nam</option>
+	<option value="4">Bắc</option>
+	<option value="5">Đông Nam</option>
+	<option value="6">Đông Bắc</option>
+	<option value="7">Tây Nam</option>
+	<option value="8">Tây Bắc</option>
+</select>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="label">
+                            Đường trước nhà
+                        </div>
+                        <div class="value">
+                            <input name="duongrong" type="text" id="duongrong" class="duongrong" maxlength="3">m
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <div class="label">
+                            Pháp lý
+                        </div>
+                        <div class="value">
+                            <select name="phaply" id="phaply" class="phaply">
+	<option value="0">Chọn</option>
+	<option value="1">Sổ đỏ/ Sổ hồng</option>
+	<option value="2">Giấy tờ hợp lệ</option>
+	<option value="3">Giấy phép XD</option>
+	<option value="4">Giấy phép KD</option>
+</select>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="label">
+                        </div>
+                        <div class="value">
+                                            
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <div class="label">
+                            Số lầu
+                        </div>
+                        <div class="value">
+                            <div class="require">Chỉ nhập số</div>
+                            <input name="solau" type="text" id="solau" class="solau" maxlength="3">	                    
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="label">
+                            Số phòng ngủ
+                        </div>
+                        <div class="value">
+                            <div class="require">Chỉ nhập số</div>
+                            <input name="sophongngu" type="text" id="sophongngu" class="sophongngu" maxlength="3">	                
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
+            </div>
+            <div class="right-other-info">
+                <div class="row">
+                    <input name="nhabep" type="checkbox" id="nhabep">Nhà bếp
+                </div>
+                <div class="row">
+                    <input name="phongan" type="checkbox" id="phongan">Phòng ăn
+                </div>
+                <div class="row">
+                    <input name="santhuong" type="checkbox" id="santhuong">Sân thượng
+                </div>
+                <div class="row">
+                    <input name="xehoi" type="checkbox" id="xehoi">Chổ để xe hơi
+                </div>
+                <div class="row" style="display:none">
+                    <input name="chinhchu" type="checkbox" id="chinhchu">Chính chủ
+                </div>
+            </div>      
+            <div class="clear"></div>                 
+            <div class="captcha-box">
+                <div class="row">
+                    <div class="col">
+                        <div class="label">
+                            <b style="color:Blue">Mã an toàn</b>
+                        </div>
+                        <div class="value">
+                            <img class="captchagenerator" src="/CaptchaGenerator.ashx?t=rzs" align="left">
+                            <input name="captcha" type="text" id="captcha" class="captcha" style="height:26px; margin-left:5px; width:90px" maxlength="7"> 
+                            <label class="require">Chỉ nhập số</label>               
+                        </div>
+                    </div>                
+                </div>
+            </div>                 
+        </div>	
+        <div class="bando" style="display:none">
+            <div class="title"><img src="/publish/img/new.gif"> Bản đồ</div>
+            <div style="padding:5px;color:#d33320; font-weight:bold">Dùng chuột kéo biểu tượng <img style="width:20px" src="/publish/img/home_map.gif"> đến vị trí gần đúng nhất của tài sản để tin của bạn có vị trí cao trên Google.</div>
+            <div id="map_canvas">
+	            <div id="map"></div>
+            </div>
+            <input name="map_lat" type="hidden" id="map_lat" value="0">
+            <input name="map_lng" type="hidden" id="map_lng" value="0">
+        </div>
+        
+        <div class="title">Hình ảnh</div>
+        <div class="upload-image-box">     
+            <div style="font-size:14px"><b style="color:Blue">Lưu ý khi đăng ảnh:</b> <span>Sử dụng hình <b>ảnh thật của tài sản</b> hoặc <b>không sử dụng ảnh</b>. Đăng ảnh không phải của tài sản sẽ bị <b style="color:Red">khóa tài khoản vĩnh viễn</b>.</span></div>       
+            <div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img1">
+                            <img class="thumbnail" src="/publish/img/upload-image.png">         
+                        </label>            
+                        <input name="img1" type="file" id="img1" class="inputimage" accept="image/*">   
+                        <input type="hidden" name="rotate1" class="rotate rotate1">
+                        <div class="upload-controls">
+                            <label class="btnChooseImage">Chọn ảnh</label>
+                            <label class="btnRemoveImage">Xóa</label>   
+                        </div>   
+                    </div>            
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img2">
+                            <img class="thumbnail" src="/publish/img/upload-image.png">
+                        </label>
+                        <input name="img2" type="file" id="img2" class="inputimage" accept="image/*">  
+                        <input type="hidden" name="rotate2" class="rotate rotate2"> 
+                    </div>  
+                    <div class="upload-controls">
+                        <label class="btnChooseImage">Chọn ảnh</label>
+                        <label class="btnRemoveImage">Xóa</label>   
+                    </div>  
+                               
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img3">
+                            <img class="thumbnail" src="/publish/img/upload-image.png"> 
+                        </label>
+                        <input name="img3" type="file" id="img3" class="inputimage" accept="image/*"> 
+                        <input type="hidden" name="rotate3" class="rotate rotate3">
+                    </div>
+                    <div class="upload-controls">
+                        <label class="btnChooseImage">Chọn ảnh</label>
+                        <label class="btnRemoveImage">Xóa</label>   
+                    </div>                 
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img4">
+                            <img class="thumbnail" src="/publish/img/upload-image.png"> 
+                        </label>
+                        <input name="img4" type="file" id="img4" class="inputimage" accept="image/*">   
+                        <input type="hidden" name="rotate4" class="rotate rotate4"> 
+                    </div>
+                    <div class="upload-controls">
+                        <label class="btnChooseImage">Chọn ảnh</label>
+                        <label class="btnRemoveImage">Xóa</label>   
+                    </div>         
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img5">
+                            <img class="thumbnail" src="/publish/img/upload-image.png"> 
+                        </label>
+                        <input name="img5" type="file" id="img5" class="inputimage" accept="image/*">  
+                        <input type="hidden" name="rotate5" class="rotate rotate5">
+                    </div>     
+                    <div class="upload-controls">
+                        <label class="btnChooseImage">Chọn ảnh</label>
+                        <label class="btnRemoveImage">Xóa</label>   
+                    </div>           
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="filename"></div>
+                        <label for="img6">
+                            <img class="thumbnail" src="/publish/img/upload-image.png"> 
+                        </label>
+                        <input name="img6" type="file" id="img6" class="inputimage" accept="image/*">
+                        <input type="hidden" name="rotate6" class="rotate rotate6">    
+                    </div>     
+                    <div class="upload-controls">
+                        <label class="btnChooseImage">Chọn ảnh</label>
+                        <label class="btnRemoveImage">Xóa</label>   
+                    </div>         
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="listthumbnail" style="margin-top:10px"></div>
+        <div id="vipBox" class="vip-box">
+            <div class="title">
+                Hình thức đăng
+            </div>
+            <div class="vip-content">
+                <div class="item selected">
+                    <div class="head">
+                        <input type="radio" name="hinhthucdang" class="hinhthucdang" value="0" checked="">Tin thường
+                   </div>
+                   <div class="content">
+                       <div class="notes">
+                            <ul>
+                                <li>Tin thường có chữ <span style="color:#1570E2">màu xanh</span>, nằm dưới tin VIP.</li>
+                                <li>Bị trôi trang nhanh do có nhiều tin đăng trong ngày.</li>
+                                <li>Chờ kiểm duyệt trước khi được hiển thị, thời gian chờ duyệt từ 5 phút đến vài tiếng tùy thuộc vào số lượng tin đăng trong ngày.</li> 
+                                <li>Thời gian hiển thị 90 ngày.</li>
+                            </ul> 
+                       </div>
+                       <div class="over"></div>
+                   </div>
+                   <div class="regular-property-over">Bạn đã đăng 2 tin miễn phí trong ngày. Để tiếp tục đăng tin bạn phải đăng tin VIP hoặc chờ qua ngày mai.</div>
+                </div>                    
+                <div class="item vipperdayform" style="display:none">
+                   <div class="head">
+                        <input type="radio" name="hinhthucdang" class="hinhthucdang" value="1">Tin VIP ngày
+                   </div>
+                   <div class="content">
+                       <div class="choose-vip-box">
+                            <select name="vip_type_day" id="vip_type_day" class="viptype nonselected">
+	<option value="">--- Loại VIP ---</option>
+	<option value="3">VIP 3 / 5.000đ / ngày</option>
+	<option value="2">VIP 2 / 12.000đ / ngày</option>
+	<option value="1">VIP 1 / 15.000đ / ngày</option>
+</select>
+                            x 
+                            <select id="dayNumber" class="daynumber nonselected" name="daynumber">
+	                            <option value="0">Số ngày</option>
+	                            <option value="1">1</option>
+	                            <option value="2">2</option>
+	                            <option value="3">3</option>
+	                            <option value="4">4</option>
+	                            <option value="5">5</option>
+	                            <option value="6">6</option>
+	                            <option value="7">7</option>
+	                            <option value="8">8</option>
+	                            <option value="9">9</option>
+	                            <option value="10">10</option>
+	                            <option value="11">11</option>
+	                            <option value="12">12</option>
+	                            <option value="13">13</option>
+	                            <option value="14">14</option>
+	                            <option value="15">15</option>
+	                            <option value="16">16</option>
+	                            <option value="17">17</option>
+	                            <option value="18">18</option>
+	                            <option value="19">19</option>
+	                            <option value="20">20</option>
+                            </select>
+                             <span class="divchiphi"> = <span class="chiphi">0</span>đ</span>
+                       </div>
+                        <div class="over"></div>
+                   </div>
+                </div>
+                <div class="item vippermonthform" style="display:none">
+                   <div class="head">
+                        <input type="radio" name="hinhthucdang" class="hinhthucdang" value="2">Tin VIP tháng
+                   </div>
+                   <div class="content">
+                       <div class="choose-vip-box">
+                            <select name="vip_type_month" id="vip_type_month" class="viptype nonselected">
+	<option value="">--- Loại VIP ---</option>
+	<option value="3">VIP 3 / 100.000đ / tháng</option>
+	<option value="2">VIP 2 / 300.000đ / tháng</option>
+	<option value="1">VIP 1 / 400.000đ / tháng</option>
+</select>
+                       </div>
+                       <div class="notes">
+                            <ul>                        
+                                <li>Tiết kiệm 20% so với đăng tin VIP theo ngày</li>
+                            </ul> 
+                        </div>
+                        <div class="over"></div>
+                   </div>
+                </div>
+                <div class="sodutaikhoan"><span class="label">Số dư tài khoản</span>: <span class="value">0</span>đ</div>
+                <div class="vipexplain nonselected" style="display:none">
+                    <h3>Lợi ích của tin VIP</h3>
+                    <ul>                   
+                        <li>Tin VIP có chữ <span style="color:Red">màu đỏ</span>, nằm trên tin thường.</li>     
+                        <li>Hiệu quả cao, số lượt xem tin VIP cao hơn từ <b>30 đến 40</b> lần so với tin thường.</li>
+                        <li>Hiển thị ngay sau khi đăng, không phải chờ duyệt như tin thường.</li>
+                        <li>Thời gian hiển tin = số ngày VIP + 90 ngày như tin thường</li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    <div class="clear"></div>  
+    <div class="control"><span class="update" onclick="AddProperty()">Đăng tin</span><span class="close" onclick="ResetForm()">Nhập lại</span></div>		
+    <div class="hotline">
+        Nếu gặp khó khăn trong vấn đề đăng tin, xin vòng liên hệ số <b><a href="tel:094233349">0942.335.349</a></b> để được hướng dẫn.
+    </div>
+    
+    <iframe id="post_target" name="post_target" style="width:0;height:0;border:0px solid #fff;"></iframe>	
+    </form>    
+    <div class="submit-result-box">
+        <div class="message-box">
+            <div class="message">Đăng tin thành công.<br>Tin của bạn sẽ được đăng sau khi kiểm duyệt.</div>	
+            <div style="text-align:center; color:#888888; line-height:22px;">[ <a style="color:blue" href="/quan-ly-ca-nhan.html">Xem tin vừa đăng</a> ]</div>            
+            <div class="button">
+                <a href="/"><span class="back-home">Về trang chủ</span></a>
+                <a href="javascript:void(0)" onclick="PostOtherNews()"><span class="back-post">Đăng tin khác</span></a>
+                <div class="clear"></div>
+            </div>					
+        </div>
+    </div>	
+</div>
+<div id="listVipHidden" class="listviphidden" style="display:none"><span id="vip3" pricemonth="100000" priceday="5000"></span><span id="vip2" pricemonth="300000" priceday="12000"></span><span id="vip1" pricemonth="400000" priceday="15000"></span></div>
+<input name="map_flag" type="hidden" id="map_flag" class="map-flag" value="3">
+<input name="web_version" type="hidden" id="web_version" class="web-version" value="1">
+</div>        
+    </div><!--left box-->    
+    <div class="right">       
+        <div class="instruction">
+		    <div class="title">Tin của bạn sẽ không được duyệt hoặc bị xóa nếu</div>
+		    <div class="content">
+		        <ul>
+		            <li>Đăng lại cũ.</li>
+	                <li>Một dự án nhưng đăng nhiều tin.</li>
+	                <li>Nội dung không có dấu.</li>
+                    <li>Nội dung mô tả không chi tiết.</li>
+                    <li>Cỡ chữ quá lớn, mất thẩm mỹ.</li>
+                    <li>Nội dung chứa tag từ khóa (vd: can ho, căn hộ him lam, can ho ban, ..).</li>
+                    <li>Nội dung chứa đường dẫn đến website khác.</li>
+                    <li>Đăng sai loại bất động sản.</li>
+                    <li>Mức giá không đúng (mức giá phải đúng với thực tế bán).</li>
+                    <li>Hình ảnh không đúng với nội dung (Phải đăng ảnh thật của tài sản hoặc không sử dụng ảnh).</li>
+                    <li>Chọn sai dự án.</li>
+                    <li>Tên liên không hợp lệ (Tên liên hệ phải là tên cá nhân hoặc doanh nghiệp).</li>
+                    <li>Tên liên hệ trong nội dung tin đăng không giống với tên liên hệ trong ô người liên hệ.</li>
+                    <li>Số điện thoại không hợp lệ.</li>
+                    <li>Số điện thoại trong nội dung tin đăng không giống với số điện thoại trong ô liên hệ.</li>
+                    <li>Địa chỉ không đúng (Địa chỉ phải có tên đường hoặc có tên phường, xã).</li>
+		        </ul>
+		    </div>			    
+		</div>
+		
+		<div class="instruction">
+		    <div class="title">Hướng đăng tin hiệu quả</div>
+		    <div class="content">
+		        <ul>
+		            <li>Nội dung là tiếng việt có dấu, thể hiện được các đặc điểm của tài sản.</li>
+		            <li>Người dùng sẽ quan tâm hơn nếu tài sản có <span>mức giá</span> và <span>diện tích</span>. Hạn chế chọn mức giá thỏa thuận và diện tích không xác định.</li>
+		            <li>Nên điền <span>địa chỉ</span> cụ thể của tài sản để tạo sự tin tưởng cho người đọc về sự hiện hữu của tài sản.</li>
+		            <li>Nên điền đầy đủ các thông tin theo yêu cầu và có <span>ảnh đính kèm</span> để người đọc có thể hình dung ra được tài sản của bạn.</li>		            
+		        </ul>		        
+		    </div>			    
+		</div>
+		<div>      
+    </div>
+    </div> 
+    <div class="clear"></div>  
+</div>
+<div class="member-inform-popup">
+    <div class="container">
+        <div class="title"><span class="head">Thông báo</span><span class="exit" onclick="CloseMemberForm()"></span></div>
+        <div class="content">
+            
+        </div>
+        <div style="text-align:center"><input type="button" value="Đóng" class="member-popup-button" onclick="CloseMemberForm()"></div>
+    </div>
+</div>
+
+        </div>
+        <div id="ctl00_pc_footer">
+            <div class="house-bottom-navigation">
+    <ul>
+        <li><a href="/rao-vat/can-ban/nha-dat/t1/ha-noi.html" title="Ban nha dat Ha Noi">Bán nhà đất Hà Nội</a></li><li><a href="/rao-vat/can-ban/nha-dat/t2/ho-chi-minh.html" title="Ban nha dat Ho Chi Minh">Bán nhà đất Hồ Chí Minh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t3/da-nang.html" title="Ban nha dat Da Nang">Bán nhà đất Đà Nẵng</a></li><li><a href="/rao-vat/can-ban/nha-dat/t4/hai-phong.html" title="Ban nha dat Hai Phong">Bán nhà đất Hải Phòng</a></li><li><a href="/rao-vat/can-ban/nha-dat/t5/can-tho.html" title="Ban nha dat Can Tho">Bán nhà đất Cần Thơ</a></li><li><a href="/rao-vat/can-ban/nha-dat/t6/an-giang.html" title="Ban nha dat An Giang">Bán nhà đất An Giang</a></li><li><a href="/rao-vat/can-ban/nha-dat/t7/ba-ria-vung-tau.html" title="Ban nha dat Ba Ria Vung Tau">Bán nhà đất Bà Rịa Vũng Tàu</a></li><li><a href="/rao-vat/can-ban/nha-dat/t8/bac-lieu.html" title="Ban nha dat Bac Lieu">Bán nhà đất Bạc Liêu</a></li>
+        <li><a href="/rao-vat/can-ban/nha-dat/t10/bac-giang.html" title="Ban nha dat Bac Giang">Bán nhà đất Bắc Giang</a></li><li><a href="/rao-vat/can-ban/nha-dat/t11/hai-duong.html" title="Ban nha dat Hai Duong">Bán nhà đất Hải Dương</a></li><li><a href="/rao-vat/can-ban/nha-dat/t12/bac-ninh.html" title="Ban nha dat Bac Ninh">Bán nhà đất Bắc Ninh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t13/ben-tre.html" title="Ban nha dat Ben Tre">Bán nhà đất Bến Tre</a></li><li><a href="/rao-vat/can-ban/nha-dat/t14/binh-duong.html" title="Ban nha dat Binh Duong">Bán nhà đất Bình Dương</a></li><li><a href="/rao-vat/can-ban/nha-dat/t15/binh-dinh.html" title="Ban nha dat Binh Dinh">Bán nhà đất Bình Định</a></li><li><a href="/rao-vat/can-ban/nha-dat/t16/binh-phuoc.html" title="Ban nha dat Binh Phuoc">Bán nhà đất Bình Phước</a></li><li><a href="/rao-vat/can-ban/nha-dat/t17/binh-thuan.html" title="Ban nha dat Binh Thuan">Bán nhà đất Bình Thuận</a></li><li><a href="/rao-vat/can-ban/nha-dat/t18/ca-mau.html" title="Ban nha dat Ca Mau">Bán nhà đất Cà Mau</a></li><li><a href="/rao-vat/can-ban/nha-dat/t20/dak-lak.html" title="Ban nha dat Dak Lak">Bán nhà đất Đắk Lắk</a></li><li><a href="/rao-vat/can-ban/nha-dat/t21/dak-nong.html" title="Ban nha dat Dak Nong">Bán nhà đất Đăk Nông</a></li><li><a href="/rao-vat/can-ban/nha-dat/t22/dien-bien.html" title="Ban nha dat Dien Bien">Bán nhà đất Điện Biên</a></li><li><a href="/rao-vat/can-ban/nha-dat/t23/dong-nai.html" title="Ban nha dat Dong Nai">Bán nhà đất Đồng Nai</a></li><li><a href="/rao-vat/can-ban/nha-dat/t24/dong-thap.html" title="Ban nha dat Dong Thap">Bán nhà đất Đồng Tháp</a></li><li><a href="/rao-vat/can-ban/nha-dat/t25/gia-lai.html" title="Ban nha dat Gia Lai">Bán nhà đất Gia Lai</a></li>
+        <li><a href="/rao-vat/can-ban/nha-dat/t27/ha-nam.html" title="Ban nha dat Ha Nam">Bán nhà đất Hà Nam</a></li><li><a href="/rao-vat/can-ban/nha-dat/t28/ha-tinh.html" title="Ban nha dat Ha Tinh">Bán nhà đất Hà Tĩnh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t29/hau-giang.html" title="Ban nha dat Hau Giang">Bán nhà đất Hậu Giang</a></li><li><a href="/rao-vat/can-ban/nha-dat/t30/hoa-binh.html" title="Ban nha dat Hoa Binh">Bán nhà đất Hòa Bình</a></li><li><a href="/rao-vat/can-ban/nha-dat/t31/hung-yen.html" title="Ban nha dat Hung Yen">Bán nhà đất Hưng Yên</a></li><li><a href="/rao-vat/can-ban/nha-dat/t32/khanh-hoa.html" title="Ban nha dat Khanh Hoa">Bán nhà đất Khánh Hòa</a></li><li><a href="/rao-vat/can-ban/nha-dat/t33/kien-giang.html" title="Ban nha dat Kien Giang">Bán nhà đất Kiên Giang</a></li><li><a href="/rao-vat/can-ban/nha-dat/t34/kon-tum.html" title="Ban nha dat Kon Tum">Bán nhà đất Kon Tum</a></li>
+        <li><a href="/rao-vat/can-ban/nha-dat/t36/lam-dong.html" title="Ban nha dat Lam Dong">Bán nhà đất Lâm Đồng</a></li>
+        <li><a href="/rao-vat/can-ban/nha-dat/t39/long-an.html" title="Ban nha dat Long An">Bán nhà đất Long An</a></li><li><a href="/rao-vat/can-ban/nha-dat/t40/nam-dinh.html" title="Ban nha dat Nam Dinh">Bán nhà đất Nam Định</a></li><li><a href="/rao-vat/can-ban/nha-dat/t41/nghe-an.html" title="Ban nha dat Nghe An">Bán nhà đất Nghệ An</a></li><li><a href="/rao-vat/can-ban/nha-dat/t42/ninh-binh.html" title="Ban nha dat Ninh Binh">Bán nhà đất Ninh Bình</a></li><li><a href="/rao-vat/can-ban/nha-dat/t43/ninh-thuan.html" title="Ban nha dat Ninh Thuan">Bán nhà đất Ninh Thuận</a></li>
+        <li><a href="/rao-vat/can-ban/nha-dat/t45/phu-yen.html" title="Ban nha dat Phu Yen">Bán nhà đất Phú Yên</a></li><li><a href="/rao-vat/can-ban/nha-dat/t46/quang-binh.html" title="Ban nha dat Quang Binh">Bán nhà đất Quảng Bình</a></li><li><a href="/rao-vat/can-ban/nha-dat/t47/quang-nam.html" title="Ban nha dat Quang Nam">Bán nhà đất Quảng Nam</a></li><li><a href="/rao-vat/can-ban/nha-dat/t48/quang-ngai.html" title="Ban nha dat Quang Ngai">Bán nhà đất Quảng Ngãi</a></li><li><a href="/rao-vat/can-ban/nha-dat/t49/quang-ninh.html" title="Ban nha dat Quang Ninh">Bán nhà đất Quảng Ninh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t50/quang-tri.html" title="Ban nha dat Quang Tri">Bán nhà đất Quảng Trị</a></li><li><a href="/rao-vat/can-ban/nha-dat/t51/soc-trang.html" title="Ban nha dat Soc Trang">Bán nhà đất Sóc Trăng</a></li><li><a href="/rao-vat/can-ban/nha-dat/t53/tay-ninh.html" title="Ban nha dat Tay Ninh">Bán nhà đất Tây Ninh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t54/thai-binh.html" title="Ban nha dat Thai Binh">Bán nhà đất Thái Bình</a></li><li><a href="/rao-vat/can-ban/nha-dat/t55/thai-nguyen.html" title="Ban nha dat Thai Nguyen">Bán nhà đất Thái Nguyên</a></li><li><a href="/rao-vat/can-ban/nha-dat/t56/thanh-hoa.html" title="Ban nha dat Thanh Hoa">Bán nhà đất Thanh Hóa</a></li><li><a href="/rao-vat/can-ban/nha-dat/t57/hue.html" title="Ban nha dat Hue">Bán nhà đất Huế</a></li><li><a href="/rao-vat/can-ban/nha-dat/t58/tien-giang.html" title="Ban nha dat Tien Giang">Bán nhà đất Tiền Giang</a></li><li><a href="/rao-vat/can-ban/nha-dat/t59/tra-vinh.html" title="Ban nha dat Tra Vinh">Bán nhà đất Trà Vinh</a></li><li><a href="/rao-vat/can-ban/nha-dat/t61/vinh-long.html" title="Ban nha dat Vinh Long">Bán nhà đất Vĩnh Long</a></li><li><a href="/rao-vat/can-ban/nha-dat/t62/vinh-phuc.html" title="Ban nha dat Vinh Phuc">Bán nhà đất Vĩnh Phúc</a></li><li><a href="/rao-vat/can-ban/nha-dat/t63/yen-bai.html" title="Ban nha dat Yen Bai">Bán nhà đất Yên Bái</a></li>
+   </ul>
+</div>	
+            <div class="footer">
+		        <div class="bottom-navigation"><a href="/"><strong>Mua bán nhà đất</strong></a> |<a href="/tro-giup-huong-dan/quy-dinh-su-dung">Quy định sử dụng</a> | <a href="/tro-giup-huong-dan/huong-dan">Hướng dẫn - Trợ Giúp</a> | <a href="/bando.html">Xem bản đồ</a> | <a href="/lien-he-gop-y.html">Liên hệ - Góp ý</a> </div>
+		        <div class="about">		        	
+		            <div>
+		            Địện thoại hỗ trợ: 0942.335.349 <br>
+		            Copyright © 2013 - 2026 123nhadatviet.com. All rights reserved.<br>         
+		            ® Ghi rõ nguồn "123nhadatviet.com" khi phát hành lại thông tin từ website này.
+		            </div>		 
+                </div>		
+	        </div><!--end footer -->	
+	        <a href="javascript:void(0)" title="Lên đầu trang" id="to_top" style="display: inline;"></a>
+	    </div>
+	    
+	    <div class="guest-config">
+	        <div class="head"></div>
+	    </div>
+    </div><!--wrapper-->    
+    
+<div class="banner banner-left" style="height: 800px; top: 0px; left: 0px;"></div>  
+<div class="banner banner-right" style="height: 800px; top: 0px; right: 0px;"></div>    
+<!-------- login- form------------------>
+<div id="register-form" class="register-form"></div><!--register-->
+<div id="login-form" class="login-form">
+    <div class="loading"></div>
+    <div class="title">Đăng nhập<span class="exit"></span></div>				
+    <div class="input-form">
+        <div class="row message"></div>
+        <div class="row">
+	        <div class="col1">
+		        Tên truy cập
+	        </div>
+	        <div class="col2">
+		        <input id="account" type="text" maxlength="50">						
+	        </div>	
+	        <div class="clear"></div>					
+        </div>
+        <div class="row">
+	        <div class="col1">
+		        Mật khẩu
+	        </div>
+	        <div class="col2">
+		        <input id="password" type="password" maxlength="50">	
+		        <input id="remember" type="checkbox"> Duy trì đăng nhập					
+	        </div>	
+	        <div class="clear"></div>		        				
+        </div>
+        <div class="row">
+            <div class="col1"></div>
+            <div class="col2">
+                <span class="show-recover-form" onclick="closeForm('login-form');ShowRecoverForm()">Quên mật khẩu ?</span> 
+                <span class="show-register-form" onclick="ShowRegisterForm()">Đăng ký</span>
+            </div>
+            <div class="clear"></div>
+        </div>						
+        <div class="row">
+	        <div class="col1"></div>	        	
+	        <div class="col2 button">					
+			        <span class="login" onclick="Login()">Đăng nhập</span>
+			        <span class="close" onclick="closeForm('login-form')">Thoát</span>
+	        </div>	
+	        <div class="clear"></div>
+        </div>	
+    </div>
+</div> 
+<div id="recover-form" class="recover-form">
+    <div class="loading"></div>
+    <div class="title">Phục hồi mật khẩu <span class="exit"></span></div>				
+    <div class="input-form">
+        <div class="row message">
+        </div>
+        <div class="row">
+            <div>Nhập tên đăng nhập và địa chỉ email đã đăng ký tài khoản</div>
+        </div>
+        <div class="row">
+            <div class="col1">
+	            Tên truy cập
+            </div>
+            <div class="col2">
+	            <input id="username" type="text" maxlength="50">						
+            </div>						
+        </div>	
+        <div class="row">
+            <div class="col1">
+	            Email
+            </div>
+            <div class="col2">
+	            <input id="email" type="text" maxlength="50">						
+            </div>						
+        </div>	
+        <div class="row" style="font-style:italic">Hoặc dùng <b>số điện thoại</b> đăng ký liên hệ bộ phận hỗ trợ</div>
+        <div class="row">
+            <div class="col1">		
+            </div>	
+            <div class="col2 button">					
+		            <span class="recover" onclick="Recover()">Gửi</span> <span class="close" onclick="closeForm('recover-form')">Đóng</span>
+            </div>	
+        </div>	
+    </div>
+</div>    
+
+<select name="ctl00$hddSalePrice" id="ctl00_hddSalePrice" class="hddsaleprice" style="display:none">
+	<option value="0">------ Mức giá ------</option>
+	<option value="9">40 triệu  - 60 triệu </option>
+	<option value="10">60 triệu  - 80 triệu </option>
+	<option value="11">80 triệu  - 100 triệu </option>
+	<option value="12">100 triệu  - 300 triệu </option>
+	<option value="13">300 triệu  - 500 triệu </option>
+	<option value="14">500 triệu  - 800 triệu </option>
+	<option value="15">800 triệu  - 1 tỷ </option>
+	<option value="16">1 tỷ  - 2 tỷ </option>
+	<option value="17">2 tỷ  - 3 tỷ </option>
+	<option value="18">3 tỷ  - 4 tỷ </option>
+	<option value="19">4 tỷ  - 6 tỷ </option>
+	<option value="20">6 tỷ  - 8 tỷ </option>
+	<option value="21">8 tỷ  - 10 tỷ </option>
+	<option value="22">10 tỷ  - 15 tỷ </option>
+	<option value="23">15 tỷ  - 20 tỷ </option>
+	<option value="24">20 tỷ  - 30 tỷ </option>
+	<option value="25">30 tỷ  - 60 tỷ </option>
+	<option value="26">Trên 60 tỷ </option>
+	<option value="0">Tất cả mức giá</option>
+</select>
+<select name="ctl00$hddrentPrice" id="ctl00_hddrentPrice" class="hddrentprice" style="display:none">
+	<option value="0">------ Mức giá ------</option>
+	<option value="1">0 - 1 triệu </option>
+	<option value="2">1 triệu  - 3 triệu </option>
+	<option value="3">3 triệu  - 5 triệu </option>
+	<option value="4">5 triệu  - 10 triệu </option>
+	<option value="5">10 triệu  - 15 triệu </option>
+	<option value="6">15 triệu  - 20 triệu </option>
+	<option value="7">20 triệu  - 30 triệu </option>
+	<option value="8">30 triệu  - 40 triệu </option>
+	<option value="9">40 triệu  - 60 triệu </option>
+	<option value="10">60 triệu  - 80 triệu </option>
+	<option value="11">80 triệu  - 100 triệu </option>
+	<option value="12">100 triệu  - 300 triệu </option>
+	<option value="13">300 triệu  - 500 triệu </option>
+	<option value="0">Tất cả mức giá</option>
+</select>  
+
+<div id="fade" class="black_overlay"></div>	 
+<div id="ctl00_links" class="links"></div>
+<input name="ctl00$hddCurrentTextDate" type="hidden" id="ctl00_hddCurrentTextDate" class="hddCurrentTextDate" value="260528">
+
+
+<script type="text/javascript" src="/publish/js/management.js?v=201706250904"></script> 
+<script type="text/javascript" src="/publish/js/jquery.autocomplete.js"></script> 
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        PostOtherNews();
+    });    		   					
+</script>
+
+
+<script type="text/javascript" src="/publish/js/common.js?v=201706250904"></script>
+
+	
+<script type="text/javascript" src="/publish/js/pc-common.js?v=201706250904"></script>
+<script type="text/javascript" src="/publish/js/jquery.autocomplete.js"></script>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-52369797-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<iframe name="oauth2relay327386817" id="oauth2relay327386817" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=https%3A%2F%2F123nhadatviet.com&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.vi.jNwOADG1Nsk.O%2Fd%3D1%2Frs%3DAHpOoo_s8LJUD_uFbjY2X4aCRtCONneL2Q%2Fm%3D__features__#rpctoken=300513849&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

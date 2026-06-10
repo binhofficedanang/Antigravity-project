@@ -1,0 +1,39 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ✅ Stealth mode (playwright-stealth) đã kích hoạt
+  ✅ Custom JS Stealth đã được tiêm vào trang
+
+--- 🌐 Đang chạy trên: MUABAN.NET ---
+Đang đăng nhập muaban.net với tài khoản: 0935723727
+- Truy cập trang đăng nhập muaban.net...
+  ⏳ Đang chờ Cloudflare tự pass... (6s) - 'Chờ một chút...'
+  ⏳ Đang chờ Cloudflare tự pass... (12s) - 'Chờ một chút...'
+  ⏳ Đang chờ Cloudflare tự pass... (18s) - 'Chờ một chút...'
+  ⏳ Đang chờ Cloudflare tự pass... (24s) - 'Chờ một chút...'
+  💡 Nếu thấy CAPTCHA hãy giải 1 lần - session sẽ được lưu lại
+  ⏳ Đang chờ Cloudflare tự pass... (30s) - 'Chờ một chút...'
+  💡 Nếu thấy CAPTCHA hãy giải 1 lần - session sẽ được lưu lại
+  ⏳ Đang chờ Cloudflare tự pass... (36s) - 'Chờ một chút...'
+  💡 Nếu thấy CAPTCHA hãy giải 1 lần - session sẽ được lưu lại
+  ⏳ Đang chờ Cloudflare tự pass... (42s) - 'Chờ một chút...'
+  💡 Nếu thấy CAPTCHA hãy giải 1 lần - session sẽ được lưu lại
+  ⚠️ Timeout chờ Cloudflare. Thử tiếp tục...
+- Kiểm tra trạng thái đăng nhập hoặc chờ form...
+  URL hiện tại: https://muaban.net/account/login
+  Title hiện tại: Chờ một chút...
+  ⚠️ Không tìm thấy form đăng nhập. Chờ thêm 5 giây...
+- Nhập số điện thoại...
+  ❌ Lỗi nhập số điện thoại: Locator.click: Timeout 5000ms exceeded.
+Call log:
+waiting for locator("#phone, input[name='phone'], input[type='tel']").first
+
+  📸 Đã chụp screenshot: muaban_login_phone_error.png
+❌ Đăng nhập Muaban thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+❌ Không có kênh nào đăng tin thành công!
+❌ Đăng tin thất bại trên các kênh: muaban.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

@@ -1,0 +1,67 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: THUVIENNHADAT.VN ---
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Cho thuê sàn văn phòng 189m2 ở VERNAL BUILDING - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-vernal-building/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 314400 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Bình Office Danang
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 175461
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Cho thuê sàn văn phòng 189m2 ở VERNAL BUILDING - Q. Hải Châu
+  ⚠️ Lỗi giải captcha bằng Local OCR: cannot import name '_center' from 'numpy.core._multiarray_umath' (/Users/binhihi/Binhihi Antigravity/venv/lib/python3.12/site-packages/numpy/core/_multiarray_umath.cpython-312-darwin.so)
+  ✅ Giải CAPTCHA thành công qua Free API! Mã: 289
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+❌ Đăng tin 123nhadatviet.com thất bại! Vẫn ở trang: https://123nhadatviet.com/dang-tin.html
+  📸 Đã chụp screenshot: 123nhadatviet_com_submit_failed.png
+❌ Đăng tin 123NhaDatViet thất bại!
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Cho thuê sàn văn phòng 189m2 ở VERNAL BUILDING - Q. Hải Châu
+  ⚠️ Lỗi giải captcha bằng Local OCR: cannot import name '_center' from 'numpy.core._multiarray_umath' (/Users/binhihi/Binhihi Antigravity/venv/lib/python3.12/site-packages/numpy/core/_multiarray_umath.cpython-312-darwin.so)
+  ✅ Giải CAPTCHA thành công qua Free API! Mã: 19413
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+🎉 Đăng tin nhadatviet247.net thành công! URL: http://nhadatviet247.net/dang-tin.html
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: thuviennhadat.vn, nhadatviet247.net
+❌ Đăng tin thất bại trên các kênh: 123nhadatviet.com
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

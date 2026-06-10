@@ -1,0 +1,126 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  ✅ Stealth mode (JS thuần) đã kích hoạt - Cloudflare JS Challenge sẽ tự pass
+
+--- 🌐 Đang chạy trên: RONGBAY.COM ---
+Đang đăng nhập rongbay.com (VietID) với tài khoản: binh.officedanang@gmail.com
+- Mở form đăng nhập...
+  ✓ Đã click mở đăng nhập bằng selector: a.hm_link_login
+- Đợi iframe VietID xuất hiện (mingid.mediacdn.vn)...
+  ... Đang đợi form VietID (1s)...
+  ... Đang đợi form VietID (6s)...
+  ... Đang đợi form VietID (11s)...
+  ... Đang đợi form VietID (16s)...
+  ... Đang đợi form VietID (21s)...
+- Nhập tài khoản (email)...
+  ⚠️ Thử selector thay thế: Locator.wait_for: Timeout 15000ms exceeded.
+Call log:
+waiting for locator("input[name='account']").first to be visible
+
+  ✓ Đã nhập tài khoản qua selector thay thế
+- Click Tiếp tục...
+=> Lỗi khi đăng nhập rongbay: Page.evaluate: TypeError: Cannot read properties of null (reading 'click')
+    at eval (eval at evaluate (:226:30), <anonymous>:1:72)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:226:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+  ⚠️ Không thể chụp screenshot (rongbay_login_failed.png): Page.screenshot: Timeout 5000ms exceeded.
+Call log:
+taking page screenshot
+  -   disabled all CSS animations
+  - waiting for fonts to load...
+
+  📸 Đã chụp rongbay_login_failed.png và lưu HTML để debug
+❌ Đăng nhập Rongbay thất bại!
+
+--- 🌐 Đang chạy trên: RAOVAT.NET ---
+Đang đăng nhập raovat.net với email: binh.officedanang@gmail.com
+=> Đăng nhập thành công (user: binh.officedanang)
+Bắt đầu đăng tin Raovat: Văn phòng làm việc 380m2 cho thuê tại Luxury Building Trần Phú Quận Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-luxury-building-tran-phu/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn danh mục...
+  => URL step 2: https://raovat.net/dang-tin-11-Nha-cua-Dat-dai
+=> Lỗi khi đăng tin raovat: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+waiting for locator("input[name='sitetitle']") to be visible
+
+❌ Đăng tin Raovat thất bại!
+
+--- 🌐 Đang chạy trên: THUVIENNHADAT.VN ---
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Văn phòng làm việc 380m2 cho thuê tại Luxury Building Trần Phú Quận Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-luxury-building-tran-phu/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 655000 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Thiên Bình
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 175101
+
+--- 🌐 Đang chạy trên: MUABAN.NET ---
+Đang đăng nhập muaban.net với tài khoản: 0935723727
+  ⚠️ CẢNH BÁO: Trình duyệt đang chạy ở chế độ ẩn danh (headless).
+  ⚠️ Ở chế độ này, Cloudflare Turnstile có thể phát hiện và chặn tự động.
+  ⚠️ Nếu bot bị kẹt hoặc đăng nhập thất bại, vui lòng bỏ chọn 'Chạy ẩn danh' trên Streamlit App.
+- Truy cập trang đăng nhập muaban.net...
+  ⏳ Đang chờ Cloudflare tự pass... (6s) - 'Chờ một chút...'
+  ⏳ Đang chờ Cloudflare tự pass... (12s) - 'Chờ một chút...'
+  ⏳ Đang chờ Cloudflare tự pass... (18s) - 'Chờ một chút...'
+  💡 Gợi ý: Cài playwright-stealth để Cloudflare tự động pass
+  ⏳ Đang chờ Cloudflare tự pass... (24s) - 'Chờ một chút...'
+  💡 Gợi ý: Cài playwright-stealth để Cloudflare tự động pass
+  ⏳ Đang chờ Cloudflare tự pass... (30s) - 'Chờ một chút...'
+  💡 Gợi ý: Cài playwright-stealth để Cloudflare tự động pass
+  ⏳ Đang chờ Cloudflare tự pass... (36s) - 'Chờ một chút...'
+  💡 Gợi ý: Cài playwright-stealth để Cloudflare tự động pass
+  ⏳ Đang chờ Cloudflare tự pass... (42s) - 'Chờ một chút...'
+  💡 Gợi ý: Cài playwright-stealth để Cloudflare tự động pass
+  ⚠️ Timeout chờ Cloudflare. Thử tiếp tục...
+- Kiểm tra trạng thái đăng nhập hoặc chờ form...
+  URL hiện tại: https://muaban.net/account/login
+  Title hiện tại: Chờ một chút...
+  ⚠️ Không tìm thấy form đăng nhập. Chờ thêm 5 giây...
+- Nhập số điện thoại...
+  ❌ Lỗi nhập số điện thoại: Locator.click: Timeout 5000ms exceeded.
+Call log:
+waiting for locator("#phone, input[name='phone'], input[type='tel']").first
+
+  📸 Đã chụp screenshot: muaban_login_phone_error.png
+❌ Đăng nhập Muaban thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: thuviennhadat.vn
+❌ Đăng tin thất bại trên các kênh: rongbay.com, raovat.net, muaban.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

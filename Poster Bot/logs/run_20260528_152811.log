@@ -1,0 +1,17 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: MAUMAU.VN ---
+Đang đăng nhập vào maumau.vn với tài khoản: binh.officedanang@gmail.com
+⚠️ Vẫn ở trang đăng nhập. Có thể có CAPTCHA hoặc mật khẩu sai.
+  📸 Đã chụp screenshot: maumau_login_failed.png
+❌ Đăng nhập MauMau thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+❌ Không có kênh nào đăng tin thành công!
+❌ Đăng tin thất bại trên các kênh: maumau.vn
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/image/raovat/favicon.ico" rel="icon" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vật Giá - Đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="https://vatgia.com/assets/css/bootstrap-4.5.0.css">
+    <link rel="stylesheet" type="text/css" href="https://vatgia.com/assets/account/css/account.css">
+            <script>
+        window.domain = "//vatgia.com";
+        window.firebaseConfig = {
+            apiKey: "AIzaSyBNKEk-8M14dhxVcaGyBLkl_cY83NsulAY",
+            authDomain: "vatgia-4-0.firebaseapp.com",
+            databaseURL: "https://vatgia-4-0.firebaseio.com",
+            projectId: "vatgia-4-0",
+            storageBucket: "vatgia-4-0.appspot.com",
+            messagingSenderId: "185395258975",
+            appId: "1:185395258975:web:1fce793b02e65bdf1c5dea",
+            measurementId: "G-DHVPTW06CR"
+        };
+        window.urlLogin = "https://www.vatgia.com/user/login";
+        window.urlRaovatHome = "https://www.vatgia.com/raovat";
+    </script>
+</head>
+<body>
+    <div id="account" class="vg_account"><div class="vg_register"><div class="bg-account-header"><div class="img-logo text-center"><img src="/assets/image/raovat/logo_footer-pc.svg"></div> <div class="text-center title-welcome"><p class="mb-0 text-title-header">Đăng ký tài khoản</p></div></div> <div class="content-register"><div><div class="form-register mb-3"><form><div class="rv-input-account"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="text" placeholder="Tên tài khoản" class="form-control"> <div class="validate-input"></div></div> <div class="rv-input-account mt-3"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="text" placeholder="Họ và tên" class="form-control"> <div class="validate-input"></div></div> <div class="rv-input-account mt-3"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="email" placeholder="Email" class="form-control"> <div class="validate-input"></div></div> <div class="rv-input-account mt-3"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="text" placeholder="Mã số thuế/Đăng ký KD" maxlength="13" class="form-control"> <div class="validate-input"></div> <div class="note-warning"><span class="ml-1">*</span>
+                            MST là thông tin bắt buộc
+                        </div></div> <div class="rv-input-account mt-2"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="text" placeholder="Số CMND/CCCD" maxlength="12" class="form-control"> <div class="validate-input"></div></div> <div class="rv-input-account mt-3"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="password" placeholder="Mật khẩu" class="form-control"> <div class="validate-input"></div></div> <div class="rv-input-account mt-3"><input onfocus="this.removeAttribute('readonly');" autocomplete="off" type="password" placeholder="Xác nhận mật khẩu" class="form-control"> <div class="validate-input"></div></div> <div class="rules-register mt-4"><div class="custom-control custom-checkbox"><input type="checkbox" id="check-info" class="custom-control-input"> <label for="check-info" class="custom-control-label">Tôi xác nhận thông tin trên là hoàn toàn chính xác.</label></div> <div class="custom-control custom-checkbox mt-1"><input type="checkbox" id="check-policy" class="custom-control-input"> <label for="check-policy" class="custom-control-label">Tôi đồng ý với
+                                <span role="button" class="mr-1 text-primary"><ins>Quy chế hoạt động</ins></span>và
+                                <span role="button" class="mr-1 text-primary"><ins>Chính sách bảo mật</ins></span>của vatgia.com.
+                            </label></div></div></form></div> <button type="submit" class="btn btn-primary btn-block btn-register border-0">Đăng ký</button></div></div> <div class="footer-register text-center"><p class="m-0 btn-footer">Bạn đã có tài khoản ?<a href="/user/login" class="ml-2">Đăng nhập</a></p></div></div></div>
+
+    
+    <script defer="true" src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js" onload="firebase.initializeApp(window.firebaseConfig)"></script>
+    <script src="/assets/js/jquery-3.5.1.min.js"></script>
+    <script defer="true" src="https://vatgia.com/assets/7100988271006543/account/js/manifest.js?v=2.9.27"></script>
+    <script defer="true" src="https://vatgia.com/assets/36998240997298/account/js/vendor.js?v=2.9.27"></script>
+    <script defer="true" src="https://vatgia.com/assets/39977810210110091009/account/js/main.js?v=2.9.27"></script>
+    <script defer="true" src="https://vatgia.com/assets/799698100439734/account/js/account.js?v=2.9.27"></script>
+    <script>
+        $(document).scroll(function () {
+            var heightY = $(this).scrollTop();
+            if(heightY > 1) {
+                $('.vg_account').attr("style","height: 100% !important;");
+                $('.btn-footer').attr("style","padding-bottom: 20px !important;");
+            } else {
+                $('.vg_account').removeAttr("style");
+                $('.btn-footer').removeAttr("style");
+            }
+        });
+    </script>
+    
+
+<div class="ldc-alert-box">
+                <div class="ldc-alert-content">
+                    <div class="ldc-alert-title">Thông báo</div>
+                    <div class="ldc-alert-message">Bạn phải đồng ý xác nhận thông tin, quy chế hoạt động và chính sách bảo mật.</div>
+                    <div class="ldc-alert-button">
+                        <button onclick="closeLinhdanchuConfirm(this)">Hủy</button>
+                        <button class="ldc-alert-success" onclick="confirmLinhdanchuConfirm(this)">Đã hiểu</button>
+                    </div>
+                </div>
+            </div></body></html>

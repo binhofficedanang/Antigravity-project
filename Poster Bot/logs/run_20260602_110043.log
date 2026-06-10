@@ -1,0 +1,142 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ✅ Stealth mode (playwright-stealth) đã kích hoạt
+  ✅ Custom JS Stealth đã được tiêm vào trang
+
+--- 🌐 Đang chạy trên: RONGBAY.COM ---
+Đang đăng nhập rongbay.com (VietID) với tài khoản: binh.officedanang@gmail.com
+- Mở form đăng nhập...
+  ✓ Đã click mở đăng nhập bằng selector: a.hm_link_login
+- Đợi form đăng nhập xuất hiện...
+  => Phát hiện form đăng nhập trên trang chính
+- Nhập tài khoản (email)...
+  ✓ Đã nhập email: binh.officedanang@gmail.com
+- Click Tiếp tục...
+  ✓ Đã click Tiếp tục: button.btn-next.btn-login
+- Nhập mật khẩu...
+  ✓ Đã nhập mật khẩu thành công
+- Click Đăng nhập...
+  ✓ Đã click Đăng nhập: button.btn-next.btn-login
+- Đợi điều hướng về rongbay.com...
+  ⚠️ Chờ điều hướng timeout (Timeout 19066ms exceeded.
+=========================== logs ===========================
+"domcontentloaded" event fired
+============================================================), tự chuyển về rongbay.com...
+=> Hoàn tất luồng đăng nhập. URL: https://rongbay.com/
+   Trạng thái: ⚠️ Chưa xác nhận đăng nhập
+❌ Đăng nhập Rongbay thất bại!
+
+--- 🌐 Đang chạy trên: RAOVAT.NET ---
+Đang đăng nhập raovat.net với email: binh.officedanang@gmail.com
+=> Đăng nhập thành công (user: binh.officedanang)
+Bắt đầu đăng tin Raovat: Văn phòng cho thuê 250m2 tại tòa nhà AAC, Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-aac/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn danh mục...
+- Đợi nút Tiếp tục sẵn sàng và click...
+  => URL step 2: https://raovat.net/dang-tin-11-Nha-cua-Dat-dai
+- Bước 2: Điền tiêu đề...
+- Chọn loại tin (Thuê - Cho thuê) bằng JS...
+- Chọn thành phố (Đà Nẵng) và Quận huyện bằng JS...
+  => Đang chọn Quận/Huyện: Hải Châu
+  => Đã chọn xong Tỉnh thành & Quận huyện
+- Điền giá...
+  => Giá quy đổi: 41750000 VNĐ/tháng
+- Điền nội dung...
+- Điền từ khóa...
+- Tải lên hình ảnh bài viết...
+  => Đã kích hoạt JS Upload All cho 5 ảnh
+- Đóng modal popup nếu có...
+- Đăng tin (dùng JS submit để tránh bị modal chặn)...
+  => URL: https://raovat.net/dang-tin?step=2
+  => Title: Rao vặt - Đăng tin rao vặt
+  ✅ ĐĂNG TIN RAOVAT THÀNH CÔNG (Đã ghi nhận trên hệ thống)!
+=> Hoàn tất đăng tin Raovat ✓
+
+--- 🌐 Đang chạy trên: THUVIENNHADAT.VN ---
+Đang đăng nhập thuviennhadat.vn với tài khoản: 0935723727
+=> Đăng nhập thuviennhadat.vn thành công!
+Bắt đầu đăng tin trên ThuVienNhaDat: Văn phòng cho thuê 250m2 tại tòa nhà AAC, Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-aac/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Bước 1: Chọn Nhu cầu...
+- Điền địa chỉ...
+- Chọn Loại Nhà Đất...
+  => Điền giá quy đổi: 167000 VND/m²/tháng
+- Thêm liên hệ...
+  => Điền thông tin liên hệ: Mr Bình
+  => Đã thêm/cập nhật thông tin liên hệ thành công
+- Điền tiêu đề & mô tả...
+- Click Tiếp tục sang Bước 2...
+- Tải lên hình ảnh...
+  => Đã tải lên 5 ảnh thành công
+- Click Tiếp tục sang Bước 3...
+- Chọn gói đăng tin Tiêu chuẩn (Miễn phí)...
+- Chọn thời hạn đăng tin 30 ngày...
+  => Đã chọn 30 ngày qua selector: div.tag.__card-post-days[data-postdaysid='22']
+  📸 Đã chụp screenshot: thuviennhadat_step3_debug.png
+  => Đã lưu ảnh chụp và mã HTML của Bước 3 để phân tích
+- Click Tiếp tục sang bước thanh toán/xác nhận...
+  => Đã click nút Tiếp tục sang màn xác nhận qua Playwright
+- Click Đăng tin...
+  => Đã click nút Đăng tin qua Playwright thành công
+  => URL hiện tại: https://thuviennhadat.vn/dang-tin?tab=3
+  ✅ ĐĂNG TIN THUVIENNHADAT THÀNH CÔNG!
+  => Mã tin đăng: 177895
+
+--- 🌐 Đang chạy trên: 123NHADATVIET.COM ---
+Đang đăng nhập vào 123nhadatviet.com với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên 123nhadatviet.com
+Bắt đầu đăng tin trên 123nhadatviet.com: Văn phòng cho thuê 250m2 tại tòa nhà AAC, Hải Châu
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 124
+  📸 Đã chụp screenshot: 123nhadatviet_com_form_filled.png
+🎉 Đăng tin 123nhadatviet.com thành công! URL: https://123nhadatviet.com/dang-tin.html
+
+--- 🌐 Đang chạy trên: NHADATVIET247.NET ---
+Đang đăng nhập vào nhadatviet247.net với tài khoản: binhofficedanang
+  ✓ Đăng nhập thành công trên nhadatviet247.net
+Bắt đầu đăng tin trên nhadatviet247.net: Văn phòng cho thuê 250m2 tại tòa nhà AAC, Hải Châu
+  ✅ Giải CAPTCHA thành công qua Local OCR! Mã: 77689
+  📸 Đã chụp screenshot: nhadatviet247_net_form_filled.png
+🎉 Đăng tin nhadatviet247.net thành công! URL: http://nhadatviet247.net/dang-tin.html
+
+--- 🌐 Đang chạy trên: RAOVAT247.NET ---
+Đang đăng nhập raovat247.net với tài khoản: binh.officedanang
+=> Lỗi đăng nhập raovat247.net: Page.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("form input[type='text']")
+
+❌ Đăng nhập RaoVat247 thất bại!
+
+--- 🌐 Đang chạy trên: NHADAT24H.NET ---
+Đang đăng nhập nhadat24h.net với tài khoản: 0935723727
+=> Lỗi đăng nhập nhadat24h.net: Page.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for locator("input[type='text']")
+
+❌ Đăng nhập NhaDat24h thất bại!
+
+--- 🌐 Đang chạy trên: DATVIET24H.COM.VN ---
+Đang kiểm tra trạng thái đăng nhập hoặc đăng nhập vào datviet24h.com.vn...
+=> Chưa đăng nhập. Tiến hành truy cập trang đăng nhập của datviet24h.com.vn...
+⚠️ Vẫn ở trang đăng nhập datviet24h.com.vn. Có thể có CAPTCHA hoặc thông tin đăng nhập sai.
+  📸 Đã chụp screenshot: datviet24h_com_vn_login_failed.png
+❌ Đăng nhập DatViet24h thất bại!
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: raovat.net, thuviennhadat.vn, 123nhadatviet.com, nhadatviet247.net
+❌ Đăng tin thất bại trên các kênh: rongbay.com, raovat247.net, nhadat24h.net, datviet24h.com.vn
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

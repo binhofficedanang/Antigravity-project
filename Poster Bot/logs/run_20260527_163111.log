@@ -1,0 +1,51 @@
+🤖 Khởi động Trình duyệt Tự động hóa...
+Khởi động trình duyệt (Persistent Session)...
+  => Đang thử khởi động Google Chrome chính chủ...
+  ✓ Đã khởi động Google Chrome thành công!
+  ℹ️ Đang chạy ở chế độ có giao diện (headful) bằng Chrome chính chủ. Không áp dụng stealth để tránh bị Cloudflare phát hiện bất thường.
+
+--- 🌐 Đang chạy trên: MUABAN.NET ---
+Đang đăng nhập muaban.net với tài khoản: 0935723727
+- Truy cập trang đăng nhập muaban.net...
+- Kiểm tra trạng thái đăng nhập hoặc chờ form...
+  URL hiện tại: https://muaban.net/
+  Title hiện tại: Mua bán đăng tin rao vặt miễn phí nhanh chóng, hiệu quả 2026 - Muaban.net
+=> Session đã đăng nhập sẵn từ lần trước!
+Bắt đầu đăng tin trên muaban.net: Cho thuê sàn văn phòng 120m2 ở TRỰC THĂNG - Q. Hải Châu
+  => Bắt đầu cào ảnh từ nguồn: https://officedanang.vn/property/toa-nha-truc-thang/...
+  => Tìm thấy 5 ảnh phù hợp. Đang tải...
+    ✓ Đã tải: img_1.jpg
+    ✓ Đã tải: img_2.jpg
+    ✓ Đã tải: img_3.jpg
+    ✓ Đã tải: img_4.jpg
+    ✓ Đã tải: img_5.jpg
+- Vào trang đăng tin...
+  Trang hiện tại: Đăng tin - Muaban.net
+- Chọn danh mục: Bất động sản -> Cho thuê -> Văn phòng...
+  - Đã click 'Bất động sản' [text=Bất động sản]
+  - Đã click 'Cho thuê'
+  - Đã click 'text=Văn phòng, mặt bằng'
+- Điền thông tin cơ bản...
+  - Tiêu đề đã điền
+  - Mô tả đã điền
+  - Giá đã điền: 28296000
+  - Diện tích đã điền: 120
+- Điền địa chỉ...
+  - Thành phố: Đà Nẵng (hoặc đại diện)
+  - Quận/Huyện: Hải Châu (hoặc đại diện)
+  - Phường/Xã: Hòa Thuận Tây (hoặc đại diện)
+  - Tên đường: Nguyễn Văn Linh (hoặc đại diện)
+  - Kiểu BĐS: Văn phòng (hoặc đại diện)
+- Tải lên hình ảnh...
+  - Đã tải 5 ảnh
+- Tìm và bấm nút Tiếp tục / Đăng tin...
+  - Đã bấm: 'button:has-text('Tiếp tục')'
+  - Đã bấm xác nhận lần 2
+URL sau đăng: https://muaban.net/dang-tin#classified_id=70929681 | Title: Đăng tin - Muaban.net
+  📸 Đã chụp screenshot: muaban_post_result.png
+🎉 Đăng tin muaban.net thành công! URL: https://muaban.net/dang-tin#classified_id=70929681
+
+🏁 Đã hoàn thành tiến trình đăng bài trên tất cả các trang được chọn!
+✅ Đăng tin thành công trên các kênh: muaban.net
+Đóng trình duyệt...
+🔒 Trình duyệt Playwright đã đóng.

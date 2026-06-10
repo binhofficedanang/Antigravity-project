@@ -1,0 +1,614 @@
+<!DOCTYPE html><html lang="vi"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Quản lý bản tin">
+      <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Rao vặt - Quản lý tin rao vặt</title>
+
+    <!-- Bootstrap core CSS -->
+      <link href="/css/v2.css?ver=2022.03.30.1" rel="stylesheet">
+      <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-F4RNVN3RY3&amp;cx=c&amp;gtm=4e65m1"></script><script src="/callback_js/init.js?ver=2022.02.07.1" type="text/javascript"></script>
+<style>
+    .user-ads .a-stats{
+        padding-left:26px;
+        font-size:12px;color:#7E7E81;
+        color:#808080;
+    }
+    .user-ads .a-tools {
+        padding-left:26px;font-size:12px;
+    }
+</style>
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/android/homescreen192-24@1,188x.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/android/homescreen192-24@5x.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/android/homescreen192-24@3,17x.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/android/homescreen192-24@2,5x.png"><link rel="apple-touch-icon" sizes="57x57" href="/images/android/homescreen192-24@2,375x.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/android/homescreen192-24@3x.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/android/homescreen192-24@4,75x.png"><link rel="icon" sizes="128x128" href="/images/android/homescreen192-128.png"><link rel="icon" sizes="192x192" href="/images/android/homescreen192-24@1,5x.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Raovat.net"><meta name="application-name" content="Raovat.net"><meta name="msapplication-TileColor" content="undefined"><meta name="msapplication-square70x70logo" content="undefined"><meta name="msapplication-square150x150logo" content="undefined"><meta name="msapplication-wide310x150logo" content="undefined"><meta name="msapplication-square310x310logo" content="undefined"></head>
+
+  <body class="modal-open">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <div id="prloading"><span class="ld-text"><img src="/images/connecting.gif" width="48" border="0"></span></div>
+            <div class="notification-nav visible-xs">
+                <div class="notification notification-button pull-right" data-original-title="" title=""><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom"><i class="fa fa-bell fa-fw bottom"></i><span class="count notificount" style="display: none"></span></a></div>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand reload" href="https://raovat.net/"><img src="/images/logo.png" width="165" border="0"></a>
+
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right bar-top">
+                <li class="lf-postad visible-md visible-lg"><a href="/dang-tin"><i class="fa fa-commenting fa-fw" aria-hidden="true"></i> Đăng tin <span class="hidden-xs">miễn phí</span></a></li>
+                <li class="visible-xs"><a href="/tim-kiem"><i class="fa fa-search fa-fw" aria-hidden="true"></i> Tìm kiếm</a></li>
+
+                <li><a href="/huong-dan"><i class="fa fa-question-circle-o fa-fw"></i><span class="visible-md-inline visible-lg-inline visible-xs-inline"> Hướng dẫn</span></a></li>
+
+                <li class="hidden-xs">
+                    <div class="notification notification-button pull-right" data-original-title="" title=""><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom"><i class="fa fa-bell fa-fw bottom"></i><span class="count notificount" style="display: none"></span></a></div>
+                </li>
+                <li class="hidden-xs">
+                    <div class="pull-right avatar"><div class="avatar-img32" id="usrAvt" data-original-title="" title=""><a tabindex="0" data-placement="bottom" role="button" data-toggle="popover" data-trigger="focus" data-title="Tài khoản của bạn <span class=&quot;badge&quot;>975724</span>">
+<img src="/images/avatar/default.png" alt="avatar"></a></div><div class="usrAvtBox hidden" id="usrAvtText"><div class="avatar-text"><div class="usr-name"><i class="fa fa-info-circle fa-fw"></i> binh.officedanang</div></div><div class="avatar-text"><div class="user-email"><i class="fa fa-envelope fa-fw"></i> binh.officedanang@gmail.com</div></div><div class="avatar-text"><div class="avt-link"><a href="/quan-ly"><i class="fa fa-wpforms fa-fw"></i> Bản tin đã đăng <span class="n-posts">16</span></a></div></div><div class="avatar-text"><div class="user-info"><a href="/tai-khoan"><i class="fa fa-user-circle-o fa-fw"></i> Chỉnh sửa thông tin</a></div></div><div class="avatar-text"><div class="user-logout"><a href="/dang-xuat"><i class="fa fa-power-off fa-fw"></i> Thoát / Đăng xuất</a></div></div><div class="avatar-last-login"><i class="fa fa-history fa-fw"></i> <span class="small">Đăng nhập gần đây 14:00 - 26/05/2026</span></div><div class="clearfix"></div></div></div>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right bar-bellow">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-server fa-fw" aria-hidden="true"></i> MyRaovat <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/dang-tin"><i class="fa fa-commenting fa-fw rvn-blue"></i> Đăng tin rao vặt</a></li>
+                        <li><a href="/quan-ly"><i class="fa fa-wpforms fa-fw"></i> Chỉnh sửa, nâng cấp bản tin</a></li>
+                        <li><a href="/nang-cap"><i class="fa fa-trophy fa-fw"></i> Nạp tiền vào tài khoản</a></li>
+                        <li><a href="/hoa-don"><i class="fa fa-history fa-fw"></i> Quản lý hóa đơn</a></li>
+                        <li role="separator" class="divider hidden"></li>
+                        <li><a href="/tin-nhan"><i class="fa fa-comments-o fa-fw"></i> Tin nhắn</a></li>
+                        <li><a href="/quan-tam"><i class="fa fa-bookmark fa-fw"></i> Tin đã đánh dấu (Favorites)</a></li>
+                        <li><a href="/tai-khoan"><i class="fa fa-user fa-fw"></i> Thông tin tài khoản</a></li>
+                        <li><a href="/mat-khau"><i class="fa fa-key fa-fw"></i> Đổi mật khẩu</a></li>
+                        <li><a href="/dang-xuat"><i class="fa fa-sign-out fa-fw red"></i> Đăng xuất</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<span id="top-link-block" class="affix-top">
+    <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span><i class="fa fa-arrow-circle-up fa-3x"></i></span></a>
+</span>
+
+    <!-- child of the body tag -->
+
+    <div id="pgContent" class="clearfix">
+
+      <div class="container pgBody">
+        <div class="rows">
+          <div class="col-md-3 col-sm-5">
+              <div id="sidebar" class="panel panel-default hidden-xs">
+    <div class="panel-heading">
+        <div class="panel-title sb-name">binh.officedanang <span class="badge">975724</span> </div>
+    </div>
+    <ul class="nav nav-pills nav-stacked">
+        <li class=""><a href="/tin-nhan"><i class="fa fa-comments-o fa-fw"></i> Tin nhắn <span class="label label-danger pull-right"></span></a></li>
+        <li class=""><a href="/quan-tam"><i class="fa fa-bookmark fa-fw"></i> Tin đã đánh dấu (Favorites)</a></li>
+
+        <li class="bg-success"><a href="/quan-ly"><i class="fa fa-wpforms fa-fw"></i> Chỉnh sửa, nâng cấp bản tin</a></li>
+        <li><a href="/dang-tin"><i class="fa fa-commenting fa-fw"></i> Đăng tin rao vặt</a></li>
+        <li class=""><a href="/nang-cap"><i class="fa fa-trophy fa-fw"></i> Nạp tiền vào tài khoản</a></li>
+        <li class=""><a href="/hoa-don"><i class="fa fa-history fa-fw"></i> Quản lý hóa đơn</a></li>
+        <li role="separator" class="divider"></li>
+        <li class=""><a href="/tai-khoan"><i class="fa fa-user fa-fw"></i> Thông tin tài khoản</a></li>
+        <li class=""><a href="/mat-khau"><i class="fa fa-key fa-fw"></i> Đổi mật khẩu</a></li>
+        <li><a href="/dang-xuat"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a></li>
+
+    </ul>
+</div>
+
+          </div>
+          <div class="col-md-7 col-sm-7">
+            <div class="rows right-side">
+              <div class="inbox-head">
+                  <form action="/quan-ly" class="pull-right position">
+                      <div class="input-append">
+                          <input type="text" name="kw" class="sr-input" placeholder="Tìm bản tin..." title="Tìm bản tin để chỉnh sửa" style="">
+                          <button class="btn sr-btn" type="submit"><i class="fa fa-search"></i></button>
+                      </div>
+                  </form>
+              </div>
+                <div class="ads-filters"><div class="col-md-3"><i class="fa fa-sliders"></i>  Lọc tin đã đăng theo</div><div class="col-md-9">// <a href="/quan-ly?f=v">Dịch vụ <i class="fa fa-shopping-cart orange"></i></a> // <a href="/quan-ly?f=exp">Hết hạn <i class="fa fa-exclamation-triangle"></i></a> // <a href="/quan-ly">Tất cả <i class="fa fa-check"></i></a></div></div>
+                <div class="clearfix"></div>
+                  <div class="panel panel-default">
+
+                      <div class="panel-heading ads-hdr clearfix">
+                          <div><i class="fa fa-info-circle fa-fw"></i> Bạn đang có 16 bản tin</div>
+
+                      </div>
+
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671940"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671940-Cho-thue-san-van-phong-185m2-o-THAI-DUONG-Q.-Cam.html" id="title8671940">Cho thuê sàn văn phòng 185m2 ở THÁI DƯƠNG - Q. Cẩm</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 27/05/2026 - <span class="bold ">30/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 8 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671940">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671940"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671940"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671940&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671940" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671940"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671940" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671935"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671935-Cho-thue-van-phong-trong-650m2-cuc-dep-o-toa-nha-V.html" id="title8671935">Cho thuê văn phòng trống 650m2 cực đẹp ở tòa nhà V</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 27/05/2026 - <span class="bold ">30/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 9 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671935">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671935"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671935"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671935&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671935" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671935"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671935" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671920"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671920-Cho-thue-dien-tich-van-phong-205m2-tai-INDOCHINA-R.html" id="title8671920">Cho thuê diện tích văn phòng 205m2 tại INDOCHINA R</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 27/05/2026 - <span class="bold ">30/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 10 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671920">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671920"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671920"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671920&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671920" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671920"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671920" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671906"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671906-Cho-thue-dien-tich-van-phong-2m2-tai-LUXURY-BUILDI.html" id="title8671906">Cho thuê diện tích văn phòng 2m2 tại LUXURY BUILDI</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 27/05/2026 - <span class="bold ">30/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 7 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671906">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671906"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671906"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671906&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671906" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671906"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671906" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671877"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671877-Cho-thue-van-phong-60m2-tai-SUMMIT-BUILDING-Quan.html" id="title8671877">Cho thuê văn phòng 60m2 tại SUMMIT BUILDING - Quận</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 27/05/2026 - <span class="bold ">30/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 7 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671877">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671877"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671877"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671877&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671877" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671877"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671877" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671523"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671523-Cho-thue-dien-tich-van-phong-400m2-tai-LUXURY-BUIL.html" id="title8671523">Cho thuê diện tích văn phòng 400m2 tại LUXURY BUIL</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 26/05/2026 - <span class="bold ">29/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 19 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671523">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671523"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671523"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671523&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671523" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671523"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671523" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671415"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671415-Van-phong-lam-viec-350m2-cho-thue-tai-VIETINBANK-Q.html" id="title8671415">Văn phòng làm việc 350m2 cho thuê tại VIETINBANK Q</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 26/05/2026 - <span class="bold ">29/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 17 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671415">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671415"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671415"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671415&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671415" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671415"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671415" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671044"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671044-Van-phong-cho-thue-180m2-tai-toa-nha-THANH-CONG--T.html" id="title8671044">Văn phòng cho thuê 180m2 tại tòa nhà THÀNH CÔNG, T</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 25/05/2026 - <span class="bold ">28/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 18 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671044">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671044"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671044"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671044&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671044" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671044"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671044" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671028"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671028-Van-phong-lam-viec-130m2-cho-thue-tai-THANH-CONG-Q.html" id="title8671028">Văn phòng làm việc 130m2 cho thuê tại THÀNH CÔNG Q</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 25/05/2026 - <span class="bold ">28/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 12 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671028">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671028"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671028"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671028&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671028" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671028"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671028" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8671014"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8671014-Cho-thue-van-phong-270m2-tai-AVN-Quan-Cam-Le--Da.html" id="title8671014">Cho thuê văn phòng 270m2 tại AVN - Quận Cẩm Lệ, Đà</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 25/05/2026 - <span class="bold ">28/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 14 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8671014">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8671014"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8671014"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8671014&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8671014" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8671014"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8671014" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8668605"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8668605-Cho-thue-van-phong-68m2-tai-COZY-Quan-Hai-Chau-.html" id="title8668605">Cho thuê văn phòng 68m2 tại COZY - Quận Hải Châu,</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 19/05/2026 - <span class="bold red">22/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 28 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8668605">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8668605"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8668605"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8668605&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8668605" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8668605"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8668605" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8668604"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8668604-Cho-thue-van-phong-130m2-tai-THANH-CONG-Quan-Tha.html" id="title8668604">Cho thuê văn phòng 130m2 tại THÀNH CÔNG - Quận Tha</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 19/05/2026 - <span class="bold red">22/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 29 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8668604">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8668604"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8668604"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8668604&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8668604" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8668604"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8668604" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8668601"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8668601-Cho-thue-van-phong-Toa-nha-VIETINBANK-Tran-Quoc.html" id="title8668601">Cho thuê văn phòng Toà nhà VIETINBANK - Trần Quốc</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 19/05/2026 - <span class="bold red">22/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 27 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8668601">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8668601"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8668601"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8668601&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8668601" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8668601"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8668601" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8668184"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8668184-Cho-thue-van-phong-Toa-nha-SHB-Nguyen-Van-Linh-.html" id="title8668184">Cho thuê văn phòng Toà nhà SHB - Nguyễn Văn Linh,</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 18/05/2026 - <span class="bold red">21/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 32 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8668184">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8668184"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8668184"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8668184&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8668184" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8668184"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8668184" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                    <div class="rows clearfix user-ads">
+                          <div class="col-md-8">
+                              <div class="rvn-item-no" id="notify8668182"><span class="badge">T</span></div>
+                              <div class="a-title"><a href="/xem/8668182-Cho-thue-van-phong-Toa-nha-SUMMIT-BUILDING-Nguye.html" id="title8668182">Cho thuê văn phòng Toà nhà SUMMIT BUILDING - Nguyễ</a></div>
+                              <div class="a-stats"><i class="fa fa-clock-o"></i> 18/05/2026 - <span class="bold red">21/05/2026</span> <i class="fa fa-comment-o"></i> 0 <i class="fa fa-eye"></i> 33 <i class="fa fa-picture-o fa-fw"></i> <span class="pic-num">0</span> </div>
+                              <div class="a-tools">
+                                  <i class="fa fa-shopping-cart orange"></i> <a href="/tin-dich-vu?siteid=8668182">Dịch vụ / Gia hạn</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="a-btn text-right">
+                                  <!--
+                                  <a title="Mua dịch vụ / Gia hạn bản tin" href="/tin-dich-vu?siteid=8668182"><i class="fa fa-shopping-cart fa-fw orange"></i></a>
+                                  //-->
+                              <a title="Hình ảnh" href="/hinh-anh?mode=upload&amp;siteid=8668182"><i class="fa fa-picture-o fa-fw"></i></a>
+                              <a title="Chỉnh sửa" href="/dang-tin?mode=edit&amp;siteid=8668182&amp;v=text"><i class="fa fa-pencil-square fa-fw"></i></a>
+                              <a title="Xóa tin" data-toggle="modal" data-id="8668182" data-target="#confirm-delete" href="#" data-href="/quan-ly?mode=delete&amp;siteid=8668182"><i class="fa fa-trash-o fa-fw"></i></a>
+                              <a class="hidden" title="Gia hạn" href="#" data-id="8668182" data-toggle="modal" data-target="#confirm-renew"><i class="fa fa-retweet fa-fw"></i></a>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div align="left"><div class="PgCounter text-center clearfix"><span class="pg-stats">Trang 1 / 2</span><nav aria-label="Page navigation">
+  <ul class="pagination"><li class="active"><a>1 <span class="sr-only">(current)</span></a></li><li><a title="16 - 16" href="/quan-ly?pg_no=2&amp;" class="reload">2</a></li><li class="pg-last"><a title="15 - 16" href="/quan-ly?pg_no=2&amp;">».</a></li>  </ul></nav></div></div>
+
+                  <div class="clearfix"></div>
+                  <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  Bạn có muốn xóa bản tin <span class="badge" id="modalSiteId"></span> này?
+                              </div>
+                              <div class="modal-body" id="modalText">
+
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                  <a class="btn btn-danger btn-ok">Delete</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              <div class="modal fade" id="confirm-renew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <div class="form-inline">Bạn vui lòng nhập 4 chữ số này <img id="imgcode" border="0"> vào ô dưới để tiếp tục!</div>
+                          </div>
+                          <div class="modal-body">
+                              <input type="text" name="imgcode4" id="imgcode4" class="form-control input-sm" style="width: 100px;" required="">
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                              <a class="btn btn-danger btn-ok" data-dismiss="modal" id="btnOkSend">Ok</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <form id="send-renew">
+                  <input type="hidden" name="siteid" id="send-siteid" style="">
+                  <input type="hidden" name="vcode" id="vcode" style="">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="modal fade in" id="send-resp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-inline">Thông báo!</div>
+                    </div>
+                    <div class="modal-body" id="modalTextResp">Bạn vui lòng xóa các bản tin cũ, để có thể đăng bản tin mới!</div>
+                    <div class="modal-footer">
+                        <a class="btn btn-danger btn-ok" data-dismiss="modal">Ok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+  <footer class="footer">
+    <div class="container">
+        <div class="rows ftr-4cols hidden-xs clearfix">
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Liên hệ Raovat.Net</div>
+
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Thông tin Raovat.Net</div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-title">Hướng dẫn</div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="ftr-title">Liên kết ưu tiên</div>
+            </div>
+        </div>
+        <div class="rows hidden-xs clearfix">
+            <div class="col-md-3 col-sm-4">
+
+                <div class="ftr-content">
+                    Địa chỉ: 68/166D Trần Quang Khải, P. Tân Định, Q.1, TPHCM.<br>ĐT:&nbsp;0913732102 (Zalo)<br>Email: <a href="mailto:info@sgc.vn" class="" classname="" target="_blank" name="">info@sgc.vn</a>
+                    <div class="fb-icon"><a target="_blank" href="https://www.facebook.com/raovat2000/"><i class="fa fa-facebook-official fa-2x"></i></a> <span class="dev-icon"><a title="fullstack developer" href="https://globalvietnam.com" target="_blank"><i class="fa fa-code fa-2x"></i></a> </span></div>
+
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-content">
+                    <div><a href="/help?p=tin-tuc"><i class="fa fa-caret-right fa-fw"></i> Tin tức</a></div><div><a href="/help?p=quy-che"><i class="fa fa-caret-right fa-fw"></i> Quy chế hoạt động</a></div><div><a href="/help?p=dieu-khoan"><i class="fa fa-caret-right fa-fw"></i> Điều khoản sử dụng</a></div><div><a href="/huong-dan?subj=1/Bang-gia-dich-vu.html"><i class="fa fa-caret-right fa-fw"></i> Bảng giá</a></div><div><a href="/help?p=lien-he"><i class="fa fa-caret-right fa-fw"></i> Liên hệ</a></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="ftr-content">
+                    <div><a href="/huong-dan?subj=27/Huong-dan-dang-ky-thanh-vien.html" class="" classname="" target="" name="">Hướng dẫn đăng ký thành viên</a></div><div><a href="/huong-dan?subj=28/Huong-dan-dang-tin.html" class="" classname="" target="" name=""><i class="fa fa-caret-right fa-fw"></i> Hướng dẫn đăng tin</a></div><div><a href="/huong-dan?subj=10/Huong-dan-thanh-toan-.html" class="" classname="" target="" name=""><i class="fa fa-caret-right fa-fw"></i> Hướng dẫn thanh toán</a></div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="ftr-content">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="ftr">
+            <div class="ftrSigns hidden-xs"><div class="badge"><a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=27313"><span class="fa fa-check-circle"> ĐÃ ĐĂNG KÝ</span><br>Bộ Công Thương</a></div></div>
+            <div class="ftrCopyright">
+                <div class="CopyrightText">Bản quyền © 2001 - 2020 bởi Công ty TNHH TM-DV-KT SGC - Số ĐKKD: 0302298015, Sở Kế Hoạch Và Đầu Tư TP.HCM</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/bootstrap/dist/js/jquery.min.js"><\/script>')</script>
+    <script src="/callback_js/globals.js?ver=2022.02.07.1"></script>
+
+  <script type="text/javascript">
+      $('#confirm-renew').on('show.bs.modal', function(e) {
+          $('#imgcode').attr('src','/scimage');
+          titleid = $(e.relatedTarget).data('id');
+          $('#btnOkSend').click(function () {
+              $('#vcode').val($('#imgcode4').val());
+              $('#send-siteid').val(titleid);
+              //alert(titleid);
+              $.ajax({
+                  url: "/ajax-renew.php",
+                  type: "POST",
+                  dataType: 'json',
+                  data:$("#send-renew").serialize(),
+                  success: function (resp) {
+                      modalDialog(resp[1]);
+                  }
+              });
+          })
+      });
+
+    var jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTc1NzI0IiwiaWF0IjoxNzc5ODcxNTAyLCJleHAiOjE3Nzk5NTc5MDIsInNzaWQiOiI2NDF0ZWJyNHBsNTI1ZjB2NjY4OXVydjBkZCJ9.ceJ8HdBHxs4AqXZ1BdVgP-o-r1pKGd-G2Igg3AJduWY';modalDialog('Bạn vui lòng xóa các bản tin cũ, để có thể đăng bản tin mới!');
+  </script><div class="modal-backdrop fade in"></div>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-727484-5"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-727484-5');
+    </script>
+  
+
+
+</body></html>
