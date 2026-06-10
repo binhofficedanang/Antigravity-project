@@ -201,9 +201,17 @@ async def main():
     """
 
     print("\n🤖 Đang khởi tạo Browser-Use Agent...")
+    session_dir = os.path.abspath("browser_sessions")
+    os.makedirs(session_dir, exist_ok=True)
+
     browser = Browser(
         headless=args.headless,
         disable_security=True,
+        user_data_dir=session_dir,
+        prohibited_domains=[
+            "google-analytics.com", "doubleclick.net", "facebook.com", 
+            "adnxs.com", "admicro.vn", "vcmedia.vn", "googletagmanager.com"
+        ]
     )
     
     agent = Agent(
