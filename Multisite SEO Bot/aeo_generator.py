@@ -10,8 +10,27 @@ class AEOGenerator:
         self.description = description
         
     def strip_html(self, text):
-        clean = re.compile('<.*?>')
-        return re.sub(clean, '', text)
+        """
+        Làm sạch HTML: xóa script (bao gồm JSON-LD), style, tag HTML,
+        HTML entities và chuẩn hóa khoảng trắng.
+        """
+        try:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(text, "html.parser")
+            # Xóa toàn bộ script (kể cả JSON-LD) và style
+            for tag in soup.find_all(["script", "style"]):
+                tag.decompose()
+            raw = soup.get_text(separator=" ")
+        except ImportError:
+            # Fallback regex nếu không có bs4
+            raw = re.sub(r"<script[\s\S]*?</script>", " ", text, flags=re.IGNORECASE)
+            raw = re.sub(r"<style[\s\S]*?</style>", " ", raw, flags=re.IGNORECASE)
+            raw = re.sub(r"<[^>]+>", " ", raw)
+        # Giải mã HTML entities (decode 2 lần vì WordPress thường encode 2 lần)
+        import html
+        raw = html.unescape(html.unescape(raw))
+        # Xóa khoảng trắng thừa
+        return re.sub(r"\s+", " ", raw).strip()
 
     def fetch_posts(self, limit=100):
         print(f"📡 Đang lấy dữ liệu từ {self.wp_url}...")
@@ -39,13 +58,22 @@ class AEOGenerator:
                 "http://localhost:11434/api/generate",
                 json={
                     "model": ollama_model,
-                    "prompt": f"Hãy viết một câu tóm tắt cực kỳ ngắn gọn (dưới 150 ký tự), khách quan, chuẩn SEO cho nội dung sau đây (chỉ trả về câu tóm tắt, không thêm bất kỳ lời dẫn giải nào):\n\n{clean_text[:2000]}",
+                    "prompt": (
+                        "Hãy đóng vai trò là một chuyên gia tối ưu hóa tìm kiếm AI (GEO/AEO). "
+                        "Nhiệm vụ của bạn là viết một đoạn tóm tắt bài viết chuẩn SEO và tối ưu nhất để các mô hình ngôn ngữ lớn (như SearchGPT, Perplexity, Google AI Overviews) dễ dàng trích dẫn làm câu trả lời.\n"
+                        "Ràng buộc về định dạng và cấu trúc:\n"
+                        "1. Độ dài lý tưởng: Nằm trong khoảng 130 đến 160 từ tiếng Việt.\n"
+                        "2. Cấu trúc câu trả lời: Trong 50 từ đầu tiên, hãy đưa ra một định nghĩa trực tiếp, độc lập hoặc câu trả lời trực diện theo dạng 'X là...' hoặc 'Dịch vụ X cung cấp...'. Đoạn văn phải có ý nghĩa trọn vẹn khi đứng một mình mà không cần ngữ cảnh phụ.\n"
+                        "3. Giọng văn: Khách quan, thực tế, chứa các số liệu hoặc thông tin cụ thể (nếu có trong văn bản), tránh các từ quảng cáo sáo rỗng hoặc ý kiến chủ quan.\n"
+                        "4. Chỉ trả về duy nhất đoạn văn tóm tắt, tuyệt đối không thêm bất kỳ lời dẫn giải, mở bài hay kết bài nào.\n\n"
+                        f"Nội dung bài viết để tóm tắt:\n{clean_text[:3000]}"
+                    ),
                     "stream": False,
                     "options": {
-                        "temperature": 0.3
+                        "temperature": 0.2
                     }
                 },
-                timeout=10
+                timeout=15
             )
             if response.status_code == 200:
                 summary = response.json().get("response", "").strip()
@@ -65,7 +93,8 @@ class AEOGenerator:
         llms_txt = f"# {self.site_name}\n\n> {self.description}\n\n## Nội dung nổi bật\n\n"
         
         for p in posts[:20]: # Chỉ lấy 20 bài mới nhất cho llms.txt để tránh quá dài
-            title = p['title']['rendered']
+            import html as _html
+            title = _html.unescape(_html.unescape(p['title']['rendered']))
             link = p['link']
             # Sử dụng nội dung bài viết để sinh tóm tắt chuẩn xác hơn là excerpt WordPress thô
             content_raw = p['content']['rendered']

@@ -1,5 +1,6 @@
 import asyncio
 import os
+import re
 import json
 import argparse
 from dotenv import load_dotenv
@@ -7,6 +8,53 @@ from pydantic import BaseModel, Field
 
 # Nạp các biến môi trường
 load_dotenv()
+
+# ── HTML PURGER ──────────────────────────────────────────────────────────────
+def purge_html(raw_html: str, keep_attrs=("id", "name", "class", "type", "placeholder", "action", "method", "for", "href")) -> str:
+    """
+    Làm sạch HTML thô trước khi đưa vào AI:
+    - Xóa script, style, svg, meta, link, iframe, noscript, header, footer, nav, aside
+    - Chỉ giữ lại các thuộc tính quan trọng (id, name, class, type, ...)
+    - Loại bỏ comment HTML
+    Mục đích: Giảm 60-80% số token khi gửi form HTML lên LLM.
+    """
+    try:
+        from bs4 import BeautifulSoup, Comment
+    except ImportError:
+        print("⚠️ beautifulsoup4 chưa được cài. Dùng HTML thô.")
+        return raw_html
+
+    soup = BeautifulSoup(raw_html, "html.parser")
+
+    # Xóa các thẻ không cần thiết
+    for tag in soup.find_all(["script", "style", "svg", "meta", "link",
+                               "iframe", "noscript", "header", "footer",
+                               "nav", "aside", "img", "picture"]):
+        tag.decompose()
+
+    # Xóa HTML comments
+    for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
+        comment.extract()
+
+    # Chỉ giữ lại các thuộc tính quan trọng
+    keep_set = set(keep_attrs)
+    for tag in soup.find_all(True):
+        attrs_to_remove = [a for a in tag.attrs if a not in keep_set]
+        for a in attrs_to_remove:
+            del tag.attrs[a]
+
+    # Xóa dòng trắng thừa
+    clean = re.sub(r"\n{3,}", "\n\n", soup.prettify())
+    return clean
+
+
+def measure_reduction(original: str, purged: str) -> None:
+    """In ra tỉ lệ nén HTML để kiểm tra hiệu quả."""
+    orig_len = len(original)
+    purged_len = len(purged)
+    ratio = (1 - purged_len / orig_len) * 100 if orig_len > 0 else 0
+    print(f"📊 HTML Purger: {orig_len:,} → {purged_len:,} ký tự ({ratio:.1f}% giảm)")
+# ─────────────────────────────────────────────────────────────────────────────
 
 class SiteSelectors(BaseModel):
     login_url: str = Field(description="URL của trang đăng nhập")
@@ -171,9 +219,17 @@ async def main():
     """
 
     print("🤖 Đang khởi chạy AI Agent...")
+    session_dir = os.path.abspath("browser_sessions")
+    os.makedirs(session_dir, exist_ok=True)
+
     browser = Browser(
         headless=args.headless,
         disable_security=True,
+        user_data_dir=session_dir,
+        prohibited_domains=[
+            "google-analytics.com", "doubleclick.net", "facebook.com", 
+            "adnxs.com", "admicro.vn", "vcmedia.vn", "googletagmanager.com"
+        ]
     )
 
     agent = Agent(
