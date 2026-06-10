@@ -66,14 +66,15 @@ class AEOGenerator:
                         "2. Cấu trúc câu trả lời: Trong 50 từ đầu tiên, hãy đưa ra một định nghĩa trực tiếp, độc lập hoặc câu trả lời trực diện theo dạng 'X là...' hoặc 'Dịch vụ X cung cấp...'. Đoạn văn phải có ý nghĩa trọn vẹn khi đứng một mình mà không cần ngữ cảnh phụ.\n"
                         "3. Giọng văn: Khách quan, thực tế, chứa các số liệu hoặc thông tin cụ thể (nếu có trong văn bản), tránh các từ quảng cáo sáo rỗng hoặc ý kiến chủ quan.\n"
                         "4. Chỉ trả về duy nhất đoạn văn tóm tắt, tuyệt đối không thêm bất kỳ lời dẫn giải, mở bài hay kết bài nào.\n\n"
-                        f"Nội dung bài viết để tóm tắt:\n{clean_text[:3000]}"
+                        f"Nội dung bài viết để tóm tắt:\n{clean_text[:1000]}"
                     ),
                     "stream": False,
                     "options": {
-                        "temperature": 0.2
+                        "temperature": 0.2,
+                        "num_predict": 220  # ~160 từ tiếng Việt (1 từ ≈ 1.4 token)
                     }
                 },
-                timeout=15
+                timeout=120  # gemma4:e4b (9GB) cần tối đa 120s
             )
             if response.status_code == 200:
                 summary = response.json().get("response", "").strip()
@@ -88,6 +89,10 @@ class AEOGenerator:
         posts = self.fetch_posts()
         if not posts:
             return
+
+        if use_ai:
+            eta_s = len(posts[:20]) * (8 if "2b" in ollama_model or "1.5b" in ollama_model else 75)
+            print(f"⏱️  ETA tóm tắt AI: ~{eta_s//60} phút {eta_s%60} giây ({len(posts[:20])} bài × {'~8s' if eta_s < 200 else '~75s'}/bài với {ollama_model})")
 
         # 1. Tạo llms.txt (Tóm tắt, cấu trúc sitemap)
         llms_txt = f"# {self.site_name}\n\n> {self.description}\n\n## Nội dung nổi bật\n\n"
@@ -126,7 +131,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AI Search Optimizer (AEO) Generator")
     parser.add_argument("--use-ai", action="store_true", help="Sử dụng local Ollama để sinh tóm tắt chất lượng cao")
     parser.add_argument("--model", type=str, default="gemma4:e4b", help="Mô hình Ollama sử dụng")
+    parser.add_argument("--fast", action="store_true",
+                        help="Dùng gemma2:2b thay vì gemma4:e4b (~8s/bài thay vì ~75s/bài). Ưu tiên tốc độ.")
     args = parser.parse_args()
+
+    # --fast override model
+    if args.fast:
+        args.model = "gemma2:2b"
+        args.use_ai = True
+        print("⚡ Fast mode: dùng gemma2:2b (~8s/bài)")
 
     print("===============================")
     print("🤖 AI SEARCH OPTIMIZER (AEO)")
