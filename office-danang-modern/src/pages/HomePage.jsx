@@ -257,7 +257,7 @@ export default function HomePage() {
                 <div style={{ background: 'white', padding: '40px 30px', borderRadius: '24px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
                   <div style={{ fontSize: '4rem', marginBottom: '20px' }}>🤝</div>
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '12px', color: '#333' }}>Office Matchmaker</h3>
-                  <p style={{ color: '#666', marginBottom: '24px', lineHeight: '1.5', flexGrow: 1 }}>Phân tích nhu cầu doanh nghiệp qua 4 câu hỏi khảo sát nhanh để hệ thống AI đề xuất các văn phòng phù hợp nhất.</p>
+                  <p style={{ color: '#666', marginBottom: '24px', lineHeight: '1.5', flexGrow: 1 }}>Phân tích nhu cầu doanh nghiệp qua 4 câu hỏi khảo sát nhanh để hệ thống dữ liệu của Office43 đề xuất các văn phòng phù hợp nhất.</p>
                   <span className="btn-primary" style={{ display: 'inline-block' }}>Phân tích ngay</span>
                 </div>
               </Link>
